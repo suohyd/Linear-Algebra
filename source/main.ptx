@@ -36,27 +36,24 @@
     <frontmatter xml:id="frontmatter">
       <titlepage>
         <author>
-          <personname>You</personname>
-          <department>Your department</department>
-          <institution>Your institution</institution>
+          <personname>Abhay Soman</personname>
+          <department>School of Mathematics and Statistics</department>
+          <institution>University of Hyderabad</institution>
         </author>
-        <date>
-          <today />
-        </date>
       </titlepage>
 
       <colophon>
 
-        <website>
+        <!--<website>
           <name>
             <c>example.org</c>
           </name>
           <address>https://example.org</address>
-        </website>
+        </website>-->
 
         <copyright>
           <year>2020<ndash />2023</year>
-          <holder>You</holder>
+          <holder></holder>
           <shortlicense> 
             This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
           </shortlicense>
@@ -97,7 +94,11 @@
     <xi:include href="./ch-Cayley-Hamilton-Jordan-Normal.ptx"/>
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>
-
+      <appendix>
+        <title>(Algebra of polynomials and determinants)</title>
+          <xi:include href="./sec-algebra-of-polynomials.ptx"/>
+          <xi:include href="./sec-determinant.ptx"/>
+      </appendix>
       <colophon>
         <p> This book was authored in <pretext />. </p>
       </colophon>
