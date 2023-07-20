@@ -1,0 +1,62 @@
+<section xml:id="sec-examples-FIT">
+	<title>Examples</title>
+	<introduction>We give a few examples of quotient spaces and certain applications of the first isomorphism theorem.</introduction>
+	<example xml:id="commutativity-Hom-direct-sum">
+		<title>(Hom and Direct sum)</title>
+		Let <m>U,V,</m> and <m>W</m> be vector spaces over a field <m>F</m>. Then
+		<me>\Hom_F\big(U\bigoplus V,W\big)\simeq\Hom_F(U,W)\bigoplus\Hom_F(V,W).</me>
+<!--			Consider the map 
+			<me>\pi\colon\Hom_F(U\bigoplus V,W)\longrightarrow\Hom_F(V,W)\quad\text{given by}\quad T\mapsto \pi(T),</me>
+			where <me>\pi(T)(v)= T(0,v)</me>.
+			<p>
+				We claim that <m>\pi</m> is surjective. Indeed, let <m>A\in\Hom_F(V,W)</m>. Consider <m>\widetilde{A}\colon U\bigoplus V\to W</m> defined by <m>\widetilde{A}(u,v)=A(v)</m>. Then, <m>\widetilde{A}\in\Hom_F(U\bigoplus V,W)</m> and <m>\pi(\widetilde{A})=A</m> (verify!).
+			</p>
+			<p>
+				While the kernel of <m>\pi</m> is
+			<me>\ker(\pi)=\big\{T\in\Hom_F(U\bigoplus V, W):\pi(T)=0\big\}.</me>
+			Hence, <m>T</m> can be considered as a vector in <m>\Hom_F(U,W)</m> by restricting <m>T</m> to <m>U</m>, i.e., considering <m>{\rm res}(T)(u)=T(u,0)</m>. Thus, we get an <m>F</m>-linear map (check this)
+			<me>{\rm res}\colon\ker(\pi)\longrightarrow\Hom_F(U,W).</me>
+
+			Conversely, if <m>S\in\Hom_F(U,W)</m> then we consider <m>\widetilde{S}\colon U\bigoplus V\to W</m> by <m>(u,v)\mapsto S(u)</m>. Then, <m>\widetilde{S}\in\ker(\pi)</m> and <m>{\rm res}(\widetilde{S})=S</m>. This gives an <m>F</m>-isomorphism
+			<me>\ker(\pi)\xrightarrow{\simeq}\Hom_F(U,W)</me>.
+		</p>
+		<p>
+			By <xref ref="first-isomorphism-theorem"/>, 
+			<me>\Hom_F\big(U\bigoplus V,W\big)\big/\Hom_F(U,W)\simeq\Hom_F(V,W).</me>
+			Hence, <m>\Hom_F\big(U\bigoplus V,W\big)\simeq\Hom_F(U,W)\bigoplus\Hom_F(V,W)</m> by <xref ref="corollary-FIT"/>.
+		</p>-->
+	</example>
+
+	<example xml:id="intersections-product">
+		<title>(Intersections and product)</title>
+		Let <m>V</m> be a vector space over a field <m>F</m> and <m>W_i\leq V</m> (<m>i</m> is in some indexing set <m>I</m>) be subspace of <m>V</m>. Then,
+		<me>V\big/\bigcap_{i\in I}W_i\text{ is isomorphic to a subspace of }\prod_{i\in I}\big(V/W_i\big).</me>
+		For each <m>i\in I</m> consider the natural projection <m>\pi_i\colon V\to V/W_i</m> (see <xref ref="def-natural-projection"/>). Define <m>\pi\colon V\to\prod_{i\in I}\big(V/W_i\big)</m> by 
+		<me>v\mapsto (\ldots,v+W_i,\ldots)</me>
+		The verification that this map is <m>F</m>-linear is left to the reader. The kernel of <m>\pi</m> is 
+		<md><mrow>\ker(\pi)\amp=\{v\in V:v+W_i=0+W_i\text{ for each }i\in I\}</mrow><mrow>\amp=\{v\in V:v\in W_i\text{ for each }i\in I\}</mrow><mrow>\amp=\bigcap_{i\in I}W_i</mrow></md>
+		By <xref ref="first-isomorphism-theorem"/>, <m>V\big/\bigcap_{i\in I}W_i</m> is isomorphic to <m>\Im(\pi)</m>. Hence the result. This shows that the following is an exact sequence.
+		<men xml:id="intersections-product-exact-seq">0\to \bigcap_{i\in I}W_i\to V\to\prod_{i\in I}\big(V/W_i\big).</men>
+	</example>
+
+	<example xml:id="intersection-direct-sum">
+		<title>(Intersection and Direct Sum)</title>
+		Let <m>X,Y\leq V</m> be subspaces of a vector space <m>V</m> over a field <m>F</m>. Consider natural projections (see <xref ref="def-natural-projection"/>).
+		<me>p\colon V/X\to V/(X+Y)\quad\text{and}\quad q\colon V/Y\to V/(X+Y)</me>
+		Consider the compositions <me>r\colon V/(X\cap Y)\to V/X\to (V/X)\bigoplus (V/Y)</me> and <me>s\colon V/(X\cap Y)\to V/Y\to (V/X)\bigoplus (V/Y).</me> Let <m>t\colon V/(X\cap Y)\to(V/X)\bigoplus (V/Y)</m> be such that <m>t=r+s</m>. We show that 
+		<me>p-q\colon (V/X)\bigoplus (V/Y)\to V/(X+Y)</me> is surjective, <m>t\colon V/(X\cap Y)\to (V/X)\bigoplus (V/Y)</m> is injective, and <m>\Im(t)=\ker(p-q)</m>. In other words, we show that the following is an short exact sequence.
+		<men xml:id="intersection-direct-sum-ses">0\to V/(X\cap Y)\xrightarrow{t}(V/X)\bigoplus (V/Y)\xrightarrow{p-q} V/(X+Y)\to 0</men>
+		Indeed, the injectivity is a part of <xref ref="intersections-product"/>. The surjectivity of <m>p-q</m> is left to the reader. We have <md><mrow>(p-q)\circ t\left(v+(X\cap Y)\right)\amp=(p-q)\left(v+X,v+Y\right)=0</mrow></md> Hence, <m>\Im(t)\leq\ker(p-q)</m>. 
+		<p>
+			Now suppose that <m>(p-q)(v+X,v^\prime+Y)=0</m>, i.e., <m>v+(X+Y)=v^\prime+(X+Y)</m>. Therefore there exists <m>x\in X</m> and <m>y\in Y</m> such that <m>v-v^\prime=x+y</m>.
+			Hence, <me>v-x=v^\prime+y.</me> Put <m>w=v-x=v^\prime+y</m>. Thus, <md><mrow>r\left(w+(X\cap Y)\right)\amp=r\left(v-x+(X\cap Y)\right)</mrow><mrow>\amp=\left((v-x)+X,0\right)</mrow><mrow>\amp=(v+X,0)</mrow></md> Similarly,
+			<md><mrow>s\left(w+(X\cap Y)\right)\amp=r\left(v^\prime-y+(X\cap Y)\right)</mrow><mrow>\amp=\left(0,(v^\prime+y)+Y\right)</mrow><mrow>\amp=(0,v^\prime+Y)</mrow></md> In particular, <me>(r+s)\left(w+(X\cap Y)\right)=t\left(w+(X\cap Y)\right)=(v+X,v^\prime+Y)</me>. Hence, <m>\ker(p-q)\leq\Im(t)</m> and the result is proved.
+		</p>
+	</example>
+
+	<example xml:id="Intersection-sum">
+		<title>(Intersection and Sum)</title>
+		Let <m>V</m> be a vector space over a field <m>F</m>. Suppose that <m>W_1,W_2\leq V</m> be subspaces of <m>V</m>. We have the following isomorphism.
+		<me>W_1\big/(W_1\cap W_2)\simeq (W_1+W_2)/W_2.</me>
+	</example>
+</section>

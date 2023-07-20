@@ -1,0 +1,48 @@
+<section xml:id="sec-uniqueness-echelon-forms">
+	<title>Uniqueness of row reduced echelon form</title>
+	<introduction>
+		Recall from the class that given a matrix <m>A</m>, by applying a sequence of elementary row operations, can be reduced to a row-reduced echelon form <m>B</m> of <m>A</m>. The matrix <m>B</m> has the following properties.
+		<ol>
+			<li>If a row of <m>B</m> is nonzero then the first nonzero entry is <m>1</m>.</li>
+			<li>All zero rows occurs at the bottom of <m>B</m>.</li>
+			<li>In any two successive nonzero rows of <m>B</m>, the leading <m>1</m> in the lower row occurs to the right of the leading <m>1</m> in the higher row.</li>
+			<li>Each column of <m>B</m> that contains the <term>leading <m>1</m></term> (this term is explained in an illustrative example below) has zero everywhere else.</li>
+		</ol>
+		<p>The natural question arises: Does the sequence in which row operations are performed change the resulting row-reduced echelon form of <m>A?</m> The answer is no!</p>
+		<p>We present a proof of this fact following Thomas Yuster's article <url href="https://www.maa.org/programs/faculty-and-departments/classroom-capsules-and-notes/the-reduced-row-echelon-form-of-a-matrix-is-unique-a-simple-proof"><sq>The reduced row echelon form of a matrix is unique: a simple proof</sq></url> from Mathematics Magazine.</p>
+	</introduction>
+	<p>We begin with the following example.
+		<sage>
+		<input>
+			sage: A=matrix(QQ,[[1,-1,2],[0,1,1],[0,1,1]]); A
+			sage: A.echelon_form()
+		</input>
+	</sage>
+	The last column of the row-reduced echelon form <em>does not</em> contain the leading <m>1</m>. The solution of <m>A(x_1,x_2,x_3)^t=0</m> can be obtained by assigning an arbitrary value to the last variable <m>x_3</m>. Following T. Yuster we call the last column a <term>free</term> column.
+	</p>
+	<theorem xml:id="uniquenss-rref">
+		<title>(Uniqueness of Row-Reduced Echelon Form)</title>
+		<statement>
+			The row-reduced echelon form of a matrix is unique.
+		</statement>
+	</theorem>
+	<proof>
+		Let <m>A</m> be an <m>m\times n</m> matrix over a field <m>F</m>. Following T. Yuster, we proceed by induction on <m>n</m>. 
+		<p>If <m>n=1</m>, i.e., <m>A</m> is an <m>m\times 1</m> matrix, then the result is true.</p>
+		<p>
+			Now assume that <m>n\geq 2</m>. Let <m>A^\prime\in M_{m\times(n-1)}(F)</m> be the matrix obtained from <m>A</m> by deleting the <m>n</m>-th column of <m>A</m>. Note that any sequence of elementary row operations that reduces <m>A</m> to a row-reduced echelon form also reduces <m>A^\prime</m> to the row-reduced echelon form. We assume that <m>B,C</m> are two row-reduced echelon forms of <m>A</m>. By induction the row-reduced echelon forms <m>B,C</m> of <m>A</m> differs only in their <m>n</m>-th column. In other words, the first <m>n-1</m> columns of <m>B</m> and <m>C</m> are the same.
+		</p>
+		<p>
+			Suppose that <m>B\neq C</m>. Therefore, the <m>j</m>-th row of <m>B</m> will be different from the <m>j</m>-th row of <m>C</m> for some <m>j</m>. Now if <m>v</m> is a column vector such that <m>Bv=0</m> then <m>Cv=0</m>, because the solutions of <m>AX=0</m> coincides with solutions of <m>BX=0</m> as well as solutions of  <m>CX=0</m>. Hence, <m>(B-C)v=0</m>. Since the first <m>n-1</m> columns of <m>B-C</m> are zero, the <m>j</m>-th coordinate of <m>(B-C)v</m> is <m>(b_{jn}-c_{jn})v_n</m>. As <m>b_{jn}\neq c_{jn}</m> we must have <m>v_n=0</m>. Therefore, the <m>n</m>-th column of both <m>B</m> and <m>C</m> contains the leading <m>1</m>; otherwise the <m>n</m>-th column of both <m>B</m> and <m>C</m> will become free column and then, we could choose an arbitrary value for <m>v_n</m>.
+		</p>
+		<p>
+			Since the first <m>n-1</m> columns of <m>B</m> and <m>C</m> are identical the leading <m>1</m> of the <m>n</m>-th column must occur in the first zero row of the row-reduced echelon form of <m>A^\prime</m>. Since the remaining entries of the <m>n</m>-th column are all zero we get that <m>B=C</m>, a contradiction. Hence, the result is proved.
+		</p>
+	</proof>
+
+	<remark>
+		<statement>
+			The <xref ref="uniquenss-rref"/> ensures that the row-reduced echelon form of a matrix obtained by you or someone else, or a computer program like SageMath will always give the same result, irrespective of the sequence of row operations.
+		</statement>
+	</remark>
+</section>

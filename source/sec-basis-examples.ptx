@@ -1,0 +1,69 @@
+<section xml:id="sec-basis-examples">
+	<title>Examples</title>
+<introduction>
+	In this section we give few examples of basis of a given vector space. First recall the definition of Kronecker delta:
+	<me>\delta_{ij}=\begin{cases}1\amp\text{if }i=j\\0\amp\text{if } i\neq j\end{cases}</me>
+	We begin with the following example.
+</introduction>
+<example xml:id="standard-basis"><title>(Standard basis of <m>F^n</m> and <m>M_{n\times 1}(F)</m>)</title>
+	<p>
+		Let <m>F</m> be a field and consider <m>F^n</m> as a vector space over <m>F</m> (refer to <xref ref="n-dim-vs"/>). For <m>i\in\{1,2,\ldots,n\}</m>, let <m>e_i=(0,0,\ldots,0,1,0,\ldots,0)</m>, where <m>1</m> is at the <m>i</m>-th place. In other words,	<me>e_i=(\delta_{i1},\delta_{i2},\ldots,\delta_{in}).</me>
+		We claim that <m>\mathfrak{B}=\{e_1,e_2,\ldots,e_n\}</m> is a basis of <m>F^n</m>. We first show that <m>\mathfrak{B}</m> is linearly independent. Suppose <m>\sum_i\alpha_ie_i=0</m>. Therefore, for each <m>\ell\in\{1,2,\ldots,n\}</m> we get <me>\sum_i\alpha_i\delta_{i\ell}=0.</me> Hence, <m>\alpha_\ell=0</m>.
+	</p>
+	<p>
+		Now we show that <m>\mathfrak{B}</m> spans <m>F^n</m>. Let <m>x=(x_1,x_2,\ldots,x_n)\in F^n</m>. We can write <m>x</m> as a linear combination of vectors in <m>\mathfrak{B}</m>, indeed, <me>x=\sum_ix_ie_i.</me>
+	</p>
+	<p>
+		This also shows that <m>\dim_F(F^n)=n.</m> We call <m>\{e_1,\ldots,e_n\}</m> the <term>standard basis</term> of <m>F^n</m>.
+	</p>
+
+	<p>
+		Similarly, <m>\{e_i^t:1\leq n\}</m> is a basis of <m>M_{n\times 1}</m>. We call <m>\{e_i^t:1\leq i\leq n\}</m> the <term>standard basis</term>.
+	</p>
+</example>
+<example><title>(A basis of solution space - particular case)</title>
+	<p>
+		Consider the matrix over <m>\Q</m> <me>A=\begin{pmatrix}1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\end{pmatrix}.</me> Its row-reduced echelon form is <me>R=\begin{pmatrix}1\amp 1\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\end{pmatrix}.</me>
+		We want to find a basis for the solution space of <m>AX=0</m>. In <xref ref="Elt-row-operations"/> we saw that the solution space of the system <m>AX=0</m> and the system <m>RX=0</m> is same. So, we work with the matrix <m>R</m>.
+	</p>	 
+	<p>
+		Only the first row of <m>R</m> is nonzero and the leading term occurs in the first column. We have <me>x_1+x_2+x_3=0.</me> Solutions of the system <m>RX=0</m> are obtained by assigning arbitrary values to <m>x_2,x_3</m> and then computing the corresponding value for <m>x_1</m>. Consider the vectors <m>v=(-1,1,0)^t</m> and <m>w=(-1,0,1)^t</m>. We claim that <m>\{v,w\}</m> forms a basis for the space of solutions of <m>RX=0</m>. It is easy to see that <m>\{v,w\}</m> is linearly independent.
+	</p>
+	<p>
+		Now suppose that <m>(s_1,s_2,s_3)^t</m> is a solution of <m>RX=0</m>. Then, <me>s_2\cdot v+s_3\cdot w=(-s_2-s_3,s_2,s_3)^t</me> is also a solution of <m>RX=0</m>. Moreover, as <m>s_1=-s_2-s_3</m> we get that <m>(s_1,s_2,s_3)^t</m> is a linear combination of <m>v,w</m>. Hence, <m>\{v,w\}</m> spans the space of solutions of <m>RX=0</m>.
+	</p>
+</example>
+
+<example xml:id="basis-of-homogeneous-solution-space"><title>(A basis of solution space - general case)</title>
+	<p>
+		Let <m>A\in M_{m\times n}(F)</m> be a matrix and <m>R</m> be its row-reduced echelon form. Let <m>\ker A</m> be the subspace of solutions of <m>AX=0</m>. Then, <m>\ker A</m> is also the subspace of solutions of <m>RX=0</m>. Suppose that the leading nonzero entries of nonzero rows of <m>R</m> occur in columns <m>k_1,k_2,\ldots,k_r</m>. Let <m>I=\{1,2,\ldots,n\}\setminus\{k_1,k_2,\ldots,k_r\}</m>. Thus if <m>(x_1,x_2,\ldots,x_n)^t\in\ker A</m> then, for <m>\ell=1,2,\ldots,r</m> and for some <m>\alpha_{k_\ell}(i)\in F</m> we get the following: <men xml:id="solution-space-general-eqn">x_{k_\ell}=\sum_{i\in I}\alpha_{k_\ell}(i)\,x_i</men> Solutions of <m>RX=0</m> can be obtained by assigning arbitrary values to <m>x_i</m> (<m>i\in I</m>) and then obtaining corresponding values for <m>x_{k_\ell}</m> (<m>1\leq\ell\leq r</m>). Consider for each <m>i\in I</m> vectors <m>v_i\in\ker A</m> obtained by putting <m>1</m> at the <m>i</m>-th place and <m>0</m> at <m>j</m>-th place for <m>j\in I\setminus\{i\}</m>. Therefore, <m>k_\ell</m>-th place of <m>v_i</m> will be <m>\alpha_{k_\ell}(i)\in F</m> for <m>1\leq\ell\leq r.</m>
+		To summarize, for <m>p\in\{1,2,\ldots,n\}</m>, the <m>p</m>-th place of the vector <m>v_i</m> (<m>i\in I</m>) is given by <me>v_{ip}=\begin{cases}\delta_{ip}\amp p\in I\\\alpha_{p}(i)\amp p\in\{k_1,k_2,\ldots,k_r\}.\end{cases}</me>
+	</p>
+
+	<p>
+		We claim that <m>\{v_i\}_{i\in I}</m> is linearly independent. Suppose that <m>\sum_{i\in I}\beta_iv_i=0</m>. We thus have <m>\sum_{i\in I}\beta_iv_{ip}=0</m>. Therefore, for <m>p\in I</m> we get <m>\sum_{i\in I}\beta_i\delta_{ip}=0</m> and thus <m>\beta_p=0</m>. Hence, the claim is proved.
+	</p> <!--By the construction of <m>v_i</m>, for <m>j\in I</m>, the <m>j</m>-th place in <m>v_i</m> is zero for <m>j\neq i</m>. This implies that <m>\beta_i=0</m>. Hence, <m>\{v_i\}_{i\in I}</m> is linearly independent.-->
+	<p>
+		We now show that <m>\{v_i\}_{i\in I}</m> spans <m>\ker A</m>. Let <m>s=(s_1,s_2,\ldots,s_n)^t\in\ker A</m>. In particular, by eq. <xref ref="solution-space-general-eqn"/>, <m>s_{k_\ell}=\sum_{i\in I}\alpha_{k_\ell}(i)s_i</m>. Hence, we have <m>s=\sum_{i\in I} s_iv_i</m>.
+	</p>
+	<p>
+		This also shows that <m>\dim_F(\ker A)=n-r.</m>
+	</p>
+</example>
+
+<example><title>(A basis for polynomials of degree at most <m>n</m>)</title>
+	Let <m>F</m> be a field and let <m>\mathcal{P}_n(F)</m> be the subspace of all polynomials in one variable over <m>F</m> of degree at most <m>n</m>. Consider <m>\mathfrak{B}=\{1,x,x^2,\ldots,x^{n-1},x^n\}</m>. Check that <m>\mathfrak{B}</m> is a basis of <m>\mathcal{P}_n(F)</m>.
+	<p>
+		In particular <m>\dim_F\big(\mathcal{P}_n(F)\big)=n</m>.
+	</p>
+</example>
+
+<example><title>(A basis of direct sum of two vector spaces)</title>
+	<p>
+		Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m>. Suppose that <m>\mathfrak{B}_V=\{v_1,v_2,\ldots,v_n\}</m> and <m>\mathfrak{B}_W=\{w_1,w_2,\ldots,w_m\}</m> are bases of <m>V</m> and <m>W</m>, respectively. Consider the vector space <m>V\bigoplus W</m> (refer to <xref ref="direct-sum-vs"/>). We claim that <m>\mathfrak{B}=\{(v_i,0),(0,w_j):v_i\in\mathfrak{B}_V\text{ and }w_j\in\mathfrak{B}_W\}</m> is a basis of <m>V\bigoplus W</m>. Indeed, if <me>\sum_i\alpha_i(v_i,0)+\sum_j\beta_j(0,w_j)=0</me> then, <m>\sum_i\alpha_iv_i=0</m> and <m>\sum_j\beta_jw_j=0</m>. Since <m>\mathfrak{B}_V,\mathfrak{B}_W</m> are bases, all <m>\alpha_i=0</m> and <m>\beta_j=0</m>. Further, if <m>(v,w)\in V\bigoplus W</m> then there are scalars <m>\alpha_i,\beta_j\in F</m> such that <m>v=\sum_i\alpha_iv_i\quad\text{and}\quad w=\sum_j\beta_jw_j</m>. Therefore, <me>(v,w)=\sum_i\alpha_i(v_i,0)+\sum_j\beta_j(0,w_j).</me> 
+	</p>
+	<p>
+		In particular, <m>\dim_F\big(V\bigoplus W\big)=\dim_FV+\dim_FW</m>.
+	</p>	
+</example>
+</section>

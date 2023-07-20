@@ -1,0 +1,26 @@
+<subsection xml:id="subsec-ordered-basis">
+	<title>Ordered basis</title>
+	<introduction>
+		In this subsection, we define notion of an ordered basis of a finite-dimensional vector space. Once an ordered basis for a vector space is fixed one may then define <q>coordinates</q> for the vector space.
+	</introduction>
+	<definition xml:id="ordered-basis">
+	<title>(Ordered basis)</title>
+	Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. An <term>ordered basis</term> for <m>V</m> is a finite sequence of vectors which is linearly independent and spans <m>V</m>.
+</definition>
+
+<remark>
+	<p>
+		If a sequence <m>v_1,v_2,\ldots,v_n</m> is an ordered basis for <m>V</m> then we write it as <m>(v_1,v_2,\ldots,v_n)</m>. Thus, we consider ordered basis <m>(v_1,v_2,\ldots,v_n)</m> and ordered basis <m>\big(v_{\sigma(1)},v_{\sigma(2)},\ldots,v_{\sigma(n)}\big)</m> to be distinct for every non-identity permutation <m>\sigma</m>.
+	</p>
+
+	<p>
+		To put it in different words, in an ordered basis the order in which basis vectors occur is important. For instance, the ordered basis <m>(v,w)</m> is different from <m>(w,v)</m>. However, as sets <m>\{v,w\}</m> and <m>\{w,v\}</m> are the same.
+	</p>	
+</remark>
+
+<definition xml:id="coordinates">
+	<statement>
+		Let <m>(v_1,v_2,\ldots,v_n)</m> be an ordered basis of <m>V</m>. Given <m>v\in V</m> there is a unique <m>n</m>-tuple <m>(\alpha_1,\alpha_2,\ldots,\alpha_n)</m> of scalars such that <m>v=\sum_i\alpha_iv_i</m> (see <xref ref="unique-lin-combination"/>). We call <m>\alpha_i</m> the <m>i</m>-th <term>coordinate of <m>v</m> relative to the ordered basis</term> <m>(v_1,v_2,\ldots,v_n)</m>.
+	</statement>
+</definition>
+</subsection>

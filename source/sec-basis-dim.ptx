@@ -1,0 +1,42 @@
+<section xml:id="sec-basis-dim">
+	<title>Basis and Dimension</title>
+	<introduction>We are now in a position to give the definition of dimension of a vector space. We begin with the definition of a basis.</introduction>
+	<definition xml:id="def-basis"><title>(Basis of a vector space)</title>
+		<statement>
+			Let <m>V</m> be a vector space over a field <m>F</m>. A <term>basis</term> of <m>V</m> over <m>F</m> is a set of linearly independent vectors in <m>V</m> which spans <m>V</m> (refer to <xref ref="vs-spanned-by"/>).
+		</statement>
+	</definition>
+
+	<p>Now we define the dimension of a vector space.</p>
+	<definition xml:id="def-dim">
+		<title>(Dimension of a vector space)</title>
+		<statement>
+			<p>
+				Let <m>V</m> be a vector space over a field <m>F</m>. The cardinality of a basis of <m>V</m> is called the <term>dimension</term> of <m>V</m>. It is denoted by <m>\dim_F V</m> or by <m>[V:F]</m>.
+			</p>
+			<p>
+				If <m>\dim_F V</m> is finite then, <m>V</m> is said to be a <term>finite-dimensional</term> vector space over <m>F</m> or if the context is clear then simply finite-dimensional. 
+			</p>
+			<p>
+				If <m>\dim_F V</m> is infinite then, <m>V</m> is said to be an <term>infinite dimensional</term> vector space over <m>F</m> or if the context is clear then simply infinite dimensional.
+			</p>
+		</statement>
+	</definition>
+
+	<remark>
+		It may not be immediately clear from the definition of finite-dimensional vector space (<xref ref="def-dim"/>) that every basis has the same cardinality. This will be proven in <xref ref="any-two-bases-same-number"/>.
+	</remark>
+
+	<remark xml:id="invariant-remark">
+		The dimension of a vector space <m>V</m> is an <term>invariant</term> of <m>V</m>. This will be made precise later.
+	</remark>
+
+	<theorem xml:id="existence-basis">
+		<statement>
+			Every vector space (not necessarily finite-dimensional) has a basis.
+		</statement>
+	</theorem>
+	<proof>
+		A proof is based on an application of Zorn's lemma.
+	</proof>
+</section>

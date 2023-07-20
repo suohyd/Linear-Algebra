@@ -1,0 +1,39 @@
+<exercises xml:id="Ex-VS">
+			<exercise>
+			<statement>Show that the set <m>{\rm Seq(F)}</m> of all sequences with values in a field <m>F</m> is a vector space under the componentwise addition <me>(a_n)+(b_n)=(a_n+b_n)</me> and the scalar multiplication <me>\alpha\cdot(x_n)=(\alpha x_n)\quad\text{where } \alpha,x_n\in F\text{ for every } n.</me></statement>
+		</exercise>
+
+		<exercise>
+			<statement>Show that the set <m>{\rm Seq_0(\R)}</m> of all real-valued sequences converging to <m>0</m> is a vector space. Use the same operations defined in an earlier exercise.</statement>
+		</exercise>
+
+		<exercise>
+			<statement>Show that the set <m>\Q(\sqrt{2})=\{a+b\sqrt{2}:a,b\in\Q\}</m> is a vector space over <m>\Q</m>. The addition is given by <me>(a+b\sqrt{2})+(c+d\sqrt{2})=(a+c)+(b+d)\sqrt{2}</me> and the scalar multiplication by <me>\alpha\cdot(a+b\sqrt{2})=\alpha a+\alpha b\sqrt{2} \quad\text{for }\alpha,a,b\in\Q.</me> </statement>
+		</exercise>
+
+		<exercise>
+			<statement>Let <m>F</m> be a field. Show that the set <m>L=\{(a,a,\ldots,a)\in F^n:a\in F\}</m> is a vector space over <m>F</m>.</statement>
+		</exercise>
+
+		<exercise>
+			<statement>Show that the set <m>V=\{(a,a+b)\in\R^2:a,b\in\R\}</m> is a vector space over <m>\R</m>.</statement>
+		</exercise>
+
+		<exercise>
+			<statement>Is the set <m>C[0,1]</m> of all real-valued continuous functions on <m>[0,1]</m> a vector space over <m>\Q</m>? Justify your answer.</statement>
+		</exercise>
+
+		<exercise>
+			<statement>Let <m>P_1,P_2</m> be two planes in <m>\R^3</m> passing through the origin <m>(0,0,0)</m>. Is <m>P_1\cap P_2</m> a vector space over <m>\R</m>? Justify your answer.</statement>
+		</exercise>
+
+		<exercise>
+			<statement>Is the set <m>\{(a,b):a,b\in\R\text{ and }a,b\leq 0\}</m> a vector space over <m>\R</m>? Justify your answer.</statement>
+		</exercise>
+		
+		<exercise>
+			<statement>The transpose of a matrix <m>A</m> is denoted by <m>A^t</m>. Is the set <m>{\rm Skew}_n(F)=\{A\in M_{n\times n}(F):A=-A^t\}</m> a vector space over <m>F</m>? Justify your answer. </statement>
+		</exercise>
+
+		<exercise><statement>For <m>n\geq 1</m>, is <m>\GL_n(F)</m> a vector space over <m>F</m>? Justify your answer.</statement></exercise>
+</exercises>

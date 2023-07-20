@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-invariant-subspaces-eigenvectors" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Invariant Subspaces and Eigenvectors</title>
+	<xi:include href="./sec-invariant-subspaces.ptx"/>
+	<xi:include href="./sec-eigen.ptx"/>
+	<xi:include href="./sec-algebraic-geometric-multiplicity.ptx"/>
+	<xi:include href="./sec-triangulable-maps.ptx"/>
+	<xi:include href="./sec-cyclic-subspaces.ptx"/>
+	<xi:include href="./sec-computations-with-Jordan-block.ptx"/>
+	<xi:include href="./ex-invariant-subspaces-eigenvectors.ptx"/>
+	<xi:include href="./sec-eigenvalues-eigenvectors-sagemath.ptx"/>
+</chapter>

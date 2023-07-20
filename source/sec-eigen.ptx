@@ -1,0 +1,184 @@
+<section xml:id="sec-eigen">
+	<title>Eigenvalues and Eigenvectors</title>
+	<introduction>We define an important class of invariant subspaces. We refer the reader to <xref ref="sec-determinant"/> for a definition and properties of the determinant.</introduction>
+	<definition xml:id="def-eigenvector-map">
+		<title>(Eigenvector and Eigenvalue of a linear map)</title>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. An <term>eigenvector <m>v</m></term> of <m>T</m> is a nonzero vector such that <me>T(v)=\lambda v</me> for some scalar <m>\lambda\in F</m>. The scalar <m>\lambda</m> is called the <term>eigenvalue</term> associated to the eigenvector <m>v</m>.
+		</statement>
+	</definition>
+	<p>Similarly we define eigenvector and eigenvalue of a matrix.</p>
+	<definition xml:id="def-eigenvector-matrix">
+		<title>(Eigenvector and Eigenvalue of a square matrix)</title>
+		Let <m>A\in M_n(F)</m> be an <m>n\times n</m> matrix over a field <m>F</m>. A nonzero column vector is an <term>eigenvector</term> of <m>A</m> if it is an eigenvector of a linear map <m>\ell_A\colon F^n\to F^n</m> defined by the left multiplication by <m>A</m>. The scalar corresponding to an eigenvector of <m>\ell_A</m> is called an <term>eigenvalue</term> of <m>A</m>.
+	</definition>
+	<remark>
+		<p>
+			We keep notations of <xref ref="def-eigenvector-map"/>. The image of the line <m>\ell=\{\alpha v:\alpha\in F\}</m> containing <m>v</m> and passing through the <q>origin</q> under <m>T</m> is contained in <m>\ell</m>. If <m>\lambda\neq 0</m> then <m>T(\ell)=\ell</m>.
+		</p>
+		<p>
+			In other words, lines defined by eigenvectors are invariant under <m>T</m>.
+		</p>
+		<p>
+			Conversely, if <m>\ell</m> is a line in <m>V</m> invariant under <m>T</m> i.e., <m>\ell</m> is an one-dimensional invariant subspace of <m>V</m>, then any nonzero vector in <m>\ell</m> is an eigenvector.
+		</p>
+	</remark>
+	<p>
+		Using above remark and thinking geometrically it is clear that the anti-clockwise rotation of the real plane by <m>90^0</m> has no eigenvectors. Indeed,
+		algebraically we have the following.
+	</p>
+	<example xml:id="rotation-of-real-plane">
+		<title>(Rotation in the real plane)</title>
+	    <statement>
+	    	The anti-clockwise rotation by <m>90^0</m> is the map <m>T\colon\R^2\to\R^2</m> given by <me>e_1\mapsto e_2\quad\text{and}\quad e_2\mapsto -e_1.</me>
+	    	Suppose that <m>\lambda\in\R</m> and <m>(\alpha,\beta)\neq (0,0)</m> are such that <md><mrow>\lambda\alpha e_1+\lambda\beta e_2\amp= T(\alpha e_1+\beta e_2)</mrow><mrow>\amp=\alpha e_2-\beta e_1.</mrow></md>
+	    	Therefore, <me>\lambda\alpha=-\beta\quad\text{and}\quad\lambda\beta=\alpha.</me> Suppose that <m>\beta\neq 0</m> (the case when <m>\alpha\neq 0</m> can be similarly dealt with). Thus, <m>-\beta=\lambda^2\beta</m> implies that <m>\lambda^2=-1</m>, a contradiction.
+	    </statement>
+	</example>
+	<p>In the above example the underlying field plays an important role. If we consider the complex plane <m>\C^2</m> over <m>\C</m> then the <q>rotation</q> have eigenvectors, as the following calculations show.</p>
+	<example xml:id="rotation-in-the-complex-plane-">
+	    <title>(Rotation in the complex plane)</title>
+	    <statement>
+	    	Consider the map <m>T\colon\C^2\to\C^2</m> given by <me>e_1\mapsto e_2\quad\text{and}\quad e_2\mapsto -e_1.</me> We consider <m>\C^2</m> as a vector space over <m>\C</m>.
+	    	Suppose that <m>\lambda\in\C</m> and <m>(\alpha,\beta)\neq (0,0)</m> are such that <md><mrow>\lambda\alpha e_1+\lambda\beta e_2\amp= T(\alpha e_1+\beta e_2)</mrow><mrow>\amp=\alpha e_2-\beta e_1.</mrow></md>
+	    	Therefore, <me>\lambda\alpha=-\beta\quad\text{and}\quad\lambda\beta=\alpha.</me> Suppose that <m>\beta\neq 0</m> (the case when <m>\alpha\neq 0</m> can be similarly dealt with). Thus, <m>-\beta=\lambda^2\beta</m> implies that <m>\lambda^2=-1</m>, i.e., <m>\lambda=\pm i</m>. Take <m>\lambda=i</m> (the case when <m>\lambda=-i</m> can be dealt with similarly) and <m>v=ie_1+e_2\neq 0</m>. Thus <me>T(ie_1+e_2)=ie_2-e_1=i(ie_1+e_2)</me>, i.e., <m>v</m> is an eigenvector of <m>T</m> with an eigenvalue <m>i</m>. Corresponding to <m>-i</m> we get eigenvector <m>-ie_1+e_2</m> which is linearly independent from <m>ie_1+e_2</m>.
+	    </statement>
+	</example>
+	<p>As similar matrices represents the same linear map we obtain the following</p>
+	<proposition>
+		<statement>Similar matrices have the same eigenvalues.</statement>
+	</proposition>
+	<p>The following simple observations will be useful.</p>
+	<proposition>
+		<statement>Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. The matrix of <m>T</m> with respect to an ordered basis <m>(v_1,v_2,\ldots,v_n)</m> is a diagonal matrix if and only if each <m>v_i</m> is an eigenvector.</statement>
+	</proposition>
+	<proposition>
+	    <statement>Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. A nonzero vector is an eigenvector with an eigenvalue <m>\lambda</m> if and only if it is in the kernel of <m>T-\lambda\unit_V</m>.</statement>
+	</proposition>
+	<corollary xml:id="det-criterion-for-eigenvalue">
+		<statement>Following are equivalent.
+			<ol>
+				<li><m>T</m> is not invertible</li>
+				<li><m>T</m> has an eigenvalue equal to <m>0</m></li>
+				<li>If <m>A</m> is a matrix of <m>T</m> with respect to an arbitrary basis then <m>\det(A)=0</m>.</li>
+			</ol></statement>
+	</corollary>
+
+	<remark xml:id="remark-det-criterion-for-eigenvalue">
+		<statement>
+			<p>
+				Suppose that <m>v\in V</m> is an eigenvector of <m>T</m> corresponding to eigenvalue <m>\lambda\in F</m>. If we let <m>S=T-\lambda\unit_V</m> then <m>S(v)=0</m>, i.e., <m>v</m> is an eigenvector corresponding to eigenvalue <m>0</m> for <m>S</m>.
+			</p>
+			<p>
+				Observe that if the matrix representation of <m>T</m> with respect to a basis <m>\mathfrak{B}</m> is <m>A</m> then, the matrix representation of <m>T-\lambda\unit_V</m> with respect to <m>\mathfrak{B}</m> is <m>A-\lambda I_n</m>. By <xref ref="det-criterion-for-eigenvalue"/>, <m>\det(A-\lambda I_n)=0</m>. Hence, <m>\lambda</m> is an eigenvalue of <m>T</m> if and only if <m>\det(A-\lambda I_n)=0</m>.
+			</p>
+		</statement>
+	</remark>
+
+	<definition xml:id="def-eigenspace"><title>(Eigenspace)</title>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. Suppose that <m>\lambda\in F</m> is an eigenvalue of <m>T</m>. The subspace <m>\ker(T-\lambda\unit_V)</m> is called the <term>eigenspace corresponding to eigenvalue <m>\lambda</m></term>.
+		</statement>
+	</definition>
+
+	<convention xml:id="eigenspace-notation">
+		<statement>
+			The eigenspace corresponding to an eigenvalue <m>\lambda</m> is denoted by <m>V_\lambda</m>.
+		</statement>
+	</convention>
+
+		<p>If <m>A\in M_n(F)</m> is a matrix then the expansion of the determinant <m>\det(tI_n-A)</m> shows that it is a polynomial in <m>t</m> whose coefficients are in <m>F</m> and it has degree <m>n</m>. We define the characteristic polynomial of a linear map.</p>
+
+	<definition xml:id="def-characteristic-polynomial">
+		<title>(Characteristic polynomial)</title>
+		Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> of dimension <m>n</m> and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. Suppose that <m>A</m> is a matrix representation of <m>T</m>. The <term>characteristic polynomial</term> of <m>T</m> is the polynomial
+		<me>\chi_T(t)=\det(tI_n-A)\in F[t].</me>
+		<p>
+			Let <m>P\in M_n(F)</m>. The <term>characteristic polynomial</term> of <m>P</m> is the polynomial
+		<me>\chi_P(t)=\det(tI_n-P)\in F[t].</me>
+		</p>
+	</definition>
+
+<p>By <xref ref="remark-det-criterion-for-eigenvalue"/> we get the following result.</p>
+<corollary xml:id="eigenvalues-as-roots">
+	<statement>The eigenvalues of <m>T</m> are roots in <m>F</m> of its characteristic polynomial.</statement>
+</corollary>
+<proposition xml:id="eigenvalue-over-C">
+		<statement>
+			Let <m>T\colon V\to V</m> be an <m>F</m>-linear map on a vector space <m>V</m> of dimension <m>n&lt;\infty</m>.
+			<ol>
+				<li>The linear map <m>T</m> has at most <m>n</m> eigenvalues.</li>
+				<li>If <m>F=\C</m> and <m>V\neq\{0\}</m> then <m>T</m> has at least one eigenvalue.</li>
+			</ol>
+		</statement>
+	</proposition>
+	<proof>
+		This follows from <xref ref="eigenvalues-as-roots"/>, <xref ref="number-of-roots-polynomial"/>, and <xref ref="Fundamental-theorem-of-algebra"/>.
+	</proof>
+	
+<p>Note that the characteristic polynomial of anti-clockwise rotation by <m>90^0</m> of the real plane is <m>t^2+1</m>. Hence it has no real roots and thus no eigenvalues. However, <m>t^2+1</m> has roots in <m>\C</m> (refer to <xref ref="rotation-of-real-plane"/> and <xref ref="rotation-in-the-complex-plane-"/>).</p>
+<p>Following result shows that the characteristic polynomial of <m>T</m> does not depend on a particular matrix representation.</p>
+<proposition xml:id="independent-of-basis-charateristic-polynomial">
+	<statement>The characteristic polynomial of <m>T</m> does not depend on the choice of a basis.</statement>
+</proposition>
+<proof>
+	Suppose that <m>A</m> and <m>B</m> be matrix representations of <m>T</m> with respect to some bases of <m>V</m>. Then there exists an invertible matrix <m>P</m> such that <m>B=C^{-1}AC</m> (see <xref ref="change-of-basis-Endo"/>).
+	Thus,
+	<me>tI_n-B=tI_n-C^{-1}AC=C^{-1}(tI_n-A)C.</me> Hence
+	<me>\det(tI_n-B)=\det\left(C^{-1}(tI_n-A)C\right)=\det(tI_n-A).</me> Thus the result is proved.
+</proof>
+
+<definition xml:id="def-minimal-polynomial">
+	<title>(Minimal polynomial)</title>
+	<statement>
+		Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>, and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. The <term>minimal polynomial of <m>T</m></term> is the monic polynomial <m>m_T(t)\in F[t]</m> of least degree annihilating <m>T</m>.
+		<p>
+		Let <m>A\in M_n(F)</m>. The <term>minimal polynomial of <m>A</m></term> is the monic polynomial <m>m_A(t)\in F[t]</m> of least degree annihilating <m>A</m>.
+		</p>
+	</statement>
+</definition>
+
+<lemma>
+	<statement>
+		If <m>A,B\in M_n(F)</m> are similar then the minimal polynomial of <m>A</m> and the minimal polynomial of <m>B</m> are the same.
+		</statement>
+</lemma>
+<proof>
+	This follows from the following observation. For any invertible matrix <m>P</m> and any polynomial <m>f(t)\in F[t]</m>
+	<me>f(P^{-1}AP)=P^{-1}f(A)P.</me>
+</proof>
+
+<exercise>
+	<statement>
+		Find the minimal polynomial of a linear map corresponding to the following matrix.
+		<me>A=\begin{pmatrix}1\amp 1\amp 1\\-1\amp -1\amp -1\\1\amp 1\amp 1\end{pmatrix}</me>
+	</statement>
+</exercise>
+
+<proposition xml:id="minimal-poly-divides-annihilating-poly">
+	<statement>
+		Let <m>p(t)\in F[t]</m> be an annihilating polynomial of an <m>F</m> linear map <m>T\colon V\to V</m>. Then the minimal polynomial of <m>T</m>, <m>m_T</m> divides <m>p(t)</m>.
+	</statement>
+</proposition>
+<proof>
+	By the division algorithm there are polynomials <m>q(t),r(t)\in F[t]</m> with <m>\deg r(t)\lt\deg m_T</m> such that
+	<me>p(t)=m_T\cdot q(t)+r(t).</me> This gives the following equation.
+	<me>0=p(T)=m_T(T)\cdot q(T)+r(T)=r(T).</me> Since <m>\deg r(t)\lt\deg m_T</m> and <m>m_T</m> is the least degree monic polynomial annihilating <m>T</m> we must have <m>r(t)=0\in F[t]</m>. Thus <m>m_T</m> divides <m>p(t)</m>.
+</proof>
+
+<p>In fact roots of the characteristic and minimal polynomial are the same.</p>
+<theorem>
+	<statement>
+		Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>, and let <m>T\colon V\to V</m> be an <m>F</m>-linear map. The characteristic polynomial of <m>T</m> and the minimal polynomial of <m>T</m> has the same roots.
+	</statement>
+</theorem>
+<proof>
+	<p>
+		Let <m>\lambda\in F</m> be a root of <m>\chi_T</m>, i.e., <m>\lambda</m> is an eigenvalue of <m>T</m> (see <xref ref="eigenvalues-as-roots"/>). Let <m>v\in V</m> be an eigenvector corresponding to <m>\lambda</m>. Thus <m>T^k(v)=\lambda^kv</m> for any <m>k\in\mathbb{N}</m>. Suppose that <m>m_T=a_0+a_1t+\cdots+a_{r-1}t^{r-1}+t^r\in F[t]</m>. Since <m>m_T</m> is an annihilating polynomial we get the following.
+	<me>0=m_T(T)(v)=a_0v+a_1\lambda v+\cdots+a_{r-1}\lambda^{r-1}v+\lambda^rv=m_T(\lambda)v</me> As <m>v</m> is an eigenvector, it is nonzero. Hence we must have <m>m_T(\lambda)=0</m>, i.e., <m>\lambda</m> is a root of <m>m_T</m>.
+</p>
+<p>
+	Conversely assume that <m>\lambda\in F</m> is a root of <m>m_T</m>. By <xref ref="minimal-poly-divides-annihilating-poly"/>, there exists <m>q(t)\in F[t]</m> such that <m>\chi_T=m_T\cdot q(t)</m>. Hence <m>\chi_T(\lambda)=m_T(\lambda)\cdot q(\lambda)=0</m>, i.e., <m>\lambda</m> is a root of <m>\chi_T</m>.
+</p>
+</proof>
+</section>

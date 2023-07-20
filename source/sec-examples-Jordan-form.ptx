@@ -1,0 +1,114 @@
+<section xml:id="sec-examples-Jordan-form">
+	<title>Examples</title>
+	<introduction>
+		In this section we find Jordan form of given matrices.
+	</introduction>
+	<example>
+		<statement>
+			Let <m>A=\begin{pmatrix}1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\end{pmatrix}\in M_3(\C)</m>. We find Jordan form of <m>A</m>.
+			<ol>
+				<li>The rank of <m>A</m> is <m>1</m>. By rank-nullity theorem, nullity of <m>A</m> is <m>2</m>. Hence, <m>0</m> is an eigenvalue of <m>A</m>. In fact we have <m>\chi_A=t^2(t-3)</m>. Therefore, the algebraic multiplicity of <m>0</m> and <m>3</m> is respectively, <m>2</m> and <m>1</m>.
+			</li>
+			<li>
+				The geometric multiplicity of <m>0</m>, <m>\dim_\C(\ker A)</m> is <m>2</m> and the geometric multiplicity of <m>1</m>, <m>\dim_\C(\ker(A-3I_3))</m> is <m>1</m>. Hence the number of Jordan block corresponding to <m>3</m> is <m>1</m> and the number of Jordan block corresponding to <m>0</m> is <m>2</m>.
+			</li>
+			<li>In this case we get a basis consisting of eigenvectors. So the matrix is diagonalizable. Anyhow, the minimal polynomial of <m>A</m> is <m>t(t-3)</m>. Hence, the largest Jordan block corresponding to <m>0</m> and <m>3</m> is of size <m>1</m>.
+			</li>
+			</ol>
+			Thus <m>A</m> is similar to <me>\begin{pmatrix}0\amp\amp\\\amp 0\amp\\\amp\amp 3\end{pmatrix}.</me>
+		</statement>
+	</example>
+
+	<example>
+	<statement>
+		Let <m>A=\begin{pmatrix}1\amp 1\\0\amp 1\end{pmatrix}\in M_2(\C)</m>. We find its Jordan form.
+		<ol>
+			<li>
+				We have <m>\chi_A=(t-1)^2\in\C[t]</m>. The algebraic multiplicity of <m>\lambda=1</m> is <m>2</m>.
+				We have <m>A-I_2=\begin{pmatrix}0\amp 1\\0\amp 0\end{pmatrix}</m>. Hence the geometric multiplicity of <m>\lambda=1</m> is <m>1</m>. Thus there is one Jordan block, i.e., in this case, <m>A</m> is similar to a Jordan block. Since we can not have a basis consisting of an eigenvectors, the Jordan form must be <m>\begin{pmatrix}1\amp 0\\1\amp 1\end{pmatrix}</m>.
+			</li>
+			<li>
+				Anyway, let us compute the minimal polynomial. Since <m>A-I_2\neq 0</m>, the minimal polynomial is <m>(t-1)^2</m>. Hence the largest Jordan block corresponding to <m>\lambda=1</m> has size <m>2</m>.
+			</li>
+		</ol>
+		Hence <m>A</m> is similar to 
+		<me>A^t=\begin{pmatrix}1\amp 0\\1\amp 1\end{pmatrix}.</me>
+	</statement>
+	</example>
+
+	<example>
+		<statement>
+			Let <m>A=\begin{pmatrix}1\amp -1\amp 1\\2\amp -2\amp 2\\-1\amp 1\amp -1\end{pmatrix}\in M_3(\C)</m>. We find its Jordan form.
+			<ol>
+				<li>
+					The rank of <m>A</m> is <m>1</m>, hence the nullity of <m>A</m> is <m>2</m>. Therefore, <m>0</m> is an eigenvalue. Furthermore the algebraic and geometric multiplicity of <m>\lambda=0</m> is <m>2</m>. Let <m>\lambda_1=\lambda_2=0</m>. We can find <m>\lambda_3</m> using trace. Indeed, <m>-2=tr(A)=\lambda_1+\lambda_2+\lambda_3=\lambda_3</m>.
+				</li>
+				<li>
+					The geometric multiplicity of <m>0</m> is <m>2</m>. Hence there are two Jordan blocks corresponding to <m>0</m>. The geometric multiplicity of <m>-2</m> is <m>1</m> hence there is only one Jordan block corresponding to this eigenvalue. Thus we can see that <m>A</m> is diagonalizable and thus, <m>A</m> is similar to <m>{\rm diag}(0,0,-2)</m>.
+				</li>
+				<li>
+					Anyway let us calculate the minimal polynomial. It is <m>t(t+2)</m>. Therefore the largest Jordan block corresponding to eigenvalues <m>0</m> and <m>-2</m> is of the size <m>1</m>.
+				</li>
+				</ol>
+				Hence <m>A</m> is similar to <m>{\rm diag}(0,0,-2)</m>.
+		</statement>
+	</example>
+
+	<example>
+		<statement>
+			Let <m>A=\begin{pmatrix}5\amp 4\amp 1\\-1\amp 0\amp 0\\-3\amp-4\amp 1\end{pmatrix}\in M_3(\C)</m>. We find its Jordan form.
+			<ol>
+				<li>
+					All eigenvalues of <m>A</m> are equal to <m>2</m>. The algebraic multiplicity of <m>2</m> is <m>3</m>.
+				</li>
+				<li>
+					The geometric multiplicity of <m>2</m> is the dimension of the kernel of <m>A-2I_2=\begin{pmatrix}3\amp 4\amp 1\\-1\amp -2\amp 0\\-3\amp -4\amp -1\end{pmatrix}</m>. The row-reduced echelon form of this matrix is
+					<me>\begin{pmatrix}1\amp 0\amp 1\\0\amp 1\amp -1/2\\0\amp 0\amp 0\end{pmatrix}.</me> Therefore, the geometric multiplicity of <m>\lambda=2</m> is <m>1</m>. Hence the number of Jordan blocks corresponding to <m>\lambda=2</m> is <m>1</m>. Hence, <m>A</m> must be similar to 
+					<me>\begin{pmatrix}2\amp 0\amp 0\\1\amp 2\amp 0\\0\amp 1\amp 2\end{pmatrix}.</me>
+				</li>
+				<li>
+					Note that <m>(A-2I_2)^2\neq 0</m> hence the minimal polynomial of <m>A</m> must be <m>(A-2I_2)^3</m>. Thus the largest Jordan block corresponding to <m>\lambda=2</m> is of the size <m>3</m>.
+				</li>
+			</ol>
+		</statement>
+	</example>
+
+	<example>
+		<statement>
+			Let <m>A=\begin{pmatrix}1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\-2\amp -2\amp 0\amp 1\\-2\amp 0\amp -1\amp -2\end{pmatrix}\in M_4(\C)</m>. We find its Jordan form.
+			<ol>
+				<li>
+					Eigenvalues of <m>A</m> are <m>1,1,-1,-1</m>. Thus the algebraic multiplicity of both <m>1</m> and <m>-1</m> is <m>2</m>.
+				</li>
+				<li>
+					To find geometric multiplicity of <m>1</m> and <m>-1</m>.
+					We have 
+					<me>A-I_4=\begin{pmatrix}0\amp 0\amp 0\amp 0\\0\amp 0\amp 0\amp 0\\-2\amp -2\amp -1\amp 1\\-2\amp 0\amp -1\amp -3\end{pmatrix}\quad\text{and}\quad A+I_4=\begin{pmatrix}2\amp 0\amp 0\amp 0\\0\amp 2\amp 0\amp 0\\-2\amp -2\amp 1\amp 1\\-2\amp 0\amp -1\amp -1\end{pmatrix}.</me>
+					Thus, nullity of <m>A-I_4</m>, i.e., the geometric multiplicity of <m>\lambda=1</m> is <m>2</m>. Hence, the number of Jordan blocks corresponding to <m>\lambda=1</m> is <m>2</m>.
+					On the other hand, computing the row-reduced echelon form of <m>A+I_4</m>, we get that the nullity of <m>A+I_4</m> is <m>1</m>. Hence the geometric multiplicity of <m>\lambda=-1</m> is <m>1</m>. Therefore, the number of Jordan block corresponding to <m>\lambda=-1</m> is <m>1</m>.
+					Thus <m>A</m> is similar to 
+					<me>\begin{pmatrix}1\amp \amp \amp \\\amp 1\amp \amp \\\amp \amp -1\amp \\\amp \amp 1\amp -1\end{pmatrix}.</me>
+				</li>
+			</ol>
+		</statement>
+	</example>
+
+	<example>
+		<statement>
+			Let <m>A=\begin{pmatrix}1\amp 1\amp 1\amp 1\\0\amp 1\amp 0\amp-1\\0\amp 0\amp 1\amp 1\\0\amp 0\amp 0\amp 1\end{pmatrix}\in M_4(\C)</m>. We compute its Jordan form.
+			<ol>
+				<li>
+					All eigenvalues of <m>A</m> are equal to <m>1</m>. The algebraic multiplicity of <m>\lambda=1</m> is <m>4</m>.
+				</li>
+				<li>
+					Consider <me>A-I_4=\begin{pmatrix}0\amp 1\amp 1\amp 1\\0\amp 0\amp 0\amp-1\\0\amp 0\amp 0\amp 1\\0\amp 0\amp 0\amp 0\end{pmatrix}.</me> Hence the nullity of <m>A-I_4</m> is <m>2</m>. Thus there are two Jordan blocks corresponding to <m>\lambda=1</m>.
+				</li>
+				<li>
+					We have <m>(A-I_4)^2=0</m> and <m>A-I_4\neq 0</m>. Hence the minimal polynomial of <m>A</m> is <m>(t-1)^2</m>. Therefore, size of the largest Jordan block corresponding to <m>\lambda=1</m> is <m>2</m>.
+				</li>
+			</ol>
+			Thus the matrix <m>A</m> is similar to 
+			<me>\begin{pmatrix}1\amp \amp \amp \\1\amp 1\amp \amp \\\amp \amp 1\amp \\\amp \amp 1\amp 1\end{pmatrix}.</me>
+		</statement>
+	</example>
+</section>

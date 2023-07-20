@@ -1,0 +1,59 @@
+<exercises xml:id="ex-exact-seq">
+	<introduction>
+		<p>
+			We gather some easy to derive properties of exact sequences. We assume that <m>X,Y, Z,</m> and <m>W</m> are vector spaces (not necessarily finite-dimensional) over a field <m>F</m>.
+		</p>
+		<p>
+			We make the following conventions.
+			<ol>
+				<li>The trivial subspace <m>\{0\}</m> of a vector space will be denoted by <m>0</m> when used in a diagram.</li>
+				<li>Since there is a unique linear map from the trivial subspace to the vector space (resp., from a vector space to its trivial subspace) we will not write the name for this linear map.</li>
+			</ol>
+		</p>
+	</introduction>
+	<exercise>
+		<statement xml:id="complex-condition">
+			If <m>X\xrightarrow{f}Y\xrightarrow{g}Z</m> is an exact sequence then <m>g\circ f=0</m>.
+		</statement>
+	</exercise>
+	<exercise xml:id="injective-ses">
+		<statement>
+			Show that <m>0\xrightarrow{}X\xrightarrow{f}Y</m> is exact if and only if <m>f</m> is injective.
+		</statement>
+	</exercise>
+	<exercise xml:id="surjective-ses">
+		<statement>
+			Show that <m>Y\xrightarrow{g}Z\xrightarrow{} 0</m> is exact if and only if <m>g</m> is surjective.
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			Show that <m>0\xrightarrow{}X\xrightarrow{f}Y\xrightarrow{}0</m> is exact if and only if <m>f</m> is bijective if and only if <m>f</m> is an <m>F</m>-isomorphism.
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			Show that given an <m>F</m>-linear map <m>f\colon X\to Y</m> we have the following short exact sequence.
+			<me>0\to\ker(f)\xrightarrow{}X\xrightarrow{f}\Im(f)\xrightarrow{}0.</me>
+		</statement>
+	</exercise>
+	<exercise xml:id="projective-module">
+		<statement>
+			Let <m>P</m> be a finite-dimensional vector space over a field <m>F</m>. Suppose that we have the following diagram with exact row and <m>g\colon P\to Y</m> is an <m>F</m>-linear map:
+			<me>\begin{CD}@.P@.\\@. @VgVV @.\\X@>f>>Y@>>>0\end{CD}</me> Show that there exists an <m>F</m>-linear transformation <m>j\colon P\to X</m> such that <m>f\circ j=g</m>.
+		</statement>
+		<hint>
+			Let <m>\{p_1,p_2,\ldots,p_n\}</m> be a basis for <m>P</m> over <m>F</m>. Since, <m>f</m> is surjective (see <xref ref="surjective-ses"/>), there exists <m>x_i\in X</m> such that <m>f(x_i)=g(p_i)</m> for each <m>i</m>. Define <m>j(\sum\alpha_ip_i)=\sum\alpha_i x_i</m>.
+		</hint>
+	</exercise>
+	<exercise xml:id="injective-module">
+		<statement>
+			Let <m>Y</m> be a finite-dimensional vector space and <m>I</m> be a vector space over <m>F</m>. Suppose that we have the following diagram with exact row and <m>\ell\colon X\to I</m> is an <m>F</m>-linear map:
+			<me>\begin{CD}0@>>> X@>i>>Y\\@.@V\ell VV@.\\@.I@.\end{CD}</me>
+			Show that there exists an <m>F</m>-linear map <m>d\colon Y\to I</m> such that <m>d\circ i=\ell</m>.
+		</statement>
+		<hint>
+			By <xref ref="injective-ses"/>, <m>i</m> is injective and hence <m>X</m> is also finite-dimensional. Let <m>\{x_1,x_2,\ldots,x_n\}</m> be a basis of <m>X</m>. Then, <m>\{i(x_1),i(x_2),\ldots,i(x_n)\}</m> is an <m>F</m>-linearly independent subset of <m>Y</m>. Extend <m>\{i(x_1),i(x_2),\ldots,i(x_n)\}</m> to a basis for <m>Y</m>, say <m>\{i(x_1),i(x_2),\ldots,i(x_n),y_1,\ldots,y_m\}</m>. Put <m>d(i(x_i))=\ell(x_i)</m> and <m>d(y_i)=0</m>.
+		</hint>
+	</exercise>
+</exercises>

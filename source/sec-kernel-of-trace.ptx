@@ -1,0 +1,31 @@
+<section xml:id="sec-kernel-of-trace">
+	<title>A basis for the kernel of trace map</title>
+	<introduction>
+	    Using Rank-Nullity Theorem, we give an explicit basis for the kernel of the trace map.
+	</introduction>
+	<p>Let <m>n\geq 2</m> be a natural number. Consider <m>n\times n</m> matrices over a field <m>F</m>, <m>M_n(F)</m>. Let <m>E_{ij}\in M_n(F)</m> be the matrix with <m>(i,j)</m>-th entry <m>1</m> and all other entries zero. We have observed that <m>\{E_{ij}:1\leq i,j\leq n\}</m> is a basis for <m>M_n(F)</m>. Recall that we defined the trace of map in <xref ref="trace"/> as follows.
+	<me>tr\colon M_n(F)\to F\quad\text{given by}\quad(a_{ij})\mapsto\sum_i a_{ii}.</me>
+	</p>
+	<theorem>
+		<statement>
+			We keep the notations of the above paragraph. A basis of the kernel of the trace map is
+			<me>\ker(tr)=\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}.</me>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			By Rank-Nullity Theorem (<xref ref="rank-nullity-theorem"/>), <me>\dim_F\ker(tr)=\dim_FM_n(F)-\dim_F\Im(tr).</me> For any <m>\alpha\in F</m> the trace of the matrix <m>{\rm diag}(\alpha,0,\ldots,0)</m> is <m>\alpha</m>. Thus <m>tr</m> is surjective. Therefore, <m>\Im(tr)=F</m> and <me>\dim_F\ker(tr)=n^2-1.</me>
+		</p>
+		<p>
+			Note that <m>E_{ij}\in\ker(tr)</m> for every <m>i\neq j</m> and <m>E_{11}-E_{ii}\in\ker(tr)</m> for every <m>2\leq i\leq n</m>.
+		</p>
+		<p>
+			Suppose that there exists <m>\alpha_{ij},\beta_i\in F</m> such that <me>\sum_{i\neq j}\alpha_{ij}E_{ij}+\sum_{i\neq 1}\beta_i(E_{11}-E_{ii})=0.</me> In other words the above equation is
+			<me>\begin{pmatrix}\sum_{i=2}^{n}\beta_i\amp\alpha_{12}\amp\alpha_{13}\amp\cdots\amp\alpha_{1n}\\\alpha_{21}\amp-\beta_2\amp\alpha_{23}\amp\cdots\amp\alpha_{2n}\\\vdots\amp\vdots\amp\vdots\amp\ddots\amp\vdots\\\alpha_{n1}\amp\alpha_{n2}\amp\alpha_{n3}\amp\cdots\amp -\beta_n\end{pmatrix}=0.</me>
+			Hence, <m>\alpha_{ij}=0,\beta_i=0</m>. We thus get <m>\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}</m> is linearly independent.
+		</p>
+		<p>
+			The cardinality of the set <m>\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}</m> is <m>(n^2-n)+(n-1)=n^2-1</m>. Since the <m>\dim_F\ker(tr)=n^2-1</m> the set <m>\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}</m> is a maximal linearly independent subset of <m>\ker(tr)</m>, i.e., it is a basis of <m>\ker(tr)</m> (see <xref ref="pre-invariance-dimension"/> and <xref ref="well-definedness-dim"/>).
+		</p>
+	</proof>
+</section>

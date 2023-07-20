@@ -1,0 +1,39 @@
+<section xml:id="sec-quotient-space-def">
+	<title>Definition of Quotient Space</title>
+	<p>
+		Let <m>V</m> be a vector space over a field <m>F</m> and let <m>W\leq V</m> be its subspace. We denote the abelian group operation on <m>V</m> by '<m>+</m>' We consider the quotient group <m>V/W</m>. Recall that
+		<me>V/W=\{v+W:v\in V\},</me> where <md><mrow>v+W\amp=\{v+w:w\in W\}</mrow><mrow>\amp=\{u\in V:u-v\in W\}.</mrow></md>
+		The set <m>v+W</m> is called the <term>coset</term> of <m>v</m> and <m>v</m> is called a <term>coset representative</term> for <m>v+W</m>. We denote the coset <m>v+W</m> by <m>[v]</m>.
+	</p>
+	<definition xml:id="def-quotient-space">
+		<title>
+			(Quotient space)
+		</title>
+		Let <m>V</m> be a vector space over a field <m>F</m> and <m>W\leq V</m> be a subspace. We denote the abelian group operation on <m>V</m> by '<m>+</m>'. The quotient group <m>V/W</m> with following operations of addition and scalar multiplication is called the <term>quotient space of <m>V</m> modulo <m>W</m></term>.
+		<ol>
+			<li>Addition: <m>(v_1+W)+(v_2+W)=(v_1+v_2)+W</m> for any <m>v_1,v_2\in V</m></li>
+			<li>Scalar multiplication: <m>\alpha(v+W)=(\alpha v)+W</m> for any <m>v\in V</m> and any <m>\alpha\in F</m></li>
+		</ol>
+		<p>
+			With this addition and the scalar multiplication <m>V/W</m> is a vector space over <m>F</m>.
+		</p>
+	</definition>
+	<exercise>
+		<statement>
+			<ol>
+				<li>Check that with the addition and the scalar multiplication defined in <xref ref="def-quotient-space"/> the quotient space <m>V/W</m> is a vector space over <m>F</m>. </li>
+				<li>Show that the additive identity of <m>V/W</m> is <m>0+W</m>.</li>
+			</ol>
+		</statement>
+	</exercise>
+
+	<remark>
+		<statement>
+			It is possible to realize the quotient space geometrically. We give a few examples.
+			<ol>
+				<li>Consider <m>V=\R^2</m> and <m>W=\{(a,a):a\in\R\}</m>, a line passing through origin. Any coset <m>v+W</m> is a line passing through <m>v</m> and parallel to <m>W</m>. </li>
+				<li>Consider <m>V=\R^3</m> and <m>W=\{(a,b,0):a,b\in\R\}</m>, a plane passing through origin. Any coset <m>v+W</m> is a plane passing through <m>v</m> and parallel to <m>W</m>.</li>
+			</ol>
+		</statement>
+	</remark>
+</section>

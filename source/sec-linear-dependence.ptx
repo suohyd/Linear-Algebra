@@ -1,0 +1,59 @@
+<section xml:id="sec-linear-dependence">
+	<title>Linearly independent vectors</title>
+	<introduction>
+		We define <em>linear independence</em> of vectors. We begin with the following.
+	</introduction>
+
+	<definition xml:id="linearly-dependent">
+		<title>(Linearly dependent vectors)</title>
+		<statement>
+			<p>
+				Let <m>V</m> be a vector space over a field <m>F</m>. A set of vectors <m>\{v_1,v_2,\ldots,v_n\}\subset V</m> is said to be <term>linearly dependent</term> over <m>F</m> or vectors <m>v_1,v_2,\ldots,v_n</m> are linear dependent if there exists scalars <m>\alpha_1,\alpha_2,\ldots,\alpha_n\in F</m> not all zero such that <me>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_n v_n=0.</me>
+			</p>
+			<p>
+				An infinite subset <m>S</m> of <m>V</m> is said to be <term>linearly dependent</term> over <m>F</m> if there is a finite nonempty subset of <m>S</m> which is linearly dependent over <m>F</m>.
+			</p>
+
+		</statement>
+	</definition>
+
+	<remark xml:id="remark-dependence">
+		<ol>
+			<li>
+				Any subset of <m>V</m> containing the zero vector is linearly dependent.
+			</li>
+
+			<li>
+				If <m>v</m> and <m>w</m> are linearly dependent then, there exists a nonzero <m>\alpha</m> (resp., a nonzero <m>\beta</m>) such that <m>v=\alpha w</m> (resp., <m>w=\beta v</m>). In other words, <m>v</m> and <m>w</m> lie on the same line (refer <xref ref="line"/>) and hence <m>v,w</m> are collinear.
+			</li>
+
+			<li>The relation '<m>v</m> and <m>w</m> are linearly dependent' is an equivalence relation on the set of nonzero vectors of <m>V</m> (Verify this statement). The equivalence classes are lines with zero removed.</li>
+		</ol>
+	</remark>
+		
+	<definition xml:id="linearly-independent">
+		<title>
+			(Linearly independent vectors)
+		</title>
+		<p>
+			A nonempty set <m>S</m> of vectors in <m>V</m> are said to be <term>linearly independent</term> over <m>F</m> if <m>S</m> is not linearly dependent over <m>F</m>.
+		</p>	
+		<p>
+			In other words, <m>S</m> is linearly independent over <m>F</m> if for any distinct vectors <m>v_1,v_2,\ldots,v_r\in S</m>
+			<me>\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_r v_r=0\quad\text{implies that}\quad\alpha_i=0\quad\text{for all }i=1,2,\ldots,r.</me>
+		</p>
+	</definition>
+
+	<remark>
+		A nonempty set <m>S</m> of vectors is linearly independent if and only if each nonempty finite subset of <m>S</m> is linearly independent.
+	</remark>
+
+	<remark xml:id="zero-vs-basis">
+		We make the following conventions.
+		<ol>
+			<li>The empty set is linearly independent.</li>
+			<li>The span of the empty set is the zero space <m>\{0\}</m>.</li>
+		</ol>
+	</remark>
+	
+</section>

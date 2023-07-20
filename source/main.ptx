@@ -3,17 +3,35 @@
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <docinfo>
+    <latex-image-preamble>
+      \usepackage{tikz}
+    </latex-image-preamble>
     <macros>
       \newcommand{\R}{\mathbb R}
+      \def\C{\mathbb{C}}
+      \def\Q{\mathbb{Q}}
+      \def\N{\mathbb{N}}
+      \def\Z{\mathbb{Z}}
+      \def\ev{\mathrm{ev}}
+      \def\Im{\mathrm{Im}}
+      \def\End{\mathrm{End}}
+      \def\Aut{\mathrm{Aut}}
+      \def\Hom{\mathrm{Hom}}
+      \def\Iso{\mathrm{Iso}}
+      \def\GL{\mathrm{GL}}
+      \def\ker{\mathrm{ker }}
+      \def\Span{\mathrm{Span}}
+      \def\tr{\mathrm{tr}}
+      \newcommand{\unit}{1\!\!1}
     </macros>
     <latex-image-preamble>
       \usepackage{tikz}
     </latex-image-preamble>
   </docinfo>
 
-  <book xml:id="my-great-book">
-    <title>My Great Book</title>
-    <subtitle>An example to get you started</subtitle>
+  <book xml:id="Linear-Algebra">
+    <title>Linear Algebra</title>
+    <subtitle>Companion notes</subtitle>
 
     <frontmatter xml:id="frontmatter">
       <titlepage>
@@ -44,18 +62,39 @@
           </shortlicense>
         </copyright>
       </colophon>
+      <preface><p>These notes are the companion to online lectures and are a work in progress. All results are standard. We refer the reader to the following references. 
+        <ol>
+          <li><sq>Linear Algebra</sq> by Hoffman and Kunze</li>
+          <li><sq>Linear Algebra: A Geometric Approach</sq> by Kumaresan</li>
+          <li><sq>Linear Algebra</sq> by Insel, Spence, and Friedberg</li>
+          <li><sq>Algebra</sq> by Artin</li>
+          <li><sq>Linear Algebra and Geometry</sq> by I. R. Shafarevich and A. O. Remizov</li>
+          <li>Linear/Multilinear Algebra section in K. Conrad's <url href="https://kconrad.math.uconn.edu/blurbs/">webpage</url>.</li>
+        </ol>
+      </p>
+    </preface>
     </frontmatter>
 
-    <chapter xml:id="chapter-title">
-      <title>Chapter title</title>
-
-      <section xml:id="section-title">
-        <title>Section title</title>
-        <p>Hello</p>
-      </section>
-
+    <chapter xml:id="Elt-row-operations">
+      <title>Elementary row operations</title>
+      <introduction>
+        <p>In this preliminary section we state some results and give some exercises related to elementary row operations.
+        </p>
+      </introduction>
+      <section><title>Elementary row operations</title>
+      <p>We discussed elementary row operations and <em>row reduced echelon form</em> of a matrix in the class. Please refer class notes for more details.</p>
+    </section>
+   <xi:include href="Elt-row-exercises.ptx"/>
+   <xi:include href="sec-sage-echelon-form.ptx"/>
+   <xi:include href="./sec-uniqueness-echelon-forms.ptx"/>
     </chapter>
-
+    <xi:include href="./VS.ptx"/>
+    <xi:include href="./ch-Basis-Dim.ptx"/>
+    <xi:include href="./ch-linear-transformations.ptx"/>
+    <xi:include href="./ch-isomorphisms.ptx"/>
+    <xi:include href="./ch-Quotient-space.ptx"/>
+    <xi:include href="./ch-invariant-subspaces-eigenvectors.ptx"/>
+    <xi:include href="./ch-Cayley-Hamilton-Jordan-Normal.ptx"/>
     <backmatter xml:id="backmatter">
       <title>Backmatter</title>
 

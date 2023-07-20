@@ -1,0 +1,41 @@
+<exercises xml:id="ex-lin-trans">
+	<exercisegroup>
+		<introduction>In the following exercises verify that the given map is an <m>F</m>-linear transformation. </introduction>
+		<exercise xml:id="transpose-as-lin-trans">
+			<statement>
+				<m>T\colon M_n(F)\to M_n(F)</m> given by <m>A\mapsto A^t</m>.
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>T\colon\Q(\sqrt{2})\to\Q(\sqrt{2})</m> given by <m>a+b\sqrt{2}\mapsto 2a</m>. Here <m>\Q(\sqrt{2})</m> is considered as a vector space over <m>\Q</m>.
+			</statement>
+		</exercise>
+
+		<exercise>
+			<statement>
+				Let <m>C(\R)</m> be the set of all real-valued continuous functions on <m>\R</m>. Consider <me>T\colon C(\R)\to C(\R)\quad\text{given by}\quad f\mapsto Tf\text{ where }Tf \text{ is a map defined by }x\mapsto\int_0^xf(t)dt.</me>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. Let <m>\{v_1,v_2,\ldots,v_n\}</m> be its basis. For each <m>v_i</m> define <m>f_i\in V^*</m> as follows.
+				<me>f_i(v_j)=\begin{cases}1\amp\text{if }i=j\\0\amp\text{if }i\neq j\end{cases}.</me> Consider <m>T\colon V\to V^*</m> defined by <me>\sum\alpha_iv_i\mapsto\sum\alpha_if_i.</me>
+			</statement>
+		</exercise>
+	</exercisegroup>
+	<exercise xml:id="contravariant-Hom">
+		<statement>
+			Let <m>V,W</m> be vector spaces over a field <m>F</m>. Show that if <m>\varphi\colon V\to W</m> is an <m>F</m>-linear map then there exists an <m>F</m>-linear map <m>\varphi^*\colon W^*\to V^*</m>.
+		</statement>
+		<hint>If <m>f\colon W\to F</m> is a linear functional then, we define <m>\varphi^*(f)=f\circ\varphi</m>. In diagrammatic terms (refer <xref ref="sec-exact-seq"/>):
+		<me>\begin{CD}V@>\varphi>>W\\@.@VVfV\\@.F\end{CD}</me>
+		<!--<me>\begin{array}{CCC}V\amp\xrightarrow{\varphi}\amp W\\\amp\searrow{?}\amp\downarrow\\\amp\amp F\end{array}</me>-->
+		</hint>
+	</exercise>
+	<!--<exercise>
+			<statement>
+				Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m>. Find the dimension of the vector space <m>\Hom_F(V,W)</m>.
+			</statement>
+		</exercise>-->
+</exercises>

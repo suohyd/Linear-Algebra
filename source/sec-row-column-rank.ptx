@@ -1,0 +1,115 @@
+<section xml:id="sec-row-column-rank">
+	<title>Row and Column rank</title>
+	<introduction>
+		We show that the row and the column rank of a matrix is always the same. Let <m>A=(a_{ij})</m> be an <m>m\times n</m> matrix over a field <m>F</m>. Let <m>\{e_i:1\leq i\leq m\}</m> be the standard basis of <m>F^m</m> and <m>\{f_i^t=(0,\ldots,0,1,0,\ldots,0)^t:1\leq i\leq n\}</m> be a basis for <m>M_{n\times 1}(F)</m>. We make following observations.
+		<p>
+			Left multiplying <m>A</m> by <m>e_i</m> gives the <m>i</m>-th row of <m>A</m>.
+		</p>
+
+		<men xml:id="left-multi-row">(0,\ldots,0,1,0,\ldots,0)_{1\times m}\cdot\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\a_{m1}\amp a_{m2}\amp\cdots\amp a_{mn} \end{pmatrix}_{m\times n}=(a_{i1},a_{i2},\ldots,a_{in})</men>
+
+		<p>
+			Right multiplying <m>A</m> by <m>f_i^t</m> gives the <m>i</m>-th column of <m>A</m>.
+		</p>
+
+		<men xml:id="right-multi-column">\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\a_{m1}\amp a_{m2}\amp\cdots\amp a_{mn} \end{pmatrix}_{m\times n}\cdot\begin{pmatrix}0\\\vdots\\0\\1\\0\\\vdots\\0\end{pmatrix}_{n\times 1}=\begin{pmatrix}a_{1i}\\a_{2i}\\\vdots\\a_{mi}\end{pmatrix}</men>
+</introduction>
+	<definition xml:id="row-space">
+		<title>(Row space)</title>
+		Let <m>A=(a_{ij})</m> be an <m>m\times n</m> matrix over a field <m>F</m>. The <term>row space</term> of <m>A</m> is <m>\langle e_1A,e_2A,\ldots,e_mA\rangle\subset F^m</m>.
+		<p>
+			The dimension of the row space is called <term>row rank</term> of <m>A</m>, and it is denoted by <m>rrk(A)</m>.
+		</p>
+	</definition>
+	<definition xml:id="column-space">
+		<title>(Column space)</title>
+		Let <m>A=(a_{ij})</m> be an <m>m\times n</m> matrix over a field <m>F</m>. The <term>column space</term> of <m>A</m> is <m>\langle Af_1^t,Af_2^t,\ldots,Af_n^t\rangle\subset M_{n\times 1}(F)</m>.
+		<p>
+			The dimension of the column space is called <term>column rank</term> of <m>A</m>, and it is denoted by <m>crk(A)</m>.
+		</p>
+	</definition>
+
+	<lemma xml:id="rrk-crk-elt-operations">
+		<statement>
+			Let <m>A\in M_{m\times n}(F)</m> and <m>E</m> be an <m>n\times n</m> elementary matrix over <m>F</m>. Then, <m>rrk(A)=rrk(EA)</m> and <m>crk(A)=crk(AE)</m>. Moreover, elementary column operations (resp., row operations) does not change the row rank (resp., column rank) of <m>A</m>. <!--Moreover, <men xml:id="rrk-crk-elt-matrix">rrk(AE)=rrk(E^\prime A)</men>.-->
+		</statement>
+	</lemma>
+	<proof>
+		We only prove the result for one of the elementary matrices. Recall from <xref ref="generators-of-GL"/> that <m>T_{pq}(\alpha)</m> is the matrix obtained by multiplying <m>q</m>-th row of <m>I_n</m> by <m>\alpha\in F</m> and adding this row to <m>p</m>-th row of <m>I_n</m>. For simplicity we further assume that <m>p</m> is less than <m>q</m>.
+		<p>
+			Thus, the matrix <m>AT_{pq}(\alpha)</m> is obtained by multiplying <m>q</m>-th column of <m>A</m> by <m>\alpha\in F</m> and adding this column to <m>p</m>-th column of <m>A</m>.
+			Therefore, using notation of eq. <xref ref="right-multi-column"/>, the column space of <m>AT_{pq}(\alpha)</m> is 
+			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle.</me>
+			Since, <m>Af_p^t=(Af_p^t+\alpha Af_q^t)-\alpha Af_q^t</m> we get
+			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle=\langle Af_i^t:1\leq i\leq n\rangle.</me>
+			We thus have <m>crk(A)=crk(AT_{pq}(\alpha))</m>.
+		</p>
+		<p>
+			We now show that an elementary column operation does not change the row rank.
+		Consider the following <m>F</m>-linear map, right multiplication by <m>E</m>:
+			<me>R_E\colon F^n\to F^n\quad\text{defined by}\quad v\mapsto v\cdot E.</me>
+			Since <m>E</m> is an elementary matrix it is invertible and <m>F</m>-linear map <m>R_{E^{-1}}</m> is the inverse of <m>R_{E}</m>. In particular, <m>R_{E}</m> is an <m>F</m>-isomorphism. By <xref ref="iso-implies-same-dim"/>, we have the following.
+			<me>\langle e_1A,\ldots,e_nA\rangle\simeq\langle e_1AE,\ldots,e_nAE\rangle.</me> In particular, <m>rrk(A)=rrk(AE)</m>.
+		</p>
+	</proof>
+
+	<remark>
+		<statement>
+			The row rank and the column rank of the matrix obtained in <xref ref="pre-row-colomn-rank-equality"/> are the same. <me>rrk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=crk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=r.</me>
+		</statement>
+	</remark>
+
+	<corollary>
+		<statement>
+			There exists bases in which the matrix of an <m>F</m>-linear transformation has the same row and column rank.
+		</statement>
+	</corollary>
+	<proof>
+		This follows from <xref ref="pre-row-colomn-rank-equality"/>.
+	</proof>
+
+	<theorem xml:id="rrk-crk-equality">
+		<statement>
+			For any <m>A\in M_{m\times n}(F)</m> we have <m>rrk(A)=crk(A)</m>.
+		</statement>
+	</theorem>
+	<proof>
+		 <p>
+		 	We consider <m>L_A\colon M_{n\times 1}(F)\to M_{m\times 1}(F)</m> defined in <xref ref="left-multiplication"/>. Then, the matrix of <m>L_A</m> with respect to standard bases is <m>A</m> (see <xref ref="standard-basis"/>). By <xref ref="pre-row-colomn-rank-equality"/>, there exists bases <m>\mathfrak{B}</m> and <m>\mathfrak{C}</m> of <m>M_{n\times 1}(F)</m> and <m>M_{m\times 1}(F)</m>, respectively such that <me>[T]_{\mathfrak{B}}^{\mathfrak{C}}=\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}.</me> Note that <m>rrk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=crk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=r</m>. By <xref ref="change-of-basis-Hom"/>, there are invertible matrices <m>P, Q</m> such that 
+		<me>A=P\cdot [T]_{\mathfrak{B}}^{\mathfrak{C}}\cdot Q</me> Since, <m>P,Q</m> are invertible matrices, by a part of the proof of <xref ref="rrk-crk-elt-operations"/>, we get that 
+		<me>rrk(A)=r=crk(A).</me>
+		</p>
+	</proof>
+	<p>In view of the above <xref ref="rrk-crk-equality"/> we can define a notion of the rank of a matrix.</p>
+	<definition xml:id="rank-of-matrix">
+		<title>(Rank of a matrix)</title>
+		<statement>
+			Let <m>A\in M_{m\times n}(F)</m>. The <term>rank</term> of <m>A</m> is the row rank (=column rank) of <m>A</m>. We denote the rank of <m>A</m> by <m>rk(A)</m>.
+		</statement>
+	</definition>
+
+	<corollary>
+		<statement>
+			For any <m>A\in M_{m\times n}(F)</m> we have <m>rk(A)=rk(A^t)</m>.
+		</statement>
+	</corollary>
+	<proof>
+		Since the row space of <m>A</m> is the column space of <m>A^t</m> we get the result by <xref ref="rrk-crk-equality"/>.
+	</proof>
+
+	<remark>
+		<statement>
+			By <xref ref="matrix-representation-dual-basis"/>, <m>A^t</m> is a matrix representation of the dual transformation with respect to a dual basis.
+		</statement>
+	</remark>
+
+	<example xml:id="rank-of-product-of-matrices">
+		<title>(Rank of a product of matrices)</title>
+		<statement>
+			Let <m>A\in M_{\ell\times m}(F)</m> and <m>B\in M_{m\times n}(F)</m> be matrices. Then <me>rk(AB)\leq\min\{rk(A),rk(B)\}.</me>
+			<p>
+					We have column space of <m>AB</m> is a subspace of the column space of <m>A</m>, hence <m>rk(AB)\leq rk(A)</m>. Now assume that <m>rk(B)&lt;rk(AB)</m>. Let <m>\{y_1,\ldots,y_r\}</m> be a basis for the column space of <m>AB</m>. Thus, there exists <m>x_i</m> in the column space of <m>B</m> such that <m>y_i=Ax_i</m>. Since, <m>rk(B)&lt;r</m> the set <m>\{x_1,\ldots,x_r\}</m> is linearly dependent. Thus, there exists scalars <m>\alpha_i</m>, not all zero, such that <m>\sum_i\alpha_ix_i=0</m>. This implies that <me>0=\sum\alpha_iA(x_i)=\sum\alpha_iy_i.</me> This is a contradiction and hence we get the result.
+			</p>
+		</statement>
+	</example>
+</section>

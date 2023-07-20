@@ -1,0 +1,50 @@
+<section xml:id="sec-rank-nullity-sage">
+	<title>Rank and Nullity using SageMath</title>
+	<introduction>
+		We use online computer algebra system <url href="https://www.sagemath.org/">SageMath</url> to compute the rank and the nullity of a given matrix. In the following example <c>A=matrix(RR,[[1,2,0,-1],[1,6,0,1],[1,-2,2,8]])</c> represents <m>3\times 4</m> matrix <m>A</m> over <m>\R</m>. The entry <c>[1,2,0,-1]</c>, <c>[1,6,0,1]</c>, and <c>[1,-2,2,8]</c> represents the first, the second, and the third row of <m>A</m>, respectively.
+	</introduction>
+	<p>
+		Please make appropriate changes (on this page itself) to compute the rank and the nullity of required matrix (considered as linear transformation). Please first do the calculations yourself and then verify using SageMath.
+	</p>
+
+	<p>Computation of the rank of <m>A</m>.
+
+		<sage>
+			<input>
+				sage: A=matrix(RR,[[1,2,0,-1],[1,6,0,1],[1,-2,2,8]])
+				sage: A.rank()
+			</input>
+		</sage>
+	</p>
+
+	<p>
+		A basis for the image of the linear transformation can be computed using SageMath. Please make appropriate changes (on this page itself!) to compute a basis of a specific transformation given by a matrix.
+		<sage>
+			<input>
+				sage: A=matrix(QQ,[[1,1],[0,0],[1,-1]])
+				sage: phi = linear_transformation(A)
+				sage: phi.matrix(side='right')
+			</input>
+		</sage>
+	</p>
+
+	<p>
+		Computation of the nullity of <m>A</m>.
+		<sage>
+			<input>
+				sage: A=matrix(RR,[[1,1],[0,0]])
+				sage: A.right_nullity()
+			</input>
+		</sage>
+	</p>
+
+	<p>
+		A basis for the kernel can be computed using SageMath. Please make appropriate changes (on this page itself!) to compute a basis of the kernel of transformation given by a matrix.
+		<sage>
+			<input>
+				sage: A=matrix(RR,[[1,1],[1,1]])
+				sage: A.right_kernel()
+			</input>
+		</sage>
+	</p>
+</section>

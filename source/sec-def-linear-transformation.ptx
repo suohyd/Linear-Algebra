@@ -1,0 +1,66 @@
+<section xml:id="sec-def-linear-transformation">
+	<title>Definition of linear transformation</title>
+	<introduction>
+		<p>
+			We begin with an example. Consider the map <m>T\colon\R^2\to\R^2</m> defined by <m>T\big((x,y)\big)=(-y,x)</m>. This is the anticlockwise rotation by <m>90^0</m> in <m>\R^2</m>. This map has following two properties. 
+			<ol>
+				<li>For any <m>v\in\R^2</m> and any <m>\alpha\in\R</m> we have <m>T(\alpha v)=\alpha T(v)</m>.</li>
+				<li>For any <m>v,w\in\R^2</m> we have <m>T(v+w)=T(v)+T(w)</m>.</li>
+			</ol>
+			The above two properties will be a part of the defining properties of linear transformations.
+		</p>
+		<p>
+			Let <m>A=\begin{pmatrix}0\amp -1\\1\amp 0\end{pmatrix}</m>, and define a map <m>T_A\colon\R^2\to\R^2</m> by <me>\begin{pmatrix}x\\y\end{pmatrix}\mapsto A\begin{pmatrix}x\\y\end{pmatrix}.</me> We see that <m>T_A</m> satisfies the above two properties as well. Moreover, <m>T</m> and <m>T_A</m> define the same map.
+		</p>
+	</introduction>
+	<definition xml:id="def-linear-transformation">
+		<title>(Linear Transformation)</title>
+		Let <m>V</m> and <m>W</m> be vector spaces over a field <m>F</m>. A mapping <m>T\colon V\to W</m> is said to be a <em>linear transformation over <m>F</m></em> or an <em><m>F</m>-linear transformation</em> if for every <m>\alpha\in F</m> and any <m>v,v_1,v_2\in V</m> we have
+		<ol>
+			<li><m>T(\alpha v)=\alpha T(v)</m></li>
+			<li><m>T(v_1+v_2)=T(v_1)+T(v_2)</m>.</li>
+		</ol>
+	</definition>
+
+	<remark>
+		<statement>
+			A linear transformation over <m>F</m> (resp., <m>F</m>-linear transformation) is also called a linear map over <m>F</m> (resp., an <m>F</m>-linear map).
+		</statement>
+	</remark>
+
+	<exercise xml:id="zero-maps-to-zero">
+		<statement>
+			<ol>
+				<li>Show that any <m>F</m>-linear transformation maps the zero vector to the zero vector.</li>
+				<li>Let <m>T\colon V\to W</m> be an <m>F</m>-linear transformation. Show that for every <m>v\in V</m> and any <m>\alpha_i\in F</m> <me>T(\sum\alpha_iv_i)=\sum\alpha_iT(v_i)</me>.</li>
+				<li>Show that <m>T(v_1-v_2)=T(v_1)-T(v_2)</m>.</li>
+				<li>Show that a composition of <m>F</m>-linear transformation is an <m>F</m>-linear transformation.</li>
+			</ol>
+		</statement>
+	</exercise>
+
+	<remark>
+		The first condition in <xref ref="def-linear-transformation"/> may be considered as the <em>commutativity</em> between scalars and the map <m>T</m> (this is elaborated in <xref ref="left-multiplication"/>). The second condition in <xref ref="def-linear-transformation"/> corresponds to a <em>group homomorphism</em> between groups <m>(V,+)</m> and <m>(W,+)</m>.
+	</remark>
+
+	<remark xml:id="extending-linearly"><title>(Linear extension of a map)</title>
+		A linear transformation on a vector space is completely determined by its action on a basis. Indeed, if <m>\{v_i\}</m> is a basis of <m>V</m> and <m>v\in V</m> then <m>v=\sum\alpha_iv_i</m> for some <m>\alpha_i\in F</m>. Using properties of linear transformation we have <m>T(v)=\sum\alpha_iT(v_i)</m>. This process is called <em>extending map linearly</em> on <m>V</m> or <em>linear extension</em> of the map.
+	</remark>
+
+	<definition xml:id="End-vs">
+		<statement>
+			The set of all <m>F</m>-linear mappings between vector spaces <m>V</m> and <m>W</m> over <m>F</m> is denoted by <m>\Hom_F(V,W)</m> or when the context is clear by <m>\Hom(V,W)</m>. We denote <m>\Hom_F(V,V)</m> by <m>\End_F(V)</m>. The set <m>\Hom_F(V,F)</m> is called the <term>dual space</term> of <m>V</m>, and it is denoted by <m>V^*</m>. The dual space <m>V^*</m> is in fact a vector space over <m>F</m> (see <xref ref="Hom-as-vs"/>). An element of <m>V^*</m> is called a <term>linear functional</term>.
+		</statement>
+	</definition>
+
+	<remark xml:id="Hom-as-vs">
+		<statement>
+		Note that <m>\Hom_F(V,W)</m> is a vector space over <m>F</m>. The addition is given by <m>(T+S)(v)=T(v)+S(v)</m>. The scalar multiplication is given by <me>(\alpha T)(v)=\alpha\cdot T(v).</me>
+		</statement>
+	</remark>
+	<remark xml:id="End-as-ring">
+		<statement>
+			The vector space <m>\End_F(V)</m> is also a ring with unity if we take composition of functions as multiplicative operation and identity map as the unity.
+		</statement>
+	</remark>
+</section>

@@ -1,0 +1,52 @@
+<section xml:id="sec-examples-linear-transformations">
+	<title>Examples of linear transformations</title>
+	<introduction>
+		We give examples of linear transformations. Most of the details are left to the reader.
+	</introduction>
+	<example xml:id="left-multiplication">
+		<title>(Left multiplication by a scalar)</title>
+		<statement>
+			<p>
+				Let <m>V</m> be a vector space over a field <m>F</m>. For <m>\alpha\in F</m> consider the map <em>left multiplication</em> by <m>\alpha</m>,  <me>\ell_\alpha\colon V\to V\quad\text{given by}\quad v\mapsto\alpha v.</me>
+				This is an <m>F</m>-linear transformation.
+			</p>
+			<p>
+				A group homomorphism <m>T\colon V\to V</m> is a linear transformation if and only if for every <m>\alpha\in F</m>, maps <m>T</m> and <m>\ell_\alpha</m> commute with each other, i.e., <m>T\circ\ell_\alpha=\ell_\alpha\circ T</m>.
+			</p>
+			<p>
+				We may consider a map <m>\ell\colon F\to\End_F(V)</m> defined by <m>\alpha\mapsto\ell_\alpha</m>. This map is an <m>F</m>-linear transformation as well.
+			</p>
+		</statement>
+	</example>
+	<example xml:id="induced-by-matrix">
+		<title>(Linear transformation induced by a matrix)</title>
+		<statement>
+			Let <m>F</m> be a field and let <m>A\in M_{m\times n}(F)</m>. The map <me>L_A\colon M_{n\times 1}(F)\to M_{m\times 1}(F)\quad\text{given by}\quad x\mapsto Ax</me> is an <m>F</m>-linear transformation. If <m>e_i=(\delta_{i1},\delta_{i2},\ldots,\delta_{in})</m> then, <m>Ae_i^t</m> is the <m>i</m>-th column of <m>A</m>.
+		</statement>
+	</example>
+
+	<example xml:id="formal-derivative">
+		<title>(Formal derivative)</title>
+		<statement>
+			For a natural number <m>m</m> consider a vector space <m>\mathcal{P}_m(F)</m> of all polynomials in one variable of degree at most <m>m</m> over a field <m>F</m>. The <em>formal derivative</em> mapping <me>D_n\colon\mathcal{P}_n(F)\to\mathcal{P}_{n-1}(F)\quad\text{defined by}\quad\sum_{i=0}^{n}a_iX^i\mapsto\sum_{i=1}^{n}ia_iX^{i-1}</me> is an <m>F</m>-linear transformation.
+		</statement>
+	</example>
+
+	<example xml:id="hyperplane-reflection">
+		<title>(Hyperplane reflection)</title>
+		Consider the vector space <m>\R^2</m> over <m>\R</m> and let <m>e_1=(1,0)</m>. We define a hyperplane reflection 
+		<m>\tau_{e_1}\colon\R^2\to\R^2</m> by <me>(x,y)\mapsto(-x,y).</me>
+		Note that any vector on the <m>Y</m>-axis, say <m>(0,y)</m> maps to itself under this map. On the other hand, any vector on the <m>X</m>-axis, say <m>(x,0)</m> is mapped to <m>(-x,0)</m>. So, the the map <m>\tau_{e_1}</m> is a <em>reflection along <m>Y</m>-axis</em>.
+
+		Check that <m>\tau_{e_1}</m> is an <m>F</m>-linear transformation.
+	</example>
+
+	<example xml:id="trace">
+		<title>(Trace as a linear map)</title>
+		<statement>
+			Let <m>F</m> be a field and let <m>M_n(F)</m> be the vector space of <m>n\times n</m> matrices over <m>F</m>. Consider <m>F</m> as a vector space over itself. The <term>trace map</term>
+			<me> \tr\colon M_n(F)\to F</me> is given by <me>\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\a_{n1}\amp a_{n2}\amp\cdots\amp a_{nn}\end{pmatrix}\mapsto a_{11}+a_{22}+\cdots+a_{nn}.</me>
+			Check that this is an <m>F</m>-linear transformation.
+		</statement>
+	</example>
+</section>

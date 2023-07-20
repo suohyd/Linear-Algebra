@@ -1,0 +1,53 @@
+<section xml:id="sec-Jordan-normal-form">
+	<title>Finding Jordan normal form over <m>\C</m></title>
+	<introduction>
+		In this section we give an algorithm to compute the Jordan normal form of a linear map from a finite-dimensional vector space over <m>\C</m> to itself. We first define Jordan form.
+	</introduction>
+	<definition>
+		<title>(Jordan form of a matrix)</title>
+		<statement>
+			A matrix <m>A\in M_n(\C)</m> is said to be in the <term>Jordan form</term> if <m>A</m> is similar to the following matrix.
+		<men xml:id="Jordan-form-matrix-eq">J=\begin{pmatrix}J_{\lambda_1}\amp\amp\amp\\\amp J_{\lambda_2}\amp\amp\\\amp\amp\ddots\amp\\\amp\amp\amp J_{\lambda_r}\end{pmatrix}</men>
+		where <m>\lambda_i</m> are eigenvalues of <m>A</m>, <m>J_{\lambda_i}</m> is the Jordan block corresponding to <m>\lambda_i</m> of size <m>k_i</m> (see <xref ref="def-Jordan-block"/>), and <m>k_1+k_2+\cdots+k_r=n</m>.			
+		</statement>
+	</definition>
+
+<p>We now state the existence of the Jordan form for any square matrix over <m>\C</m>.</p>
+
+	<theorem xml:id="existence-of-Jordan-normal-form">
+		<title>(Existence of the Jordan normal form)</title>
+		<statement>
+			<p></p>
+			<p>
+				<alert>Vector space form</alert>: Let <m>V</m> be a finite-dimensional vector space over <m>\C</m> and let <m>T\colon V\to V</m> be a <m>\C</m>-linear map. Then there exists a basis <m>\mathfrak{B}</m> of <m>V</m> such that the matrix of <m>T</m> with respect to <m>\mathfrak{B}</m> has Jordan form (see <xref ref="Jordan-form-matrix-eq"/>).
+			</p>
+			<p>
+				<alert>Matrix form</alert>: Let <m>A\in M_n(\C)</m>. There is an invertible matrix <m>P\in M_n(\C)</m> such that <m>P^{-1}AP</m> has Jordan form (see <xref ref="Jordan-form-matrix-eq"/>).
+			</p>
+			<p>
+				The Jordan form of <m>T</m> or a matrix is unique except for a permutation of the Jordan blocks occurring in <xref ref="Jordan-form-matrix-eq"/>.
+			</p>
+		</statement>
+	</theorem>
+	<p>We list some facts that are useful in determining Jordan form of a linear map or a matrix. Let <m>V</m> be a finite-dimensional vector space over <m>\C</m> and let <m>T\colon V\to V</m> be a <m>\C</m>-linear map. We assume that <m>\lambda_i</m> are eigenvalues of <m>T</m>.
+		</p>
+	<fact xml:id="step-1-to-Jordan-form">
+		<title>(Eigenvalues and diagonal of Jordan form)</title>
+		<statement>
+			 	The characteristic polynomial of <m>T</m>, <m>\chi_T</m> gives us eigenvalues and their multiplicities. The algebraic multiplicity of an eigenvalue <m>\lambda</m> gives us the number of times <m>\lambda</m> occur in Jordan form.
+		</statement>
+	</fact>
+		<fact xml:id="step-2-to-Jordan-form">
+		    <title>(Number of Jordan blocks)</title>
+		    <statement>
+		    	The dimension of each eigenspace corresponding to <m>\lambda_i</m>, i.e., the geometric multiplicity of <m>\lambda_i</m> gives us the number of Jordan blocks corresponding to <m>\lambda_i</m> in Jordan form.
+		    </statement>
+		</fact>
+		<fact xml:id="step-3-to-Jordan-form">
+			 	<title>(Size of the largest Jordan block)</title>
+			 	<statement>
+			 		The multiplicity of <m>\lambda_i</m> in the minimal polynomial of <m>T</m> gives us the size of the largest Jordan block corresponding to <m>\lambda_i</m> occurring in Jordan form of <m>T</m>.
+			 	</statement>
+			</fact>
+<p>For our purposes the above facts will be enough to get Jordan form of a given linear map or a matrix. In the next section we work out a few examples.</p>
+</section>

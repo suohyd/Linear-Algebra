@@ -1,0 +1,8 @@
+<section xml:id="sec-ordered-basis-linear-trans" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Ordered basis and linear maps</title>
+<introduction>
+	In this section we give a matrix representation of a linear transformation. We consider only finite-dimensional vector spaces in this section.
+</introduction>
+<xi:include href="subsec-ordered-basis.ptx"/>
+<xi:include href="subsec-matrix-rep.ptx"/>
+</section>

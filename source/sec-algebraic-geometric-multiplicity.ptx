@@ -1,0 +1,63 @@
+<section xml:id="sec-algebraic-geometric-multiplicity">
+	<title>Algebraic and Geometric multiplicity</title>
+	<introduction>
+		Throughout this section we assume that <m>V</m> is a finite-dimensional vector space over a field <m>F</m> and <m>T\colon V\to V</m> is an <m>F</m>-linear map.
+	</introduction>
+	<definition xml:id="def-algebraic-multiplicity">
+		<title>(Algebraic multiplicity)</title>
+		<statement>
+			Let <m>\chi_T</m> be the characteristic polynomial of <m>T</m> and let <m>\lambda\in F</m> be an eigenvalue of <m>T</m>. Then, by the repeated application of <xref ref="criterion-for-root"/>, we can write <m>\chi_T=(t-\lambda)^m\cdot q(t)\in F[t]</m> with <m>q(\lambda)\neq 0</m>. The natural number <m>m</m> is said to be the <term>algebraic multiplicity of <m>\lambda</m></term>.
+		</statement>
+	</definition>
+
+	<definition xml:id="def-geometric-multiplicity">
+		<title>(Geometric multiplicity)</title>
+		<statement>
+			Let <m>\lambda\in F</m> be an eigenvalue of <m>T</m>. The <term>geometric multiplicity</term> of <m>\lambda</m> is the dimension of <m>V_\lambda=\ker(T-\lambda\unit_V)</m> over <m>F</m>.
+		</statement>
+	</definition>
+
+<p>We have the following lemma.</p>
+<lemma xml:id="geometric-less-than-algebraic">
+	<statement>
+		Let <m>\lambda</m> be an eigenvalue of <m>T</m>. The geometric multiplicity of <m>\lambda</m> is less than or equal to algebraic multiplicity of <m>\lambda</m>.
+	</statement>
+</lemma>
+<proof>
+	Suppose that <m>\mathfrak{B}_\lambda=\{v_1,v_2,\ldots,v_r\}</m> be a basis of <m>V_\lambda=\ker(T-\lambda\unit_V)</m>. Thus geometric multiplicity of <m>\lambda</m> is <m>r</m>. We extend <m>\mathfrak{B}_\lambda</m> to a basis of <m>V</m>, say <m>\mathfrak{B}=\{v_1,v_2,\ldots,v_r,w_1,\ldots,w_s\}</m>. The matrix representation of <m>T</m> with respect to <m>\mathfrak{B}</m> has the following block form.
+	<me>\begin{pmatrix}\lambda\cdot I_r\amp B\\\mathbf{O}\amp D\end{pmatrix}</me>
+	By a property of the determinant <xref ref="sec-determinant"/>, <m>\chi_T=(t-\lambda)^r\cdot\chi_D</m>. Therefore, the algebraic multiplicity of <m>\lambda</m> is at least <m>r</m>. Thus the result is proved.
+</proof>
+
+<!--<lemma xml:id="distinct-eigenvalue-trivial-intersection">
+	<statement>
+		Eigenspaces corresponding to distinct eigenvalues has only trivial intersection. More generally if <m>\lambda_i</m> (<m>1\leq i\leq s</m>) are distinct eigenvalue with eigenspaces <m>V_{\lambda_i}</m> then, <me>V_{\lambda_i}\cap\left(\sum_{j\neq i}V_{\lambda_j}\right)=\{0\}</me>.
+	</statement>
+</lemma>
+<proof>
+	<p>
+		We first show a special case.
+		Let <m>\lambda,\mu\in F</m> be distinct eigenvalues of <m>T</m> and let <m>V_\lambda</m> and <m>V_\mu</m> be corresponding eigenspaces. Let <m>v\in V_\lambda\cap V_\mu</m>. Thus <m>T(v)=\lambda v</m> and <m>T(v)=\mu v</m>. Hence <me>0=(\lambda-\mu)v</me>. Since <m>\lambda\neq\mu</m> we must have <m>v=0</m>.
+	</p>
+	<p>
+		Suppose <m>v\in V_{\lambda_i}\cap\sum_{j\neq i}V_{\lambda_j}</m>. Let <m>v=\sum_{j\neq i}v_j</m> with each <m>v_j\in V_{\lambda_j}</m> Hence,
+		<me>T(v)=\lambda_iv\quad\text{and}\quad T(v)=\sum_{j\neq i}\lambda_jv_j.</me>
+	</p>
+</proof>
+
+<lemma>
+	<statement>
+		Let <m>\lambda_1,\ldots,\lambda_s\in F</m> be pairwise distinct eigenvalues of <m>T</m>, and let <m>\mathfrak{B}_i</m> be bases of <m>V_{\lambda_i}</m>. Then <m>\mathfrak{B}_1\cup\mathfrak{B}_2\cup\cdots\cup\mathfrak{B}_s</m> is a linearly independent subset of <m>V</m>.
+	</statement>
+</lemma>
+<proof>
+	For each <m>i</m> suppose that <m>\mathfrak{B}_i=\{v_{i1},v_{i2},\ldots,v_{ir_i}\}</m>. Suppose there are <m>a_{ij}\in F</m> such that
+	<men xml:id="eq-1">\sum_{i=1}^{s}\sum_{j=1}^{r_i} a_{ij}v_{ij}=0.</men> By applying <m>T</m> we get 
+	<me>\sum_{i=1}^{s}\lambda_i\sum_{j=1}^{r_i}a_{ij}v_{ij}=0.</me>
+	Hence,
+	<me>\lambda_1\sum_{j=1}^{r_1}a_{1j}v_{1j}=\sum_{i=2}^{s}\lambda_i\sum_{j=1}^{r_i}a_{ij}v_{ij}\in V_{\lambda_1}\cap\left(\sum_{i=2}^{s}V_{\lambda_i}\right).</me>
+	By <xref ref="distinct-eigenvalue-trivial-intersection"/>, <m>V_{\lambda_1}\cap\left(\sum_{i=2}^{s}V_{\lambda_i}\right)=\{0\}</m>. Since <m>\lambda_i</m>'s are distinct, not all <m>\lambda_i</m> are zero. For simplicity assume that <m>\lambda_1,\lambda_2,\ldots,\lambda_{s-1}</m> are nonzero. As <m>\{v_{1j}\}_{j=1}^{r_1}</m> is linearly independent, we have <m>a_{1j}=0</m> for each <m>j</m> by the above equation. Similarly, we get that <m>a_{ij}=0</m> for each <m>j\in\{1,2,\ldots,r_i\}</m> and <m>i\in\{2,3,\ldots,s-1\}</m>.
+	Therefore, the equation <xref ref="eq-1"/> becomes
+	<me>a_{s1}v_{s1}+\cdots+a_{sr_s}v_{sr_s}=0.</me> As <m>\{v_{s1},\ldots,v_{sr_s}\}</m> is linearly independent, we have <m>a_{s1}=a_{s2}=\cdots=a_{sr_s}=0</m>. Hence the result is proved.
+</proof>-->
+</section>

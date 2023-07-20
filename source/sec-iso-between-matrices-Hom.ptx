@@ -1,0 +1,59 @@
+<section xml:id="sec-iso-between-matrices-Hom">
+	<title>Matrices and a space of linear transformations</title>
+	<introduction>In this section we give dictionary between the space of all <m>m\times n</m> matrices over a field <m>F</m> and the space of all <m>F</m>-linear transformations between vector spaces <m>V</m> and <m>W</m> of dimensions <m>n</m> and <m>m</m>, respectively. We begin with the following observations.
+	</introduction>
+	<p>
+			Let <m>A</m> be a matrix representation of a linear transformation <m>S\colon V\to W</m> with respect to bases <m>\mathfrak{B}_V</m> and <m>\mathfrak{B}_W</m>. By <xref ref="iso-to-n-dim-vs"/>, there are <m>F</m>-isomorphisms 
+			<me>T_{\mathfrak{B}_V}\colon V\xrightarrow{\sim} F^n\quad\text{and}\quad T_{\mathfrak{B}_W}\colon W\xrightarrow{\sim} F^m.</me>
+			By <xref ref="row-column-space-iso"/> we have <m>F</m>-isomorphisms
+			<me>_nT\colon F^n\xrightarrow{\sim} M_{n\times 1}(F)\quad\text{and}\quad _mT\colon F^m\xrightarrow{\sim} M_{m\times 1}(F).</me> Consider the following composition of maps.
+			<men xml:id="composition">V\xrightarrow{T_{\mathfrak{B}_V}}F^n\xrightarrow{_nT}M_{n\times 1}(F)\xrightarrow{L_A}M_{m\times 1}(F)\xrightarrow{_mT^{-1}}F^{m}\xrightarrow{T_{\mathfrak{B}_W}^{-1}}W</men>
+			The map <m>L_A</m> is the left multiplication by the matrix <m>A</m> (see <xref ref="induced-by-matrix"/>). The composition above is denoted by <m>\ell_A</m>. Thus,
+			<men xml:id="left-multi-arbitrary-matrix">\ell_A=T_{\mathfrak{B}_W}^{-1}\circ{} _mT^{-1}\circ L_A\circ{} _nT\circ T_{\mathfrak{B}_V}.</men> 
+			By eq. <xref ref="matrix-rep-coordinates"/> it follows that the given linear transformation <m>S</m> is the same as the composition transformation given in eq. <xref ref="composition"/>. Furthermore, given a matrix <m>A\in M_{m\times n}(F)</m> we can define <m>\ell_A</m> using <xref ref="induced-by-matrix"/> and eq. <xref ref="left-multi-arbitrary-matrix"/>.
+	</p>
+	<remark>
+		Suppose that <m>\mathfrak{B}_V=(v_1,\ldots,v_n)</m> and <m>\mathfrak{B}_W=(w_1,\ldots,w_m)</m> are ordered bases for <m>V</m> and <m>W</m>, respectively. The composition <m>{}_nT\circ T_{\mathfrak{B}_V}\colon V\to M_{n\times 1}(F)</m> in the eq. <xref ref="left-multi-arbitrary-matrix"/> is given by 
+		<me>\sum\alpha_iv_i\xrightarrow{{}_nT\circ T_{\mathfrak{B}_V}}\begin{pmatrix}\alpha_1\\\alpha_2\\\vdots\\\alpha_n\end{pmatrix}.</me>
+		While the composition <m>T^{-1}_{\mathfrak{B}_W}\circ {}_mT^{-1}\colon M_{m\times 1}(F)\to W</m> in eq. <xref ref="left-multi-arbitrary-matrix"/> is given by 
+		<me>\begin{pmatrix}\beta_1\\\beta_2\\\vdots\\\beta_m\end{pmatrix}\xrightarrow{T^{-1}_{\mathfrak{B}_V}\circ {}_mT^{-1}}\sum\beta_iw_i.</me>
+	</remark>
+
+	<example>
+		<title>(An illustrative example  for the map <m>\ell_A</m>)</title>
+		Consider vector spaces <m>V=M_2(\R)</m> and <m>W=\R^3</m> over <m>\R</m>. Let <m>\mathfrak{B}_V=(E_{11},E_{12},E_{21},E_{22})</m> and <m>(e_1,\ldots,e_4)</m> be standard bases for <m>V</m> and <m>W</m>, respectively. Consider the following matrix.
+		<me>A=\begin{pmatrix}1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 0\amp 0\end{pmatrix}\in M_{3\times 4}(\R)</me>
+		The map 
+		<me>{}_4T\circ T_{\mathfrak{B}_V}\colon V\to M_{4\times 1}(\R)</me> is given by <me>E_{11}\mapsto\begin{pmatrix}1\\0\\0\\0\end{pmatrix},\;E_{12}\mapsto\begin{pmatrix}0\\1\\0\\0\end{pmatrix},\;E_{21}\mapsto\begin{pmatrix}0\\0\\1\\0\end{pmatrix},\;E_{22}\mapsto\begin{pmatrix}0\\0\\0\\1\end{pmatrix}.</me>
+		The map <me>L_A\colon M_{4\times 1}(\R)\to M_{3\times 1}(\R)</me> is given by
+		<me>A\begin{pmatrix}1\\0\\0\\0\end{pmatrix}=\begin{pmatrix}1\\0\\0\end{pmatrix},\; A\begin{pmatrix}0\\1\\0\\0\end{pmatrix}=\begin{pmatrix}0\\1\\0\end{pmatrix},\; A\begin{pmatrix}0\\0\\1\\0\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix},\;A\begin{pmatrix}0\\0\\0\\1\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}.</me>
+		The map <me>T^{-1}_{\mathfrak{B}_W}\circ{}_3T^{-1}\colon M_{3\times 1}(\R)\to W</me> is given by
+		<me>\begin{pmatrix}1\\0\\0\end{pmatrix}\mapsto e_1,\;\begin{pmatrix}0\\1\\0\end{pmatrix}\mapsto e_2,\;\begin{pmatrix}0\\0\\1\end{pmatrix}\mapsto e_3.</me>
+		Combining all the above maps we obtained that the <m>\ell_A\colon M_2(\R)\to\R^3</m> is given by
+		<me>E_{11}\mapsto e_1,\; E_{12}\mapsto e_2,\; E_{21}\mapsto 0,\; E_{22}\mapsto 0.</me>
+	</example>
+
+	<p>
+		Fixing bases <m>\mathfrak{B}_V</m> and <m>\mathfrak{B}_W</m> we have defined following maps: one is
+		<md><mrow>\big\{F\text{-linear transformations }V\to W\big\}\longrightarrow M_{m\times n}(F)</mrow>\\<mrow>T\mapsto [T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}</mrow></md> and the other one is
+		<md><mrow>M_{m\times n}(F)\longrightarrow\big\{F\text{-linear transformations }V\to W\big\}</mrow>\\<mrow>A\mapsto \ell_A</mrow></md>
+		The next theorem shows that these maps are in fact <m>F</m>-linear inverses of each other.
+	</p>
+	<theorem xml:id="iso-matrices-Hom">
+		<statement>
+			Let <m>V</m> and <m>W</m> be vector spaces over a field <m>F</m>. Fix bases <m>\mathfrak{B}_V</m> and <m>\mathfrak{B}_W</m> of <m>V</m> and <m>W</m>, respectively. Further assume that <m>\dim_FV=n</m> and <m>\dim_FW=m</m>. Consider the map
+		<men>\ell\colon M_{m\times n}(F)\to\Hom_F(V,W)\quad\text{given by}\quad A\mapsto\ell_A</men> Here <m>\ell_A</m> is as defined in <xref ref="left-multi-arbitrary-matrix"/>. The map <m>\ell</m> is an <m>F</m>-isomorphism.
+	</statement>
+	</theorem>
+	<proof>
+		It is left to the reader to check that <m>\ell</m> is an <m>F</m>-linear transformation. The observations made above eq. <xref ref="left-multi-arbitrary-matrix"/> shows that <m>\ell</m> is surjective. We show the injectivity of <m>\ell</m> by showing <m>\ker(\ell)=\{0\}</m> (see <xref ref="injective-iff-kenerl-is-zero"/>). Suppose that <m>A\in M_{m\times n}(F)</m> is such that <m>\ell_A=0</m>. Therefore, for any <m>v\in V</m> we have 
+		<me>\big(T_{\mathfrak{B}_W}^{-1}\circ{} _mT^{-1}\circ L_A\circ{} _nT\circ T_{\mathfrak{B}_V}\big)(v)=0\quad\text{i.e.,}\quad T_{\mathfrak{B}_W}^{-1}\circ{} _mT^{-1}\circ L_A({} _nT\circ T_{\mathfrak{B}_V}(v))=0.</me>
+		Since, <m>T_{\mathfrak{B}_W}^{-1}</m> and <m>{}_mT^{-1}</m> are isomorphisms, we get <m>L_A({} _nT\circ T_{\mathfrak{B}_V}(v))=0</m> for every <m>v\in V</m>. Furthermore, <m>{} _nT</m> and <m>T_{\mathfrak{B}_V}</m> are isomorphisms, and hence their composition is surjective. Therefore, <m>L_A=0</m>. Recall that <m>\{e_i^t=(\delta_{i1},\delta_{i2},\ldots,\delta_{in})^t\}</m> is a basis for <m>M_{n\times 1}(F)</m>, and <m>L_A(e_i^t)=0</m> is the <m>i</m>-th column of <m>A</m> (see eq. <xref ref="e_i-gives-i-th-column"/>). Hence, <m>A=0</m>, and <m>\ell</m> is injective.
+	</proof>
+
+	<corollary xml:id="dim-of-matrices">
+		<statement>
+			We have <m>mn=\dim_FM_{m\times n}(F)=\Hom_F(V,W)</m>.
+		</statement>
+	</corollary>
+</section>

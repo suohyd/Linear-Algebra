@@ -1,0 +1,25 @@
+<section xml:id="linear-combination">
+	<title>Linear combination</title>
+	<introduction><p>We define a linear combination of vectors in a vector space.</p></introduction>
+
+	<definition xml:id="linear-combination-def">
+		<statement>Let <m>V</m> be a vector space over a field <m>F</m>. A vector <m>w\in V</m> is said to be a <term>linear combination</term> or an <term><m>F</m>-linear combination</term> of vectors <m>v_1,v_2,\ldots,v_r</m> in <m>V</m> if there are scalars <m>\alpha_1,\alpha_2,\ldots,\alpha_r\in F</m> such that <me>w=\alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_r v_r.</me>
+		</statement>
+	</definition>
+
+	<example>
+		Consider <m>\R^2</m> as a vector space over <m>\R</m> (refer to <xref ref="n-dim-vs"/>). A vector <m>(\alpha,0)\in\R^2</m> is a linear combination of vector <m>(1,0)</m> as well as a linear combination of vectors <m>(1,0)</m> and <m>(0,1)</m>. Indeed, we have <me>(\alpha,0)=\alpha(1,0)</me> and <me>(\alpha,0)=\alpha(1,0)+0(0,1).</me>
+	</example>
+
+	<remark>
+		<statement>If <m>w,z\in V</m> are such that <me>w=\sum_{i=1}^{r}\alpha_iv_i\quad\text{and}\quad z=\sum_{i=1}^{r}\beta_i v_i\quad\text{for }\alpha_i,\beta_i\in F\text{ and }v_i\in V</me> then, <me>w+z=\sum_{i=1}^{r}(\alpha_i+\beta_i)v_i.</me> Furthermore, for any <m>\gamma\in F</m><me>\gamma w=\sum_{i=1}^{r}(\gamma\alpha_i) v_i\quad\text{and}\quad \gamma z=\sum_{i=1}^{r}(\gamma\beta_i)v_i.</me>
+		</statement>
+	</remark>
+
+	<exercise>
+		<statement>
+			What are all vectors in <m>\R^2</m> that can be written as linear combinations of vectors <m>(1,0)</m> and <m>(0,1)</m>? Think geometrically.
+		</statement>
+	</exercise>
+	<!--<p><xref ref="subspace-criterion"/></p>-->
+</section>

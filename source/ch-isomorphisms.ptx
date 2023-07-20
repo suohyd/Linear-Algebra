@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-isomorphisms" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Isomorphisms</title>
+	<introduction>We introduce the concept of isomorphism between two vector spaces in this chapter.
+	</introduction>
+	<xi:include href="./sec-isomorphisms.ptx"/>
+	<xi:include href="./sec-iso-between-matrices-Hom.ptx"/>
+	<xi:include href="./sec-isomorphism-invertible-matrix.ptx"/>
+	<xi:include href="./sec-row-column-rank.ptx"/>
+	<xi:include href="./sec-rank-nullity-sage.ptx"/>
+	<xi:include href="./sec-double-dual-iso.ptx"/>
+	<xi:include href="./sec-exercises-isomorphism.ptx"/>
+</chapter>	

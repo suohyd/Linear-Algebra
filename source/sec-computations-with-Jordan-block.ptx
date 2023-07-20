@@ -1,0 +1,29 @@
+<section xml:id="sec-computations-with-Jordan-block">
+	<title>Some Computations with Jordan block</title>
+	<introduction>
+		<ol>
+		<li>
+				<statement>
+					Suppose that <m>A=(a_{ij})</m> be an <m>n\times n</m> matrix over a field <m>F</m>. We describe the collection of elements <m>a_{ij}</m> with</statement>
+				<ol>
+					<li><m>i=j</m> the <term>main diagonal of <m>A</m></term>;</li>
+					<li><m>i-j=r</m> (where <m>r</m> is a given number) the <term>diagonal lying <m>r</m> steps from the main diagonal</term></li>
+				</ol>
+			</li>
+			<li>
+				Let <m>A\in M_m(F)</m> be the Jordan block (see <xref ref="def-Jordan-block"/>). Then, <m>A=\lambda\cdot I_m+B</m> where <m>B</m> is a matrix with a lower diagonal (diagonal lying <m>1</m> step from the main diagonal) entries <m>1</m> and all other entries <m>0</m>. We thus have 
+				<me>Be_1^t=e_2^t,\;Be_2^t=e_3^t,\;\ldots,\;Be_{n-1}^t=e_n,\;Be_m^t=0.</me>
+				This shows that <me>B^re_i^t=e_{i+r}^t\quad\text{for}\;1\leq i\leq m-r\quad\text{and}\quad B^re_i^t=0\quad\text{for}\;i>m-r.</me>
+				Thus, the matrix of <m>B^r</m> has the diagonal lying <m>r</m> steps from the main diagonal containing all <m>1</m>'s, and all other entries are <m>0</m>.
+			</li>
+			<li>Furthermore, <m>\lambda I_m\cdot B=B\cdot\lambda I_m</m>. Therefore using <xref ref="Taylor-formula"/>, for a polynomial of degree <m>n</m> in one variable <m>f(t)\in F[t]</m>, we get
+			<men xml:id="Taylor-formula-Jordan-block">f(A)=f(\lambda)I_m+f^\prime(\lambda)B+\frac{f^{\prime\prime}(\lambda)}{2}B^2+\cdots+\frac{f^{(n)}(\lambda)}{n!}B^n</men>
+			If we put <m>g_r=f^{(r)}(\lambda)\big/r!</m> then
+			<men xml:id="poly-formula-Jordan-block">
+				f(A)=\begin{pmatrix}g_0\amp 0\amp 0\amp \cdots\amp 0\amp 0\\g_1\amp g_0\amp 0\amp\cdots\amp 0\amp 0\\g_2\amp g_1\amp g_0\amp\ddots\amp\amp 0\\\vdots\amp\ddots\amp\ddots\amp\ddots\amp\ddots\amp\vdots\\g_{m-2}\amp g_{m-3}\amp\ddots\amp\ddots\amp g_0\amp 0\\g_{m-1}\amp g_{m-2}\amp g_{m-3}\amp\cdots\amp g_1\amp g_0\end{pmatrix}.
+			</men>
+		</li>
+		</ol>
+		Using the above expression it is relatively easy to compute the powers of a Jordan block. As an exercise compute the <m>100</m>-th power of <m>2\times 2</m> Jordan block.
+	</introduction>
+</section>

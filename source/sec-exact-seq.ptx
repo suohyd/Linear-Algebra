@@ -1,0 +1,91 @@
+<section xml:id="sec-exact-seq">
+	<title>Exact sequences (Optional)</title>
+	<introduction>
+			We define an useful notion of exact sequences. Throughout this section we assume that <m>X,Y, Z,</m> and <m>W</m> are vector spaces (not necessarily finite-dimensional) over a field <m>F</m>.
+	</introduction>
+
+	<p>
+		<term>Diagram of vector spaces</term>: Let <m>f</m> be an <m>F</m>-linear map from <m>X</m> to <m>Y</m>, and <m>g</m> an <m>F</m>-linear map from <m>Y</m> to <m>Z</m>, <m>h</m> be an <m>F</m>-linear map from <m>Z</m> to <m>W</m>. This information we write schematically in the form of a diagram:
+		<me>X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}W</me>
+	</p>
+	<p>
+		We emphasize that the diagram is not a mathematical object but a valuable tool to facilitate reading an argument.
+	</p>
+
+	<p>
+			We make the following conventions.
+			<ol>
+				<li>The trivial subspace <m>\{0\}</m> of a vector space will be denoted by <m>0</m> when used in a diagram.</li>
+				<li>Since there is a unique linear map from the trivial subspace to the vector space (resp., from a vector space to its trivial subspace) we will not write the name for this linear map.</li>
+			</ol>
+		</p>
+
+	<definition xml:id="exact-seq">
+		Let <m>f\colon X\to Y</m> and <m>g\colon Y\to Z</m> be <m>F</m>-linear maps. The ordered pair <m>(f,g)</m> is called an <term>exact sequence</term> if <me>g^{-1}\{0\}=f(X).</me>
+	</definition>
+	<remark>
+		<statement>
+			By <xref ref="def-kernel"/> and <xref ref="def-image"/>, the pair <m>(f,g)</m> is an exact sequence if and only if <m>\ker(g)=\Im(f)</m>.
+		</statement>
+	</remark>
+	<definition xml:id="exact-diagram">
+		<statement>
+			A diagram of vector spaces with <m>F</m>-linear maps <m>f, g</m>
+			<me>X\xrightarrow{f}Y\xrightarrow{g}Z</me> is called an <term>exact sequence</term> if the ordered pair <m>(f,g)</m> is exact, i.e., if <m>\ker(g)=\Im(f)</m>.
+		</statement>
+	</definition>
+	<definition xml:id="exact-at">
+		<statement>
+			Consider the following diagram of vector spaces with <m>F</m>-linear maps <m>f,g</m>, and <m>h</m>. <me>X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}W</me>
+			This diagram is said to be <term>exact at Y</term> if <m>X\xrightarrow{f}Y\xrightarrow{g}Z</m> is exact. Similarly, this diagram is said to be <term>exact at Z</term> if <m>Y\xrightarrow{g}Z\xrightarrow{h}W</m> is exact.
+		</statement>
+	</definition>
+	<definition xml:id="short-exact-seq">
+		<statement>
+			A diagram of vector spaces with <m>F</m>-linear maps <m>f,g</m>
+			<me>0\xrightarrow{}X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{}0</me> is called a <term>short exact sequence</term> if <m>f</m> is injective, <m>g</m> is surjective, and the diagram is exact at <m>Y</m>.
+		</statement>
+	</definition>
+	<theorem xml:id="additivity-of-dim">
+		<title>(Dimension as an additive function)</title>
+		<statement>
+			Let <m>X,Y</m>, and <m>Z</m> be finite-dimensional vector spaces over a field <m>F</m>. Consider the following short exact sequence of vector spaces with <m>F</m>-linear maps <m>f,g</m>.
+			<me>0\to X\xrightarrow{f} Y\xrightarrow{g} Z\to 0</me> We then have <me>\dim_FX-\dim_FY+\dim_FZ=0.</me>
+		</statement>
+	</theorem>
+	<proof>
+		By <xref ref="short-exact-seq"/>, <m>f</m> is injective, <m>g</m> is surjective, and <m>\Im(f)=\ker(g)</m>. Let <m>\{x_1,\ldots,x_r\}</m> be a basis for <m>X</m>.
+		<p>
+			We claim that <m>\{f(x_1),\ldots,f(x_r)\}</m> is a basis for <m>\Im(f)</m>. Suppose that <m>\sum\alpha_if(x_i)=0</m>, i.e., <m>f\big(\sum\alpha_ix_i\big)=0</m>. Hence, <m>\sum\alpha_ix_i\in\ker(f)</m>. Since <m>f</m> is injective, we get <m>\sum\alpha_ix_i=0</m>. The linear independence of <m>\{x_1,\ldots,x_n\}</m> implies that <m>\alpha_i=0</m> for each <m>i</m>. Therefore, <m>\{f(x_1),\ldots,f(x_r)\}</m> is linearly independent.
+		</p>
+		<p>
+			We now show that <m>\{f(x_1),\ldots,f(x_r)\}</m> spans <m>\Im(f)</m>. Indeed, suppose that <m>f(x)\in\Im(f)</m>. There exists unique <m>\alpha_i\in F</m> such that <m>x=\sum\alpha_ix_i</m>. Hence, <m>f(x)=\sum\alpha_if(x_i)</m>. 
+		</p>
+		<p>
+			We thus have proved that <m>\{f(x_1),\ldots,f(x_r)\}</m> is a basis (this shows that <m>X</m> is <m>F</m>-isomorphic to <m>f(X)</m>, see <xref ref="injective-iso-to-image"/>). Therefore, using <m>\Im(f)=\ker(g)</m>, we have <me>\dim_F\ker(g)=\dim_F\Im(f)=r=\dim_FX</me>.
+		</p>
+		<p>
+			Furthermore, using <m>g</m> is surjective, we have <me>\dim_FZ=\dim_F\Im(g).</me>
+		</p>
+		By Rank-Nullity Theorem (see <xref ref="rank-nullity-theorem"/>), applied to the linear transformation <m>g\colon Y\to Z</m>, we get that 
+		<md><mrow>\dim_FY\amp=\dim_F\ker(g)+\dim_F\Im(g)</mrow><mrow>\amp=\dim_F\Im(f)+\dim_FZ</mrow><mrow>\amp=\dim_FX+\dim_FZ.</mrow></md>
+		In other words, <m>\dim_FX-\dim_FY+\dim_FZ=0</m>, and hence the theorem is proved.
+	</proof>
+	<remark>
+		<statement>
+			In fact following more general result is true.
+			<p>
+				Let <m>X_0,X_1,\ldots,X_n</m> be finite-dimensional vector spaces over a field <m>F</m>. Suppose that we have the following exact sequence with <m>F</m>-linear maps <m>d_i</m>.
+				<me>0\to X_0\xrightarrow{d_0}X_1\xrightarrow{d_1}X_2\xrightarrow{d_2}\cdots\xrightarrow{d_{n-1}}X_n\to 0</me>
+				Thus, we have <m>d_0</m> is injective, <m>d_{n-1}</m> is surjective, and <m>\ker(d_{k+1})=\Im(d_{k})</m> for each <m>0\leq k\leq n-2</m>.
+				Then, 
+				<me>\sum_{i=0}^{n}(-1)^{i}\dim_FX_i=0.</me>
+			</p>
+			<p>
+				We will not prove this result. A possible way to prove this result is by 'splitting' the exact sequence into several short exact sequences:
+				<md><mrow>0\to X_0\xrightarrow{d_0}X_1\xrightarrow{d_0}\Im(d_0)\to 0</mrow><mrow>0\to\ker(d_k)\xrightarrow{\text{inclusion map}}X_k\xrightarrow{d_k}\Im(d_k)\to 0\quad\text{for each }1\leq k\leq n-1.</mrow></md>
+				One may then apply <xref ref="additivity-of-dim"/> for every short exact sequence obtained above to get the result.
+			</p>
+		</statement>
+	</remark>
+</section>

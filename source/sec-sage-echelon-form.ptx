@@ -1,0 +1,42 @@
+<section xml:id="sec-sage-echelon-form">
+	<title>Row echelon form using SageMath</title>
+	<introduction>
+		We use online computer algebra system <url href="https://www.sagemath.org/">SageMath</url> to compute the rank and the nullity of a given matrix. In the following example <c>A=matrix(RR,[[1,2,0,-1],[1,6,0,1],[1,-2,2,8]])</c> represents <m>3\times 4</m> matrix <m>A</m> over <m>\R</m>. The entries <c>[1,2,0,-1]</c>, <c>[1,6,0,1]</c>, and <c>[1,-2,2,8]</c> represents the first, the second, and the third row of <m>A</m>, respectively.
+	</introduction>
+	<p>
+		You may input the matrix of your choice (you can change the number of rows, and column) to get row reduced echelon form. Please first do the calculations yourself and then verify using SageMath.
+	</p>
+	<p>
+		<sage>
+		<input>
+			sage: A=matrix(RR,[[1,2,1,-1],[9,7,5,5],[1,-2,2,8]]); A
+			sage: A.echelon_form()
+		</input>
+	</sage>
+	</p>
+
+	<p>
+		In the following SageMath can compute the solution of the system <m>AX=Y</m>. You may change (on this page itself!) <m>A</m> and <m>Y</m> appropriately.
+
+		<sage>
+			<input>
+				sage: A=matrix(RR,[[1,0,0],[1,0,1],[2,2,1]])
+				sage: Y=vector([1,0,0])
+				sage: X = A.solve_right(Y)
+				sage: A*X
+				<!--sage: A*x==vector([1,0,0])-->
+			</input>			
+		</sage>
+	</p>
+
+	<p>
+		In the following we can reduced the augmented matrix <m>[A|v]</m> to row reduced echelon form. You may change (on this page itself!) <m>A</m> and <m>v</m> appropriately.
+	<sage>
+		<input>
+			sage: A=matrix(RR,[[1,2,3],[1,0,1],[2,2,1]])
+			sage: v=vector([1,0,0])
+			sage: matrix(A.augment(v)).rref()
+		</input>
+	</sage>
+	</p>
+</section>

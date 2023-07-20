@@ -1,0 +1,79 @@
+<exercises xml:id="ex-basis-dim">
+	<exercisegroup>
+		<introduction>
+		In the following exercises find a basis and the dimension of vector space.
+	</introduction>
+	<exercise>
+		<statement>
+			<m>\C</m> over <m>\R</m>.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			<m>F^n</m> over a field <m>F</m> (refer to <xref ref="n-dim-vs"/>)
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			<m>\End_{\R}(\R)</m> over <m>\R</m> (refer to <xref ref="Endomorphisms-R"/>).
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			<m>M_{m\times n}(F)</m> over a field <m>F</m>.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Vector space of all polynomials in one variable of degree at most <m>n</m> over a field <m>F</m>.
+		</statement>
+	</exercise>
+
+</exercisegroup>
+
+<exercisegroup>
+	<introduction>In the following exercises assume that <m>V</m> is a finite-dimensional vector space over a field <m>F</m>.</introduction>
+	<exercise>
+		<statement>
+			Let <m>\{v_1,v_2,\ldots,v_n\}</m> be a basis of <m>V</m>. Show that vectors <me>w_i=\sum_{j=1}^{n}\alpha_{ij}v_j \quad \text{for } 1\leq i\leq m</me> are linearly dependent if and only if <me>\begin{pmatrix}\alpha_{11}\amp\alpha_{21}\amp\cdots\amp\alpha_{m1}\\
+			\alpha_{12}\amp\alpha_{22}\amp\cdots\amp\alpha_{m2}\\
+			\vdots\amp\vdots\amp\ddots\amp\vdots\\
+			\alpha_{1n}\amp\alpha_{2n}\amp\cdots\amp\alpha_{mn}\\\end{pmatrix}X=0</me> has a nontrivial solution.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Show that <m>\R</m> considered as a vector space over <m>\Q</m> is not finite-dimensional.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			If <m>W&lt;V</m> is a proper subspace then, <m>\dim_FW &lt;\dim_FV</m>.<!--If <m>W\leq V</m> then <m>\dim_FW\leq\dim_FV</m>.-->
+		</statement>	
+	</exercise>
+
+	<exercise>
+		<statement>
+			Determine all <m>1</m>-dimensional subspaces of <m>\R^2</m>.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Let <m>p</m> a prime, and let <m>\mathbb{F}_p</m> be the field with <m>p</m> elements. Show the cardinality of a finite-dimensional vector space over <m>\mathbb{F}_p</m> is finite.
+		</statement>
+	</exercise>
+
+	<exercise xml:id="unique-lin-combination">
+		<statement>
+			Let <m>V</m> be a vector space over a field <m>F</m> with a basis <m>\{v_1,v_2,\ldots,v_n\}</m>. Show that every <m>v\in V</m> can be written <em>uniquely</em> as a linear combination of <m>v_1,v_2,\ldots,v_n</m>.
+		</statement>
+	</exercise>
+</exercisegroup>
+</exercises>

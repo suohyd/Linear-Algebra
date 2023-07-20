@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-Quotient-space" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Quotient space</title>
+	<introduction>
+		In this chapter we define quotient spaces.
+	</introduction>
+	<xi:include href="./sec-quotient-space-def.ptx"/>
+	<xi:include href="./sec-natural-projection.ptx"/>
+	<xi:include href="./sec-first-isomorphism-theorem.ptx"/>
+	<xi:include href="./sec-examples-FIT.ptx"/>
+</chapter>

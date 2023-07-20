@@ -1,0 +1,98 @@
+<exercises xml:id="ex-invariant-subspaces-eigenvectors">
+	<introduction>Throughout this section we assume that <m>V</m> is a finite-dimensional vector space over a field <m>F</m> and <m>T\colon V\to V</m> an <m>F</m>-linear map.</introduction>
+	<exercise>
+		<statement>Find the characteristic polynomial of <m>A=\begin{pmatrix}a\amp b\\c\amp d\end{pmatrix}</m>. Show that <me>A^2-tr(A)A+\det(A)I_2=0</me>.</statement>
+	</exercise>
+	<exercise>
+		<statement>Let <m>A\in M_n(F)</m> be an invertible matrix. Show that <m>A^{-1}</m> has same eigenvectors as that of <m>A</m>.</statement>
+	</exercise>
+	<exercise>
+		<statement>An <m>F</m>-linear map <m>T</m> has <em>every</em> vector in <m>V</m> as an eigenvector if and only if <m>T(v)=\alpha v</m> for every <m>v\in V</m> and some fixed scalar <m>\alpha\in F</m>.</statement>
+	</exercise>
+	<exercise>
+		<statement>Show that eigenvectors corresponding to distinct eigenvalues are linearly independent.</statement>
+	</exercise>
+
+	<exercise>
+		<statement>Suppose that <m>A\in M_n(F)</m> is of the rank <m>r&lt;n</m>. Show that <m>0</m> is an eigenvalue of <m>A</m>.</statement>
+	</exercise>
+
+	<exercisegroup>
+		<introduction>Find the characteristic and the minimal polynomial of linear transformations corresponding to the following matrices.</introduction>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}0\amp 1\\0\amp 0\end{pmatrix}\in M_2(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}0\amp -1\\1\amp 1\end{pmatrix}\in M_2(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}0\amp 0\amp -1\\1\amp 0\amp -1\\0\amp 1\amp -1\end{pmatrix}\in M_3(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}1\amp 1\amp 1\\1\amp 1\amp 1\\2\amp 2\amp 2\end{pmatrix}\in M_3(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				The matrix corresponding to a linear map <m>T\colon\R^4\to\R^4</m> given by
+				<me>e_1\mapsto e_2,\;e_2\mapsto e_3,\;e_3\mapsto e_4,\;e_4\mapsto e_1.</me>
+			</statement>
+		</exercise>
+	</exercisegroup>
+
+	<exercisegroup>
+		<introduction>Find the minimal polynomial, eigenvalues, and eigenvectors for the following linear maps/matrices. Furthermore, if <m>\lambda</m> is an eigenvalue then find a basis and the dimension of <m>\ker(T-\lambda\unit_V)</m> (resp., <m>\ker(A-\lambda I_n))</m>.</introduction>
+		<exercise>
+			<statement><m>A=\begin{pmatrix}0\amp 0\\1\amp 0\end{pmatrix}\in M_2(\C)</m></statement>
+		</exercise>
+		<exercise>
+			<statement><m>A=\begin{pmatrix}\lambda\amp 1\amp 0\\0\amp\lambda\amp 0\\0\amp 0\amp 2\end{pmatrix}\in M_3(\R)</m></statement>
+		</exercise>
+		<exercise>
+			<statement><m>A=\begin{pmatrix}1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\end{pmatrix}\in M_3(\C)</m></statement>
+		</exercise>
+		<exercise>
+			<statement>The differentiation operator on polynomials in one variable over <m>\C</m> of degree at most <m>4</m>.</statement>
+		</exercise>
+		<exercise>
+			<statement>The transpose map <m>T\colon M_2(\R)\to M_2(\R)</m> given by <m>A\mapsto A^t</m>.</statement>
+		</exercise>
+	</exercisegroup>
+
+	<exercisegroup>
+		<introduction>Find out whether the following matrices are similar to diagonal matrices over a given field.</introduction>
+		<exercise>
+			<statement><m>\begin{pmatrix}0\amp 1\\0\amp 0\end{pmatrix}\in M_2(\mathbb{F}_2)</m>, where <m>\mathbb{F}_2</m> is a field with two elements.</statement>
+		</exercise>
+		<exercise>
+			<statement><m>\begin{pmatrix}2\amp 0\\1\amp 2\end{pmatrix}\in M_2(\R)</m></statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}0\amp -1\amp 0\\-1\amp 3\amp -1\\-4\amp 13\amp -4\end{pmatrix}\in M_3(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\begin{pmatrix}1\amp 1\amp 1\amp 1\\1\amp 1\amp -1\amp -1\\1\amp -1\amp 1\amp -1\\1\amp -1\amp -1\amp 1\end{pmatrix}\in M_4(\R)</m>
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				Let <m>A</m> be the matrix of the following linear map with respect to the standard ordered basis.
+				<me>T\colon F^n\to F^n\quad\text{given by}\; e_i\mapsto e_{i+1}\;\text{for}\;1\leq i\leq n-1\;\text{and}\;e_n\mapsto 0.</me>
+			</statement>
+		</exercise>
+	</exercisegroup>
+
+	<exercise>
+		<statement>Find <m>\begin{pmatrix}1\amp 1\\-1\amp 3\end{pmatrix}^{20}\in M_2(\C)</m>.</statement>
+	</exercise>
+</exercises>

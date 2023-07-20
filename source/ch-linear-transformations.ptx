@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-linear-transformations" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Linear transformations</title>
+	<introduction>In this chapter, we study linear transformations. These are maps between vector spaces that <sq>preserve</sq> vector space operations. We will also see a relation between linear transformations and matrices.</introduction>
+	<xi:include href="./sec-def-linear-transformation.ptx"/>
+	<xi:include href="./sec-examples-linear-transformations.ptx"/>
+	<xi:include href="./ex-lin-trans.ptx"/>
+	<xi:include href="./sec-kernel-image-of-hom.ptx"/>
+	<xi:include href="./sec-rank-nullity.ptx"/>
+	<xi:include href="./sec-kernel-of-trace.ptx"/>
+	<xi:include href="./sec-ordered-basis-linear-trans.ptx"/>
+	<xi:include href="./ex-ordered-basis.ptx"/>
+	<xi:include href="./sec-exact-seq.ptx"/>
+	<xi:include href="./ex-exact-seq.ptx"/>
+</chapter>

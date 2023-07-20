@@ -1,0 +1,39 @@
+<section xml:id="sec-rank-nullity">
+	<title>Rank-Nullity Theorem</title>
+	<introduction>
+		We begin with a couple of definitions.
+	</introduction>
+	<definition xml:id="def-nullity">
+		<statement>
+			Let <m>V</m> and <m>W</m> be vector spaces over a field <m>F</m>. Let <m>T\colon V\to W</m> be an <m>F</m>-linear map. The dimension of the kernel of <m>T</m> is called the <term>nullity</term> of <m>T</m>. So, <me>{\rm nullity}(T)=\dim_F\ker(T).</me>
+		</statement>
+	</definition>
+	<definition xml:id="def-rank">
+		<statement>
+			Let <m>V</m> and <m>W</m> be vector spaces over a field <m>F</m>. Let <m>T\colon V\to W</m> be an <m>F</m>-linear map. The dimension of the image of <m>T</m> is called the <term>rank</term> of <m>T</m>. So, <me>{\rm rank}(T)=\dim_F\Im(T).</me>
+		</statement>
+	</definition>
+	<theorem xml:id="rank-nullity-theorem">
+		<title>(Rank-Nullity Theorem)</title>
+		<statement>
+			Let <m>V</m> and <m>W</m> be vector spaces over a field <m>F</m>. Let <m>T\colon V\to W</m> be an <m>F</m>-linear map. If <m>V</m> is a finite-dimensional vector space over <m>F</m> then,
+			<me>\dim_FV=\dim_F\ker(T)+\dim_F\Im(T)={\rm nullity}(T)+{\rm rank}(T).</me>
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			Let <m>\{u_1,\ldots,u_r\}</m> be a basis for <m>\ker(T)</m>. We extend this basis to a basis of <m>V</m>, say <m>\{u_1,\ldots,u_r,v_1,\ldots,v_s\}</m>. We claim that <m>\{T(v_1),\ldots,T(v_s)\}</m> is a basis for <m>\Im(T)</m>. We first check the independence. Suppose that 
+			<md><mrow>0\amp=\sum\alpha_iT(v_i)</mrow>
+			<mrow>\amp= T\big(\sum\alpha_iv_i\big)</mrow>.</md> Thus, <m>\sum\alpha_iv_i\in\ker(T)</m> and hence there exists <m>\beta_j\in F</m> such that <me>\sum\alpha_iv_i=\sum\beta_ju_j\quad\text{i.e.,}\quad\sum_i\alpha_iv_i-\sum_j\beta_ju_j=0.</me> Since <m>\{u_1,\ldots,u_r,v_1,\ldots,v_n\}</m> is a basis we have <m>\alpha_i=0</m> and <m>\beta_j=0</m> for each <m>i</m> and <m>j</m>. Therefore, <m>\{T(v_j)\}</m> is linearly independent.
+	</p>
+	<p>
+		Given any <m>w\in\Im(T)</m> there exists <m>v\in V</m> such that <m>w=T(v)</m>. Let <me>v=\sum\gamma_iu_i+\sum\delta_jv_j.</me> Using <m>\{u_i\}</m> is a basis of <m>\ker(T)</m> we have the following.
+		<md><mrow>w\amp=T(v)</mrow><mrow>\amp=\sum\gamma_iT(u_i)+\sum\delta_jT(v_j)</mrow><mrow>\amp=\sum\delta_jT(v_j)</mrow>.</md> Hence <m>\{T(v_j)\}</m> spans <m>\Im(T)</m>. Since <m>\{T(v_j)\}</m> is linearly independent and spans the <m>\Im(T)</m> it is a basis of <m>\Im(T)</m>. We thus have <me>\dim_F\Im(T)=s\quad\text{and}\quad\dim_F\ker(T)=r.</me> Therefore, <me>\dim_FV={\rm nullity}(T)+{\rm rank}(T).</me>
+	</p>
+	</proof>
+	<corollary xml:id="injective-iff-surjective">
+		<statement>
+			Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m> of the same dimension. Then, an <m>F</m> linear map <m>T\colon V\to W</m> is injective if and only if it is surjective.
+		</statement>
+	</corollary>
+</section>

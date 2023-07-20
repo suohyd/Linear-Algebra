@@ -1,0 +1,64 @@
+<section xml:id="sec-triangulable-maps">
+	<title>Triangulable linear maps and matrices</title>
+	<introduction>
+	In this section we give a condition under which a matrix representation of a linear map is an upper triangular matrix. We begin with the following definition.
+	</introduction>
+	<definition xml:id="def-triangulable-map">
+		<title>(Triangulable linear map)</title>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and <m>T\colon V\to V</m> be an <m>F</m>-linear map. We say that <m>T</m> is <term>triangulable</term> if there is a basis <m>\mathfrak{B}</m> of <m>V</m> such that <m>[T]_{\mathfrak{B}}</m> is an upper triangular matrix.
+		</statement>
+	</definition>
+
+	<p>The matrix form of the above definition is given below.</p>
+
+<definition xml:id="def-triangulable-matrix">
+	<title>(Triangulable matrix)</title>
+	<statement>
+		A matrix <m>A\in M_n(F)</m> is said to be <term>triangulable</term> if <m>A</m> is similar to an upper triangular matrix in <m>M_n(F)</m>.
+	</statement>
+</definition>
+
+<p>We now state the useful observation.</p>
+<proposition xml:id="ch-poly-for-block-form">
+	<statement>
+		Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> and let <m>T\colon V\to V</m> is an <m>F</m>-linear map. Suppose that <m>W</m> is a <m>T</m>-invariant subspace of <m>T</m>. Let <m>\overline{T}\colon V/W\to V/W</m> be an <m>F</m>-linear map given by <m>v+W\mapsto T(v)+W</m>. Then
+		<me>\chi_T=\chi_{T|_W}\cdot\chi_{\overline{T}}\quad\text{and}\quad tr(T)=tr(T|_W)+tr(\overline{T}).</me>
+	</statement>
+</proposition>
+<proof>
+	This follows from <xref ref="invariant-subspace-block-form"/> and properties of the determinant (<xref ref="sec-determinant"/>) and the linearity of the trace map.
+</proof>
+
+<p>We now give a criterion for a linear to be triangulable in terms of its characteristic polynomial. For this first recall the definition of a split polynomial <xref ref="def-split-polynomial"/>.</p>
+
+<theorem xml:id="triangulable-criterion-ch-poly">
+	<statement>
+		Let <m>V</m> be a finite-dimensional vector space of dimension <m>n</m> over a field <m>F</m> and <m>T\colon V\to V</m> be an <m>F</m>-linear map. The map <m>T</m> is triangulable if and only if the characteristic polynomial of <m>T</m>, <m>\chi_T</m> is split over <m>F</m>.
+	</statement>
+</theorem>
+<proof>
+	<p>
+		Suppose that <m>T</m> is triangulable, i.e., there is a basis <m>\mathfrak{B}</m> of <m>V</m> in which <m>[T]_{\mathfrak{B}}=(a_{ij})</m> is an upper triangular matrix, i.e., <m>a_{ij}=0</m> for <m>i&gt;j</m>. Thus <m>\chi_T=\det(tI_n-[T]_{\mathfrak{B}})=(t-a_{11})\cdots(t-a_{nn})</m> by a property of the determinant, see <xref ref="sec-determinant"/>. Hence <m>\chi_T</m> is split over <m>F</m>.
+	</p>
+	<p>
+		Now assume that <m>\chi_T</m> is split over <m>F</m>. We show that <m>T</m> is triangulable. We proceed by induction on the dimension of <m>V</m>, <m>\dim_FV=n</m>. If <m>n=1</m> then the result is clear. Assume that <m>n&gt;1</m>. Since <m>\chi_T</m> is split, it has a root <m>\lambda\in F</m>, i.e., <m>\lambda\in F</m> is an eigenvalue of <m>T</m>. Let <m>v_1</m> be an eigenvector corresponding to <m>\lambda\in F</m>. Thus <m>W=\langle v_1\rangle</m> is an invariant subspace under <m>T</m>. We define a linear map <m>\overline{T}\colon V/W\to V/W</m> by <me>v+W\mapsto T(v)+W.</me> By <xref ref="ch-poly-for-block-form"/> we have <m>\chi_T=\chi_{T|_W}\cdot\chi_{\overline{T}}</m>. Therefore, <m>\chi_{\overline{T}}</m> is also split. As <m>\dim_FV/W &lt; n</m>, by induction, there is a basis <m>\overline{\mathfrak{B}}=\{v_2+W,\ldots,v_n+W\}</m> of <m>V/W</m> such that <m>[\overline{T}]_{\overline{\mathfrak{B}}}</m> is an upper triangular matrix. Then for the basis <m>\{v_1,v_2,\ldots,v_n\}</m> of <m>V</m>, the matrix of <m>T</m> is upper triangular.
+	</p>
+</proof>
+
+<corollary>
+	<statement>
+		Every <m>\C</m>-linear map from a finite-dimensional vector space <m>V</m> over <m>\C</m> to itself is triangulable.
+	</statement>
+</corollary>
+<proof>
+	This follows from <xref ref="triangulable-criterion-ch-poly"/> and the fundamental theorem of algebra (<xref ref="Fundamental-theorem-of-algebra"/>).
+</proof>
+
+<example>
+		<title>(Non-triangulable linear map)</title>
+		<statement>
+			Consider an <m>\R</m>-linear map <m>T</m> from <m>\R^3</m> to itself given by <m>e_1\mapsto e_2</m>, <m>e_2\mapsto -e_1</m>, and <m>e_3\mapsto e_3</m>. The characteristic polynomial of <m>T</m> is <m>\chi_T=(t-1)(t^2+1)\in\R[t]</m> and it has only one root in <m>\R</m>. Hence <m>\chi_T</m> not split over <m>\R</m>. By <xref ref="triangulable-criterion-ch-poly"/>, <m>T</m> is not triangulable.
+		</statement>
+	</example>
+</section>

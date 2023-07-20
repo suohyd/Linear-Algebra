@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-Basis-Dim" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Basis and dimension of a vector space</title>
+	<introduction>We define an important concept of the dimension of a vector space.</introduction>
+	<xi:include href="./sec-linear-dependence.ptx"/>
+	<xi:include href="./ex-linear-dependence.ptx"/>
+	<xi:include href="./sec-basis-dim.ptx"/>
+	<xi:include href="./sec-results-basis-dim.ptx"/>
+	<xi:include href="./ex-basis-dim.ptx"/>
+	<xi:include href="./sec-basis-examples.ptx"/>
+	<xi:include href="./sec-new-vs.ptx"/>
+</chapter>

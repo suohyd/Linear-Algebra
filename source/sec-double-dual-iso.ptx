@@ -1,0 +1,118 @@
+<section xml:id="sec-double-dual-iso">
+	<title>Natural isomorphism between a vector space and its double dual</title>
+	<introduction>
+		We describe the <q>natural isomorphism</q> between a vector space and its double dual. The term <q>natural</q> can be defined precisely. However, we will not define this term in this course. We refer the reader to the chapter on Category Theory in the book <sq>Basic Algebra II</sq> by N. Jacobson.
+	</introduction>
+	<p>
+		Throughout this section we assume that <m>V</m> is a finite-dimensional vector space over a field <m>F</m>. Recall from <xref ref="End-vs"/> that the dual space of <m>V</m>, <m>V^*=\Hom_F(V,F)</m> is an vector space over <m>F</m>. The <term>double dual</term> of <m>V</m> is a vector space over <m>F</m> defined by <m>V^{**}=\Hom_F(V^*,F)</m>.
+	</p>
+	<proposition xml:id="V-simeq-dual">
+		<statement>
+			Keep notations of this section. There is an <m>F</m>-isomorphism between <m>V</m> and its dual space <m>V^*</m>.
+		</statement>
+	</proposition>
+	<proof>
+		<p>
+			Let <m>\mathfrak{B}=\{v_1,v_2,\ldots,v_n\}</m> be a basis of <m>V</m> over <m>F</m>. We define <m>v_i^*(v_j)=\delta_{ij}</m>, and extend it linearly over <m>V</m>. Thus, we get a subset <m>\mathfrak{B}^*=\{v_1^*,v_2^*,\ldots,v_n^*\}</m> of <m>V^*</m>.
+		</p>
+		<p>
+			We claim that <m>\mathfrak{B}^*</m> is a basis for <m>V^*</m> over <m>F</m>. Let <m>\sum\alpha_iv_i^*=0</m>, i.e., for every <m>v_j</m> we have <me>\sum\alpha_iv_i^*(v_j)=0.</me> Therefore, for every <m>j</m>, we get <m>\alpha_j=0</m>. Hence, <m>\mathfrak{B}^*</m> is <m>F</m>-linearly independent.
+		</p>
+		<p>
+			We now show that <m>\mathfrak{B}^*</m> spans <m>V^*</m>. Let <m>f\in V^*</m> be a linear functional. The map <m>f</m> is determined by its action on <m>v_i</m>. Therefore, <me>f=\sum f(v_i)v_i^*.</me>
+		</p>
+		An <m>F</m>-isomorphism between <m>V</m> and <m>V^*</m> can now be defined by <me>v_i\mapsto v_i^*.</me>
+	</proof>
+
+	<corollary>
+		<statement>
+			We have <m>\dim_FV=\dim_FV^*</m>.
+		</statement>
+	</corollary>
+
+	<definition xml:id="dual-basis">
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. As in the proof of <xref ref="V-simeq-dual"/>, let <m>v_i^*(v_j)=\delta_{ij}</m>. Let <m>\{v_1,\ldots,v_n\}</m> be a basis of <m>V</m>. The set <m>\{v_1^*,\ldots,v_n^*\}</m> is called a <term>dual basis</term> for <m>V^*</m> . 
+
+			The set <m>\{v_1^*,\ldots,v_n^*\}</m> is a basis of <m>V^*</m> (refer to the proof of <xref ref="V-simeq-dual"/>).
+		</statement>
+	</definition>
+
+	<example xml:id="matrix-representation-dual-basis">
+		<title>(Matrix representation of dual basis)</title>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m> with an ordered basis <m>\mathfrak{B}=(v_1,\ldots,v_n)</m>. Consider a dual basis <m>\mathfrak{B}^*=(v_1^*,\ldots,v_n^*)</m> as in <xref ref="dual-basis"/>. Let <m>T\colon V\to V</m> be an <m>F</m>-linear map. Suppose that <m>T(v_j)=\sum_i a_{ij}v_i</m>, i.e., <me>[T]_{\mathfrak{B}}=\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp \vdots\amp\ddots\amp \vdots\\a_{n1}\amp a_{n2}\amp\cdots\amp a_{nn}\\\end{pmatrix}.</me> We have a map
+			<me>T^*\colon V^*\to V^*\quad\text{given by}\quad f\mapsto f\circ T.</me>
+			We have the following. <me>T^*(v_j^*)(v_k)=v_j^*\circ T(v_k)=v_j^*\left(\sum_i a_{ik}v_i\right)=a_{jk}</me> Hence,
+			<me>T^*(v_j^*)=\sum_ka_{jk}v^*_k.</me> The matrix of <m>T^*</m> with respect to <m>\mathfrak{B}^*</m> is the <em>transpose</em> of <m>[T]_{\mathfrak{B}}</m>.
+			<me>[T^*]_{\mathfrak{B}^*}=\begin{pmatrix}a_{11}\amp a_{21}\amp\cdots\amp a_{n1}\\a_{12}\amp a_{22}\amp\cdots\amp a_{n2}\\\vdots\amp \vdots\amp\ddots\amp \vdots\\a_{1n}\amp a_{2n}\amp\cdots\amp a_{nn}\\\end{pmatrix}</me>
+		</statement>
+	</example>
+
+	<remark>
+		<statement>
+			<p>
+				The isomorphism defined in <xref ref="V-simeq-dual"/> depends on the choice of a basis.
+			</p>
+			<p>
+				Indeed, suppose that <m>V</m> is one-dimensional vector space over a field <m>\R</m>. Consider any nonzero vector <m>v</m>. Then, <m>\{v\}</m> is a basis for <m>V</m>, and its dual basis is <m>\{v^*\}</m>. Similarly, <m>\{2v\}</m> is a basis and <m>\{v^*/2\}</m> is a dual basis. Note that mappings <m>v\mapsto v^*</m> and <m>2v\mapsto v^*/2</m> are different.
+			</p>
+		</statement>
+	</remark>
+	<p>We now define an isomorphism between a vector space and its double dual, which is independent of the choice of a basis. We call this isomorphism the <term>canonical isomorphism</term> or <term>natural isomorphism</term>.</p>
+	<p>
+		We begin with the definition of <term>evaluation map</term>.
+	</p>
+	<definition xml:id="evaluation-map">
+	<statement>
+	 Let <m>v\in V</m>. The evaluation map is an <m>F</m>-linear function on <m>V^*</m>: <me>\ev_v\colon V^*\to F\quad\text{is defined by}\quad f\mapsto f(v).</me> We often denote <m>f(v)</m> by <m>\langle v,f\rangle</m>. In this notation the map <m>\varphi^*</m> as defined in <xref ref="contravariant-Hom"/>, will assume the following form.
+		<me>\langle v,\varphi^*(f)\rangle=\langle \varphi(v),f\rangle.</me>
+	</statement>
+	</definition>
+
+	<proposition>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. We have the following.
+			<ol>
+				<!--<li>
+					For any nonzero <m>v\in V</m> there exists <m>f\in V^*</m> such that <m>f(v)\neq 0</m>.
+				</li>-->
+				<li>
+					A vector <m>v\in V</m> is zero if and only if <m>f(v)=0</m> for every <m>f\in V^*</m>.
+				</li>
+				<li>
+					If <m>v\in V</m> is such that <m>f(v)\neq 0</m> for some linear function <m>f\in V^*</m> then,
+					<me>V=\langle v\rangle\bigoplus\ker(f).</me>
+				</li>
+				<li>
+					Consider nonzero linear functions <m>f,g\in V^*</m>. Then, <m>\ker(f)=\ker(g)</m> if and only if there exists a scalar <m>\alpha</m> such that <m>f=\alpha g</m>.
+				</li>
+			</ol>
+		</statement>
+	</proposition>
+
+		<p>We now prove the following natural isomorphism between a vector space and its double dual.</p>
+	<theorem xml:id="canonical-iso-double-dual">
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field. The <m>F</m>-linear map <m>\ev\colon V\to V^{**}</m> defined by <me>v\mapsto\ev_v</me>is an <m>F</m>-isomorphism.
+		</statement>
+	</theorem>
+	<proof>
+		First verify that the map <m>v\mapsto\ev_v</m> is an <m>F</m>-linear map. Let <m>\{v_1,\ldots,v_n\}</m> be a basis for <m>V</m> over <m>F</m>. It is left to the reader to verify that <m>\{\ev_{v_1},\ev_{v_2},\ldots,\ev_{v_n}\}</m> is a dual basis for <m>V^*</m> (follow a similar argument as in the proof of <xref ref="V-simeq-dual"/>). This will prove the theorem.
+	</proof>
+
+	<p>
+		We obtain the following useful consequence of the <xref ref="canonical-iso-double-dual"/>.
+	</p>
+
+	<corollary>
+		<statement>
+			We keep notations of <xref ref ="canonical-iso-double-dual"/>. If <m>\varphi\in\Hom_F(V^*,F)</m> then there exists a unique vector <m>v\in V</m> such that <me>\varphi=\ev_v</me>.
+		</statement>
+	</corollary>
+
+	<question>
+	    <title>(Trace is non-degenerate)</title>
+	    <statement>Let <m>V=M_n(\R)</m> be a vector space over <m>\R</m> of <m>n\times n</m> matrices. Show that for any <m>\R</m>-linear functional <m>f\in\Hom_F(V,F)</m> there exists a unique <m>A\in V</m> such that <m>f(X)=tr(AX)</m> for every <m>X\in V</m>.</statement>
+	</question>
+</section>

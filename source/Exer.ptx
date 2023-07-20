@@ -1,0 +1,9 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="Exer">
+	<introduction>A</introduction>
+	<exercises xml:id="exercises">
+		<p>Let <m>e\colon M_{n\times n}(F)\to M_{n\times n}(F)</m> be an elementary row operation (of any type).</p>
+        <exercise><statement> Let <m>A\in M_{n\times n}(F)</m>. Show that <me>e(I_n)\cdot A=e(A).</me></statement></exercise>
+
+        <exercise><statement>Keep the notations of the above exercise. If we multiply <m>A</m> by <m>e(I_n)</m> on the right, i.e., if we consider the matrix <m>A\cdot e(I_n)</m> then, what matrix one gets? Relate this with "elementary column operations".</statement></exercise>
+</exercises>
+</section>

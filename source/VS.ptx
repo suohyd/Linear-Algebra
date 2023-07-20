@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="VS" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Vector spaces</title>
+	<introduction>
+		<p>In this chapter we give the definition of vector space over a field. This is a central concept for this course. As you will see, you have already encountered several examples of vector spaces.
+		</p>
+	</introduction>
+	<section xml:id="vs-def">
+		<title>Definition of a vector space</title>
+		<p>
+			Let <m>V</m> be an <em>abelian group</em>. We write the binary operation on <m>V</m> additively. Thus <m>(V,+)</m> have the following properties:
+		<ol>
+			<li> For <m>v,w\in V</m>, <m>v+w=w+v</m>.</li>
+
+			<li>For <m>v,w,z\in V</m>, <m>v+(w+z)=(v+w)+z</m>.</li>
+
+			<li>There exists a unique element <m>0\in V</m> such that for any <m>v\in V</m>, <m>0+v=v+0=v</m>.</li>
+
+			<li>For every <m>v\in V</m> there exists a unique element (which is denoted by <m>-v</m>) such that <m>v+(-v)=(-v)+v=0</m>.</li>
+		</ol>
+	</p>
+	<p>
+		Now we give the definition of a vector space over a field. 
+	<definition xml:id="vector-space"><title>(Vector space over a field)</title>
+		<statement>Let <m>F</m> be a field and let <m>V</m> be an abelian group. We call <m>V</m> a <em>vector space over <m>F</m></em> or <em>an <m>F</m>-vector space</em> if there is a map, called <em>scalar multiplication</em> <me>F\times V\to V</me> satisfying the following conditions. First, for a given <m>\alpha\in F</m> and <m>v\in V</m>, let us denote the image of <m>(\alpha,v)</m> under this map simply by <m>\alpha\cdot v</m>.
+		<ol>
+			<li>Let <m>1</m> be the unity in <m>F</m>. Then, <me>1\cdot v= v</me> for every <m>v\in V</m>.</li>
+
+			<li>For <m>\alpha,\beta\in F</m> and <m>v\in V</m>, we have <me>(\alpha\beta)\cdot v=\alpha\cdot(\beta\cdot v).</me></li>
+
+			<li>For <m>\alpha\in F</m> and <m>v,w\in V</m> we have <me>\alpha\cdot(v+w)=\alpha\cdot v+\alpha\cdot w.</me></li>
+
+			<li>For <m>\alpha,\beta\in F</m> and <m>v\in V</m>, we have <me>(\alpha+\beta)\cdot v=\alpha\cdot v+\beta\cdot v.</me></li>
+		</ol>
+		The elements of <m>F</m> are called <em>scalars</em> and elements of <m>V</m> are called <em>vectors</em>. 
+		</statement>
+	</definition>
+	<remark>
+		Often we omit "<m>\cdot</m>" for scalar multiplication and simply write <m>\alpha v</m>.
+	</remark>
+	<remark>
+		Please try not to confuse the terminology of a vector that you have studied in 12th, viz., a vector is something that has a 'length', 'base', and it is denoted by an arrow, etc.. The definition above is what we will use throughout!
+	</remark>
+	</p>
+	<example>Let <m>\R</m> be the field of real numbers. Consider <m>\R^2=\{(x,y):x,y\in\R\}</m>. The componentwise addition turns <m>\R^2</m> into an abelian group. We define a scalar multiplication as follows:
+	<me>\alpha\cdot(x,y)=(\alpha x,\alpha y),</me> where <m>\alpha,x,y\in\R</m>. Note that <m>\alpha x</m> (resp., <m>\alpha y</m>) is the usual multiplication in <m>\R</m>, while <m>\alpha\cdot(x,y)</m> is a <em>scalar multiplication</em>. Check that <m>\R^2</m> is a vector space over <m>\R</m>.
+	<p>
+		If we fix <m>(1,1)\in\R^2</m> then, for given <m>\alpha\in\R</m> we get <me>\alpha\cdot(1,1)=(\alpha,\alpha).</me> In this way, we may say that <m>\R</m> sits inside <m>\R^2</m>.
+	</p>
+	</example>
+	<exercise>
+		<statement>Let <m>n\in\N</m>. Consider <m>\R^n=\{(x_1,x_2,\ldots,x_n):x_i\in\R\}</m>. Show that <m>\R^n</m> is a vector space over <m>\R</m>.</statement>
+	</exercise>
+	</section>
+	<xi:include href="./vs-examples.ptx"/>
+	<xi:include href="./Ex-VS.ptx"/>
+	<xi:include href="./linear-combination.ptx"/>
+	<xi:include href="./subspace.ptx"/>
+	<xi:include href="./Ex-subspace.ptx"/>
+</chapter>

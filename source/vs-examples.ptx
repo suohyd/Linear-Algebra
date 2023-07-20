@@ -1,0 +1,55 @@
+<section xml:id="vs-examples">
+	<title>Examples of vector spaces</title>
+	<introduction><p>In this section we list some examples of vector spaces. More examples will be discussed in the class. In most of the instances the checking is left to the reader.</p></introduction>
+
+	<example xml:id="zero-dime-vs">
+		<title>(Zero-dimensional vector space)</title>
+		A trivial abelian group <m>V=\{0\}</m> over a field <m>F</m> is a vector space. The scalar multiplication is given by <m>\alpha\cdot 0=0</m> for <m>\alpha\in F</m>.
+		Note that zero-dimensional vector spaces over <em>different fields</em> are <em>different</em>!
+	</example>
+
+
+	<example xml:id="n-dim-vs"><title>(<m>n</m>-dimensional vector space over a field)</title>
+		Let <m>F</m> be a field, and let <me>F^n=\{(x_1,x_2,\ldots,x_n):x_i\in F\}.</me> We consider <m>F^n</m> as an abelian group by componentwise addition. We make <m>F^n</m> as an <m>F</m> vector space by defining scalar multiplication as follows:
+		<me>\alpha\cdot(x_1,x_2,\ldots,x_n)=(\alpha x_1,\alpha x_2,\ldots,\alpha x_n).</me> Note that <m>\alpha x_i</m> is the multiplication in the field <m>F</m> while <m>\alpha\cdot(x_1,x_2,\ldots,x_n)</m> is a scalar multiplication. Check that with this scalar multiplication <m>F^n</m> is an <m>F</m> vector space.
+	</example>
+
+	<example xml:id="Endomorphisms-R"><title>(Vector space of <m>\R</m>-linear maps over <m>\R</m>)</title>
+		For <m>\alpha\in\R</m> consider the map <me>\ell_\alpha\colon\R\to\R</me> defined by <m>\ell(x)=\alpha x</m> for <m>x\in\R</m>.
+		Consider <me>\End_{\R}(\R)=\{\ell_\alpha :\alpha\in\R\}.</me> Addition of functions give additive structure on <m>\End_{\R}(\R)</m>. We may define scalar multiplication by <me>a\cdot\ell_\alpha=\ell_{a\alpha}\quad\quad\text{for}\quad a,\alpha\in\R.</me> 
+	</example>
+
+	<example><title>(Vector space of matrices)</title>
+		Let <m>F</m> be a field and consider <m>M_{m\times n}(F)</m> the set of <m>m\times n</m> matrices over <m>F</m>. The additive structure on <m>M_{m\times n}(F)</m> can be given by usual addition of matrices. We define scalar multiplication as follows:
+		<me>\alpha\cdot\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\a_{m1}\amp a_{m2}\amp\cdots\amp a_{mn}\end{pmatrix}=\begin{pmatrix}\alpha a_{11}\amp \alpha a_{12}\amp\cdots\amp \alpha a_{1n}\\\alpha a_{21}\amp \alpha a_{22}\amp\cdots\amp \alpha a_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\alpha a_{m1}\amp \alpha a_{m2}\amp\cdots\amp \alpha a_{mn}\end{pmatrix}\quad\text{for}\quad\alpha,a_{ij}\in F.</me>
+	</example>
+
+	<example><title>(A ring containing a field)</title>
+		Let <m>R</m> be a ring with unity <m>1</m>, and let <m>F</m> be a subfield in <m>R</m> (we always assume that the unity of a ring and its subring is the same). Then <m>R</m> is a vector space over <m>F</m> with the ring multiplication in <m>R</m> considered as a scalar multiplication. Note that elements of <m>F</m> can be considered as scalars as well as vectors.
+	</example>
+
+	<example xml:id="direct-sum-vs"><title>(Direct sum of two vector spaces)</title>
+		Let <m>V,W</m> be vector spaces over a field <m>F</m>. Consider <me>V\oplus W=\{(v,w):v\in V\text{ and }w\in W\}.</me> Additive structure is defined by <me>(v_1,w_1)+(v_2,w_2)=(v_1+v_2,w_1+w_2),</me> where <m>v_i\in V</m> and <m>w_i\in W</m>. The addition <m>v_1+v_2</m> (resp., <m>w_1+w_2</m>) is defined by using additive structure in <m>V</m> (resp., <m>W</m>). We define scalar multiplication as follows: <me>\alpha\cdot(v,w)=(\alpha v,\alpha w)\quad\text{for}\quad\alpha\in F\text{ and }v\in V\text{ and }w\in W.</me> Here, <m>\alpha v</m> (resp., <m>\alpha w</m>) is the scalar multiplication defined for <m>V</m> (resp., <m>W</m>). Check that <m>V\oplus W</m> is a vector space over <m>F</m>.
+	</example>
+
+	<example xml:id="product-of-vector-spaces">
+		<title>(Product of vector spaces)</title>
+		Let <m>I</m> be an indexing set and let <m>V_i</m> (<m>i\in I</m>) be vector spaces over a field <m>F</m>. Consider the (Cartesian) product <m>\prod_{i\in I}V_i</m>, this is the set of all functions <m>f\colon I\to \bigcup_{i\in I}V_i</m> such that <m>f(i)\in V_i</m>. This is a vector space over <m>F</m> with following operations: if <m>(\ldots,x_i,\ldots)</m> and <m>(\ldots,y_i,\ldots)</m> are any two elements of <m>\prod_{i\in I} V_i</m> then 
+		<ol>
+			<li>
+				<m>(\ldots,x_i,\ldots)+(\ldots,y_i,\ldots)=(\ldots, x_i+y_i,\ldots)</m>; component wise addition.
+			</li>
+			<li>
+				For any <m>\alpha\in F</m> the scalar multiplication is define by <me>\alpha\cdot(\ldots,x_i,\ldots)=(\ldots,\alpha x_i,\ldots).</me>
+			</li>
+		</ol>
+	</example>
+
+	<example xml:id="Square-classes">
+		<title>(Square classes of rationals)</title>
+		Consider the multiplicative group of rationals, <m>\Q^\times</m> and its subgroup <m>(\Q^\times)^2=\{r^2:r\in\Q^\times\}</m>. Consider the quotient group <m>V=\Q^\times/(\Q^\times)^2</m>. Note that the group operation on <m>V</m> is <em>multiplication</em>, and the <em>identity element</em> of <m>V</m> is <m>1(\Q^\times)^2</m>. We claim that <m>V</m> is a vector space over <m>\mathbb{F}_2</m>.
+		We define the scalar multiplication as follows.
+		<me>\mathbb{F}_2\times V\to V</me> given by <me>\big(0,r(\Q^\times)^2\big)\mapsto 1(\Q^\times)^2\quad\text{and}\quad \big(1,r(\Q^\times)^2\big)\mapsto r(\Q^\times)^2.</me>
+		The scalar multiplication by <m>1\in\mathbb{F}_2</m> is decided by one of the axioms of vector space, viz., <m>1\cdot v=v</m>. The scalar multiplication <m>0\in\mathbb{F}_2</m> is a consequence of the vector space axioms: <m>0\cdot v=0\in V</m> (<m>0\in V</m> is <m>1\left(\Q^\times\right)</m>).
+	</example>
+</section>

@@ -1,0 +1,91 @@
+<section xml:id="sec-isomorphisms">
+	<title>Definition of Isomorphism</title>
+		<introduction>
+			We define a notion of isomorphism of vector spaces. Isomorphic vector spaces will have the <sq>same</sq> vector space structures.
+		</introduction>
+		<definition xml:id="isomorphism">
+			<statement>
+				<p>
+					Let <m>T\colon V\to W</m> be a linear transformation of vector spaces over a field <m>F</m>. We say that <m>T</m> is an <term>isomorphism</term> over <m>F</m> (resp., <term><m>F</m>-isomorphism</term>) between <m>V</m> and <m>W</m> if <m>T</m> is bijective.
+				</p>
+				<p>
+					Vector spaces <m>V</m> and <m>W</m> are said to be <term>isomorphic</term> if there is a bijective <m>F</m>-linear transformation from <m>V</m> onto <m>W</m>.
+				</p>
+				<p>
+					Isomorphic vector spaces <m>V,W</m> are denoted by <m>V\simeq W</m>. The set of all isomorphisms between <m>V</m> and <m>W</m> is denoted by <m>\Iso_F(V,W)</m>. We denote <m>\Iso_F(V,V)</m> by <m>\Aut_F(V)</m> and it is called <term><m>F</m>-automorphisms</term> of <m>V</m>.
+				</p>
+			</statement>
+		</definition>
+		<lemma xml:id="linearity-of-inverse">
+			<statement>
+				Let <m>T\colon V\to W</m> be a bijective <m>F</m>-linear transformation. The set-theoretic inverse of <m>T</m> is also an <m>F</m>-linear transformation.
+			</statement>
+		</lemma>
+		<proof>
+			<p>
+				Let <m>S\colon W\to V</m> be the set-theoretic inverse of <m>T</m>. We need to show that for any <m>\alpha,\beta\in W</m> and any <m>x,y\in W</m>, <m>S(\alpha x+\beta y)=\alpha S(x)+\beta S(y)</m>.
+			</p>
+			<p>
+				Since <m>T</m> is bijective, there exists unique <m>a,b\in V</m> such that <m>T(a)=x</m> and <m>T(b)=y</m>. Further, the <m>F</m>-linearity and bijectivity of <m>T</m> implies that <m>T(\alpha a)=\alpha T(a)=\alpha x</m> and <m>T(\beta b)=\beta T(b)=\beta y</m>. Thus, we also get <m>T(\alpha a+\beta b)=\alpha x+\beta y</m>. Hence, <md><mrow>S(\alpha x+\beta y)\amp=S\big(T(\alpha a+\beta b)\big)</mrow>\\<mrow>\amp=\alpha a +\beta b</mrow>\\<mrow>\amp=\alpha S\big(T(a)\big)+\beta S\big(T(b)\big)</mrow>\\<mrow>\amp=\alpha S(x)+\beta S(y).</mrow></md>
+			</p>
+		</proof>
+		<remark>
+			<statement>
+				In view of <xref ref="linearity-of-inverse"/>, an <m>F</m>-linear map <m>T\colon V\to W</m> is an <m>F</m>-isomorphism if and only if there exists an <m>F</m>-linear map <m>S\colon W\to V</m> such that <m>T\circ S=1_W</m> and <m>S\circ T=1_V</m>.
+			</statement>
+		</remark>
+		<lemma xml:id="injective-iso-to-image">
+			<statement>
+				If <m>T\colon V\to W</m> is an injective <m>F</m>-linear transformation then, <m>V\simeq\Im(T)</m>.
+			</statement>
+		</lemma>
+		<proof>
+			See the first part of the proof of <xref ref="additivity-of-dim"/>
+		</proof>
+
+		<lemma xml:id="inj-iff-iso">
+			<statement>
+				Let <m>V, W</m> be finite-dimensional vector spaces over a field <m>F</m> of the same dimension, and let <m>T\colon V\to W</m> be an <m>F</m>-linear map. If <m>T</m> is injective (resp., surjective) then <m>T</m> is an <m>F</m>-isomorphism.
+			</statement>
+		</lemma>
+		<proof>
+			This follows from <xref ref="injective-iff-surjective"/> and <xref ref="linearity-of-inverse"/>.
+		</proof>
+
+		<lemma xml:id="iso-implies-same-dim">
+			<statement>
+				Let <m>T\colon V\to W</m> be an <m>F</m>-isomorphism. If <m>\{v_1,v_2,\ldots,v_n\}</m> is a basis of <m>V</m> then <m>\{T(v_1),T(v_2),\ldots,T(v_n)\}</m> is a basis of <m>W</m>. In particular, isomorphic vector spaces have the same dimension.
+			</statement>
+		</lemma>
+		<exercise>
+			<statement>
+				A linear functional <m>f\colon V\to F</m> (see <xref ref="End-vs"/>) is an isomorphism if and only if <m>V\simeq F</m>. 
+			</statement>
+		</exercise>
+		
+		<exercise xml:id="row-column-space-iso">
+			<statement>
+				Let <m>V=F^n</m> and <m>W=M_{n\times 1}(F)</m> be vector spaces over a field <m>F</m>. Let <m>e_i=(\delta_{i1},\delta_{i2},\ldots,\delta_{in})</m>. Consider ordered bases <m>\mathfrak{B}_V=\{e_i:1\leq i\leq n\}</m> and <m>\mathfrak{B}_W=(e_i^t:1\leq i\leq n)</m> of <m>V</m> and <m>W</m>, respectively. Then, linear transformation <m>T\colon V\to W</m> given by <m>x\mapsto x^t</m> is an <m>F</m>-isomorphism.
+			</statement>
+		</exercise>
+
+		<proposition xml:id="iso-to-n-dim-vs">
+			<statement>
+				Every finite-dimensional vector space over a field <m>F</m> of dimension <m>n</m> is isomorphic to <m>F^n</m>.
+			</statement>
+		</proposition>
+		<proof>
+			Let <m>V</m> be a vector space over <m>F</m>, and let <m>\dim_FV=n &lt;\infty</m>. Fix an ordered basis <m>(v_1,\ldots,v_n)</m> for <m>V</m> and consider the standard ordered basis <m>(e_1,e_2,\ldots,e_n)</m> for <m>F^n</m> (refer <xref ref="standard-basis"/>). By <xref ref="unique-lin-combination"/>, for every <m>v\in V</m> there exists unique scalars <m>\alpha_i</m> such that <m>v=\sum_i\alpha_iv_i</m>. Thus, the map
+			<me>T\colon V\to F^n\quad\text{given by}\quad \sum\alpha_iv_i\mapsto \sum\alpha_ie_i</me> is well-defined. It is also easy to verify that  <m>T</m> is an <m>F</m>-isomorphism.
+		</proof>
+
+		<lemma xml:id="iso-different-bases-endo">
+			<statement>
+				Let <m>\{v_1,v_2,\ldots,v_n\}</m> and <m>\{w_1,w_2,\ldots,w_n\}</m> be bases of <m>V</m> and <m>W</m>, respectively. Consider the mapping <m>T\colon V\to W</m> such that <m>v_i\mapsto w_i</m>. Extend the map linearly on <m>V</m> (see <xref ref="extending-linearly"/>). Then, the map <m>T</m> is an isomorphism.
+			</statement>
+		</lemma>
+
+		<remark>
+			We observed earlier (<xref ref="End-as-ring"/>) that <m>\End_F(V)</m> is a ring. We denote the group of all units in <m>\End_F(V)</m> by <m>\GL(V)</m>. The group <m>\GL(V)</m> is called the <term>general linear group</term> of <m>V</m>. So, an element of <m>\GL(V)</m> is an <m>F</m>-isomorphism of <m>V</m> onto itself.
+		</remark>
+</section>

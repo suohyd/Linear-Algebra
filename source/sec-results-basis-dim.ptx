@@ -1,0 +1,75 @@
+<section xml:id="sec-results-basis-dim">
+	<title>Invariance of dimension</title>
+	<introduction>
+		In this section we show that every basis of a finite-dimensional vector space has the same cardinality. Throughout this section we assume that <m>V</m> is a finite-dimensional vector space over a field <m>F</m>. We begin with the following lemma. 
+	</introduction>
+
+	<lemma xml:id="pre-invariance-dimension">
+		<statement>
+			If <m>v_1,v_2,\ldots,v_n\in V</m> are linearly independent over <m>F</m>, and <m>v_1,v_2,\ldots,v_n,v_{n+1}</m> are linearly dependent over <m>F</m>, then <m>v_{n+1}</m> can be written as an <m>F</m>-linear combination of <m>v_1,v_2,\ldots,v_n</m>.
+		</statement>
+	</lemma>
+	<proof>
+		There exists scalars <m>\alpha_i\in F</m>, not all zero, such that <me>\alpha_1 v_1+\cdots+\alpha_n v_n+\alpha_{n+1}v_{n+1}=0.</me> If <m>\alpha_{n+1}=0</m> then the linear independence of <m>v_1,v_2,\ldots,v_n</m> implies that <m>\alpha_1=\alpha_2=\cdots=\alpha_n=0</m>, which will be a contradiction. Hence, <m>\alpha_{n+1}\neq 0</m>. Therefore, <me>v_{n+1}=\tfrac{\alpha_1}{\alpha_{n+1}}v_1+\cdots+\tfrac{\alpha_n}{\alpha_{n+1}}v_n.</me>
+	</proof>
+
+	<lemma xml:id="linear-combination-independence">
+		<statement>
+			Let <m>v_1,v_2,\ldots,v_n\in V</m> (<m>n&gt;1</m>) and let <m>v_i^\prime=v_i</m> for <m>i=1,2,\ldots,n-1</m> and <m>v_n^\prime=v_n+\alpha v_1</m> for some <m>\alpha\in F</m>. Then, <m>v_1,v_2,\ldots,v_n</m> are linearly independent if and only if <m>v_1^\prime,v_2^\prime,\ldots,v_n^\prime</m> are linearly independent.
+		</statement>
+	</lemma>
+	<proof>
+		We only show that if <m>v_1,v_2,\ldots,v_n</m> are linearly independent then <m>v_1^\prime,v_2^\prime,\ldots,v_n^\prime</m> are linearly independent. 
+		Suppose that there are <m>\gamma_i\in F</m> such that
+		<me>\gamma_1 v_1^\prime+\cdots+\gamma_{n-1}v_{n-1}^\prime+\gamma_nv_n^\prime=0,</me> i.e., <me>\gamma_1 v_1+\cdots+\gamma_{n-1}v_{n-1}+\gamma_n (v_n+\alpha v_1)=0</me> Because <m>v_1,v_2,\ldots,v_n</m> are linearly independent, we get that <me>\gamma_1+\gamma_n\alpha=\gamma_2=\gamma_3=\cdots=\gamma_n=0.</me> Hence all <m>\gamma_i=0</m> and <m>v_1^\prime,v_2^\prime,\ldots,v_n^\prime</m> are linearly independent.
+	</proof>
+
+	<p>We now prove the following important result. This result show that any two basis of a vector space have the same cardinality.</p>
+	<theorem xml:id="well-definedness-dim">
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. If a basis of <m>V</m> has <m>n</m> vectors then any <m>n+1</m> vectors in <m>V</m> are linearly dependent.
+		</statement>
+	</theorem>
+	<proof>
+		<p>
+			We use induction to prove this theorem. Suppose that <m>\{v_1,v_2,\ldots,v_n\}</m> is a basis of <m>V</m>. Let <m>w_1,w_2,\ldots,w_n,w_{n+1}</m> be vectors in <m>V</m>. If <m>n=1</m> then, there are scalars <m>\alpha,\beta\in F</m> such that <m>w_1=\alpha v_1</m> and <m>w_2=\beta v_1</m>. In view of <xref ref="remark-dependence"/> it is enough to consider the case when <m>\alpha\neq 0</m> and <m>\beta\neq 0</m>. Thus, <m>\alpha\neq 0</m> (resp., <m>\beta\neq 0</m>) implies that <m>w_2=\beta\alpha^{-1}w_1</m> (resp., <m>w_1=\alpha\beta^{-1}w_2)</m>. Hence, we are done when <m>n=1</m>.
+		</p>
+		<p>
+			We now assume that the result is true for vector spaces having <m>n-1</m> number of vectors in its basis. Now assume that <m>w_1,\ldots,w_n,w_{n+1}\in V</m> are linearly independent. As <m>\{v_1,v_2,\ldots,v_n\}</m> is a basis it spans <m>V</m>, in particular we have 
+			<me> w_i=\sum_{i=1}^{n}\alpha_{ij}v_j.</me> Without loss of generality we assume that <m>w_1\neq 0</m>. So, one of the scalars, say <m>\alpha_{1n}\neq 0</m>. Set <m>w_1^\prime=w_1</m> and <m>w_k^\prime=w_k-\alpha_{kn}\alpha_{1n}^{-1}w_1</m> for <m>k=2,3,\ldots,n+1</m>. Note that in the expression of <m>w_k^\prime</m> (<m>1\leq k\leq n+1</m>) the vector <m>v_n</m> does not occur. Repeated application of <xref ref="linear-combination-independence"/> implies that <m>w_1^\prime,w_2^\prime,\ldots,w_{n+1}^\prime</m> is linearly independent. In particular, <m>w_2^\prime,\ldots,w_{n+1}^\prime</m> is linearly independent. As seen above, each <m>w_k^\prime</m> (<m>1\leq k\leq n+1</m>) is a linear combination of <m>v_1,\ldots,v_{n-1}</m>. Induction hypothesis applied to a vector subspace <m>\langle v_1,v_2,\ldots,v_{n-1}\rangle</m> implies that <m>w_2^\prime,\ldots,w_{n+1}^\prime</m> are linearly dependent, a contradiction.
+		</p>	
+	</proof>
+
+	<corollary xml:id="any-two-bases-same-number"><title>(Invariance of dimension)</title>
+		<statement>
+			Any two bases of a finite-dimensional vector space have the same number of elements.
+		</statement>
+	</corollary>
+
+	<corollary>
+		<statement>Let <m>\dim_FV=n</m> (refer to <xref ref="def-dim"/>). Then any subset of <m>V</m> with <m>m</m> elements with <m>m&gt;n</m> is linearly dependent.</statement>
+	</corollary>
+
+	<remark xml:id="completing-to-basis"><title>(Completing to a basis)</title>
+		<p>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>, and let <m>S\subseteq V</m> be a nonempty subset. Consider linearly independent vectors <m>v_1,v_2,\ldots,v_n\in S</m>. Then either every subset <m>\{v_1,\ldots,v_n,w\}</m> with <m>w\in S</m> is linearly dependent or there exists <m>v_{n+1}\in S</m> such that <m>\{v_1,\ldots,v_n,v_{n+1}\}</m> is linearly independent.
+		</p>
+		<p>
+			Similarly, either every <m>\{v_1,\ldots,v_n,v_{n+1},w\}</m> with <m>w\in S</m> is linearly dependent or there exists <m>v_{n+2}\in S</m> such that <m>\{v_1,\ldots,v_n,v_{n+1},v_{n+2}\}</m> is linearly independent. Continuing in this way, after a finite number of steps, we obtain a linearly independent subset of <m>S</m> such that any bigger subset of <m>S</m> is linearly dependent.
+		</p>
+		<p>
+			Therefore, <em>any linearly independent subset can be expanded to a maximal linearly independent susbset.</em>
+		</p>
+	</remark>
+	<p>In fact we have the following result.</p>
+	<theorem>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over <m>F</m>, and let <m>\{e_1,e_2,\ldots,e_n\}</m> be a basis of <m>V</m>. If <m>\mathfrak{B}=\{f_1,f_2,\ldots,f_r\}\subseteq V</m> is linearly independent then, <m>\mathfrak{B}</m> can be extended to a basis of <m>V</m> by adding <m>n-r</m> vectors from <m>\{e_1,e_2,\ldots,e_n\}</m>.
+		</statement>
+	</theorem>
+	<proof>
+			<p>
+				Consider the set <m>\{f_1,f_2,\ldots,f_r,e_1,e_2,\ldots,e_n\}</m>. Choose, in this set, a maximal linearly independent set <m>\{f_1,f_2,\ldots,f_r,e_{k_1},e_{k_2},\ldots,e_{k_\ell}\}</m> that includes all <m>f_i</m>.
+			</p>
+	</proof>
+</section>

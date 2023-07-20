@@ -1,0 +1,29 @@
+<subsection xml:id="subsec-matrix-rep">
+	<title>Matrix representation of a linear transformation</title>
+	<introduction>
+		Now we are in a position to give matrix representation for linear transformation with respect to ordered bases.
+	</introduction>
+
+<p>
+	Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m>. Suppose that <m>\mathfrak{B}_V=(v_1,v_2,\ldots,v_n)</m> and <m>\mathfrak{B}_W=(w_1,w_2,\ldots,w_m)</m> are ordered bases of <m>V</m> and <m>W</m>, respectively. Let <m>T\colon V\to W</m> be an <m>F</m>-linear transformation.
+</p>
+<p>
+	Since <m>\mathfrak{B}_V</m> is a basis, for a given <m>v\in V</m> there are uniquely determined <m>\alpha_i\in F</m> such that <m>v=\sum\alpha_iv_i</m> (see <xref ref="unique-lin-combination"/>). Then, <me>T(v)=T\big(\sum\alpha_iv_i\big)=\sum\alpha_iT(v_i).</me> Hence, <m>T</m> is completely determined by <m>T(v_i)</m> for <m>1\leq i\leq n</m>.
+</p>
+<p>
+	Because the ordered set <m>\mathfrak{B}_W</m> is a basis of <m>W</m> we get, for every <m>i\in\{1,2,\ldots,n\}</m>,
+	<me>T(v_i)=\sum_{k=1}^{m}\beta_{ki}w_k.</me> Therefore,
+	<me>T(v)=\sum_{i=1}^{n}\alpha_i\sum_{k=1}^{m}\beta_{ki}w_k=\sum_{k=1}^{m}\big(\sum_{i=1}^{n}\alpha_i\beta_{ki}\big)w_k.</me> Therefore, the <m>k</m>-th coordinate of <m>T(v)</m> with respect to <m>\mathfrak{B}_W</m> is <men xml:id="coordinate-of-Tv">\sum_{i=1}^{n}\alpha_i\beta_{ki}</men>.
+</p>	
+<p>
+ 	 We obtain the <term>matrix of <m>T</m> relative to ordered bases</term> <m>\mathfrak{B}_V</m> and <m>\mathfrak{B}_W</m>,
+	<me>[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}=\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{m1}\amp\beta_{m2}\amp\cdots\amp\beta_{mn}\end{pmatrix}.</me>
+	We observe the following. <men xml:id="matrix-rep-coordinates">\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{m1}\amp\beta_{m2}\amp\cdots\amp\beta_{mn}\end{pmatrix}\begin{pmatrix}\alpha_1\\\alpha_2\\\vdots\\\alpha_n\end{pmatrix}=\begin{pmatrix}\sum_{i=1}^{n}\alpha_i\beta_{1i}\\\sum_{i=1}^{n}\alpha_i\beta_{2i}\\\vdots\\\sum_{i=1}^{n}\alpha_i\beta_{mi}\end{pmatrix}</men>
+	In particular, if <m>e_k=(\delta_{k1},\delta_{k2},\ldots,\delta_{kn})</m> then
+	<men xml:id="e_i-gives-i-th-column">\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{m1}\amp\beta_{m2}\amp\cdots\amp\beta_{mn}\end{pmatrix}\cdot e_k^t=\begin{pmatrix}\beta_{1k}\\\beta_{2k}\\\vdots\\\beta_{mk}\end{pmatrix}</men>
+	Thus, the action of <m>[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}</m> on <m>e_k^t</m> gives the <m>k</m>-th column of the matrix.
+</p>
+<remark>
+	We emphasize that matrix of a linear transformation depends on the choice of bases.
+</remark>
+</subsection>

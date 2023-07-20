@@ -1,0 +1,42 @@
+<exercises xml:id="ex-ordered-basis">
+	<exercisegroup>
+		<introduction>
+			In the following exercises, compute the matrix of a given linear transformation with respect to given bases.
+		</introduction>
+		<exercise>
+			<statement>
+			Let <m>V=W=\R^2</m> over <m>\R</m>. Consider ordered bases <m>\mathfrak{B}_{V}=\mathfrak{B}_W=((1,0),(0,1))</m>. Let <m>T\colon\R^2\to\R^2</m> be a linear transformation given by <m>(x,y)\mapsto(-y,x)</m>.
+		</statement>
+		</exercise>
+
+		<!--<exercise>
+			<statement>
+				Let <m>V=\R^n</m> and <m>W=V^*</m>, the dual space of <m>V</m> over <m>\R</m>. Let <m>B\colon V\bigotimes W\to F</m> be defined by <m>B(v,f)=f(v)</m>. Show that if we fix <m>v_0\in V</m> then, <m>B(v_0,)\colon V^*\to F</m> is an <m>\R</m>-linear.
+			</statement>
+		</exercise>-->
+
+		<exercise>
+			<statement>
+				Let <m>V=M_{1\times n}(F)</m> and <m>W=M_{n\times 1}(F)</m> be vector spaces over a field <m>F</m>. Let <m>e_i=(\delta_{i1},\delta_{i2},\ldots,\delta_{in})</m>. Consider ordered bases <m>\mathfrak{B}_V=\{e_i:1\leq i\leq n\}</m> and <m>\mathfrak{B}_W=(e_i^t:1\leq i\leq n)</m> of <m>V</m> and <m>W</m>, respectively. Consider the linear transformation <m>T\colon V\to W</m> given by <m>x\mapsto x^t</m>.
+			</statement>
+		</exercise>
+
+		<exercise>
+			<statement>
+				Suppose that <m>V,W</m> are finite-dimensional vector spaces over a field <m>F</m>. Let <m>\mathfrak{B}_V=(v_1,v_2,\ldots,v_n)</m> and <m>\mathfrak{B}_W=(w_1,w_2,\ldots,w_m)</m> be ordered bases of <m>V</m> and <m>W</m>, respectively. Consider the following set. <me>\mathfrak{B}_V\bigoplus\mathfrak{B}_W=((v_1,0),(v_2,0),\ldots,(v_n,0),(0,w_1),(0,w_2),\ldots,(0,w_m))</me> This is an ordered basis of <m>V\bigoplus W</m>. Consider the projection <m>\pi\colon V\bigoplus W\to V</m> given by <m>(v,w)\mapsto v</m>.
+			</statement>
+		</exercise>
+
+		<exercise>
+			<statement>
+				Let <m>\mathfrak{B}_1=(e_1,e_2)</m> be the standard ordered basis of <m>\R^2</m> (refer <xref ref="standard-basis"/>) and let <m>\mathfrak{B}_2=(e_1+e_2,e_1-e_2)</m> be another ordered basis of <m>\R^2</m> over <m>\R</m>. Let <m>T_1\colon\R^2\to\R^2</m> be defined by <me>\alpha e_1+\beta e_2\mapsto\alpha(e_1+e_2)+\beta(e_1-e_2)</me>. Let <m>T_2\colon\R^2\to\R^2</m> be defined by <me>\gamma_1(e_1+e_2)+\gamma_2(e_1-e_2)\mapsto\gamma_1e_1+\gamma_2e_2</me>. Find <m>[T_1]_{\mathfrak{B}_1}^{\mathfrak{B}_1}</m> and <m>[T_2]_{\mathfrak{B}_2}^{\mathfrak{B}_1}</m>.
+			</statement>	
+		</exercise>
+	</exercisegroup>
+	<exercise xml:id="linear-map-matrix-composition">
+		<statement>
+			Let <m>U,V,</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m> with bases <m>\mathfrak{B}_U,\mathfrak{B}_V</m>, and <m>\mathfrak{B}_W</m> respectively. Consider <m>F</m>-linear maps <m>T\colon U\to V</m> and <m>S\colon V\to W</m>. Show that the matrix of <m>S\circ T</m> with respect to bases <m>\mathfrak{B}_U</m> and <m>\mathfrak{B}_W</m> is <m>[S]_{\mathfrak{B}_V}^{\mathfrak{B}_W}\cdot[T]_{\mathfrak{B}_U}^{\mathfrak{B}_V}</m>.
+			<!--<m>[U:F]=\ell,[V:F]=m,[W:F]=n</m> thus <m>[T]_{m\times\ell},[S]_{n\times m}, [S\circ T]_{n\times\ell}</m>-->
+		</statement>
+	</exercise>
+</exercises>

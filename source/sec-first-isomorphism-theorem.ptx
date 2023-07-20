@@ -1,0 +1,65 @@
+<section xml:id="sec-first-isomorphism-theorem">
+	<title>Fundamental Homomorphism Theorem</title>
+	<introduction>
+		We prove the Fundamental Homomorphism Theorem, a similar result as in the Group Theory course, in context of vector spaces. We begin with the following result.
+	</introduction>
+	<theorem xml:id="universal-property-quotient">
+		<title>(Universal Property of Quotient Space)</title>
+		<statement>
+			Let <m>V, X</m> be vector spaces over a field <m>F</m> and <m>W</m> be a subspace of <m>V</m>. Let <m>T\colon V\to X</m> be an <m>F</m>-linear map such that <m>W\leq\ker(T)</m>. Then there is a unique linear map <m>\overline{T}\colon V/W\to X</m> such that <m>\overline{T}\circ\pi_W=T</m>.
+			<p>
+				Diagrammatically we require an <m>F</m>-linear map <m>\overline{T}\colon V/W\to X</m> such that <m>\overline{T}\circ\pi_W=T</m>.
+			<me>\begin{CD}V@>\pi_W>>V/W\\@V T VV@.\\X@.\end{CD}</me>
+			</p>
+			<!--<me>\def\diaguparrow#1{\smash{
+  \raise.6em\rlap{\scriptstyle #1}
+  \lower.3em{\mathord{\diagup}}
+  \raise.52em{\!\mathord{\nearrow}}
+}}
+\begin{CD}
+\amp\amp E\\
+\amp \diaguparrow{\gamma} @VV \alpha V \\
+F @>> \beta> G
+\end{CD}</me>-->
+		</statement>
+	</theorem>
+	<proof>
+		Define <m>\overline{T}\colon V/W\to X</m> by <m>\overline{T}(v+W)= T(v)</m>. Since, <m>W\leq\ker(T)</m>, the map <m>\overline{T}</m> is well-defined. Checking of <m>F</m>-linearity, uniqueness of <m>\overline{T}</m>, and <m>\overline{T}\circ\pi_W=T</m> is left to the reader.
+	</proof>
+
+	<theorem xml:id="first-isomorphism-theorem">
+		<title>(Fundamental Homomorphism Theorem)</title>
+		<statement>
+			Let <m>V, W</m> be vector spaces over a field <m>F</m> and let <m>T\colon V\to W</m> be an <m>F</m>-linear map. Then, <me>V/\ker(T)\simeq\Im(T).</me>
+
+		</statement>
+	</theorem>
+	<proof>
+		By <xref ref="universal-property-quotient"/>, there is an <m>F</m>-linear map <m>\overline{T}\colon V/\ker(T)\to\Im(T)</m> given by <m>v+\ker(T)\mapsto T(v)</m>. This map is surjective (verify!). We show that <m>\overline{T}</m> is injective. If <m>\overline{T}(v+\ker(T))=T(v)=0</m> then, <m>v\in\ker(T)</m>, i.e., <m>v+\ker(T)=0+\ker(T)</m>. Hence, <m>\overline{T}</m> is injective. Therefore, <m>\overline{T}</m> is an <m>F</m>-isomorphism between <m>V/\ker(T)</m> and <m>\Im(T)</m>.
+	</proof>
+	<corollary xml:id="corollary-FIT">
+		<statement>
+			We keep notations of <xref ref="first-isomorphism-theorem"/>. We further assume that <m>V</m> is a finite-dimensional vector space. We have <me>\dim_F\big(V/\ker(T)\big)=\dim_FV-\dim_F\ker(T).</me>
+			Moreover, <me>V\simeq\ker(T)\bigoplus\Im(T).</me>
+		</statement>
+	</corollary>
+	<proof>
+			<p>
+				Since, <m>V</m> is finite-dimensional, its subspace <m>\ker(T)</m> is also finite-dimensional. Let <m>\{v_1,\ldots,v_s\}</m> be a basis for <m>\ker(T)</m>. Extend it to a basis for <m>V</m>, say <m>\mathfrak{B}=\{v_1,\ldots,v_s,u_1,\ldots,u_r\}</m>. Then, <m>\{u_1+\ker(T),\ldots,u_r+\ker(T)\}</m> is a basis for <m>V/\ker(T)</m>. Indeed, if <m>\sum\alpha_i(u_i+\ker(T))=0+\ker(T)</m> then <m>\sum\alpha_iu_i\in\ker(T)</m>. Therefore, there exists <m>\beta_j\in F</m> such that <m>\sum\alpha_iu_i=\sum\beta_jv_j</m>. By linear independence of <m>\mathfrak{B}</m>, <m>\alpha_i=0</m> for every <m>i</m>. Therefore, <m>\{u_1+\ker(T),\ldots,u_r+\ker(T)\}</m> is linearly independent over <m>F</m>. Given a vector <m>v\in V</m> there are uniquely determined <m>\beta_i,\gamma_j</m> such that <m>v=\sum\beta_iv_i+\gamma_ju_j</m>, i.e., <m>v+\ker(T)=\big(\sum\gamma_ju_j\big)+\ker(T)</m>. This shows that <m>\{u_1+\ker(T),\ldots,u_r+\ker(T)\}</m> spans <m>V/\ker(T)</m>. By <xref ref="first-isomorphism-theorem"/> and <xref ref="iso-implies-same-dim"/>, <me>\{\overline{T}(u_1+\ker(T)),\ldots,\overline{T}(u_r+\ker(T))\}=\{T(u_1),\ldots,T(u_r)\}</me> is a basis for <m>\Im(T)</m>.
+			</p>
+			<p>
+				We define an <m>F</m>-linear map 
+				<me>\varphi\colon\ker(T)\bigoplus\Im(T)\to V</me>
+				by
+				<me>(v_i,0)\mapsto v_i\quad\text{and}\quad \left(0,T(u_j)\right)\mapsto u_j.</me> Therefore, <m>\varphi</m> maps a basis of <m>\ker(T)\bigoplus\Im(T)</m> onto a basis of <m>V</m>, and hence, <m>\varphi</m> is an <m>F</m>-isomorphism.
+			</p>
+			<p>Both the assertions of the corollary now follows.</p>
+	</proof>
+
+	<remark>
+		<statement>
+			Let <m>T\colon\R^2\to\R^2</m> be a linear map given by <me>e_1\mapsto 0\quad\text{and}\quad e_2\mapsto e_1.</me> As <m>T(e_1)=0</m> we get that <m>e_1\in\ker(T)</m>. Since <m>T(e_2)=e_1</m>, we have <m>e_1\in\Im(T)</m>. By rank-nullity theorem (<xref ref="rank-nullity-theorem"/>) we obtain the following.
+			<me>\ker(T)=\langle e_1\rangle=\Im(T).</me> So, <m>V\neq\ker(T)\bigoplus\Im(T)</m> (see <xref ref="direct-sum-equivalent-conditions"/>). However, as <xref ref="corollary-FIT"/> shows, <m>V</m> is <alert>isomorphic</alert> as a vector space to <m>\ker(T)\bigoplus\Im(T)</m>.
+		</statement>
+	</remark>
+</section>

@@ -1,0 +1,51 @@
+<section xml:id="sec-determinant">
+	<title>Determinants</title>
+	<introduction>
+		In this section we recall a definition and some properties of determinant of a square matrix. Throughout this section we assume that <m>F</m> is a field.
+	</introduction>
+	<p>
+		Let <m>S_n</m> (<m>n\geq 2</m>) be the permutation/symmetric group. There is a group homomorphism <m>sgn\colon S_n\to\{1,-1\}</m> defined by mapping even permutations to <m>1</m> and mapping odd permutations to <m>-1</m>.
+	</p>
+	<definition xml:id="def-determinant"><title>(Determinant of a matrix)</title>
+		<statement>
+			Let <m>A=(a_{ij})\in M_n(F)</m>. The determinant of <m>A</m> is defined to be 
+			<me>\det(A)=\sum_{\sigma\in S_n}sgn(\sigma)\; a_{1\sigma(1)}\cdots a_{i\sigma(i)}\cdots a_{n\sigma(n)}\in F.</me>
+		</statement>
+	</definition>
+	<p>
+		<alert>Properties of the determinant</alert>. Assume that <m>A=(a_{ij})\in M_n(F)</m>.
+	</p>
+	<p>
+		<ol>
+			<li><alert>Row linearity</alert>. Let <m>A_i=(a_{i1},a_{i2},\ldots,a_{in})</m> be the <m>i</m>-th row of <m>A</m>. For <m>\beta\in F</m> we let <m>\beta A_i=(\beta a_{i1},\beta a_{i2},\ldots,\beta a_{in})</m>. For any <m>B\in M_{1\times n}(F)</m> and any <m>\beta,\gamma\in F</m> and any <m>i\in\{1,2,\ldots,n\}</m> we get the following.
+			<me>\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\\beta A_i+\gamma B\\A_{i+1}\\\vdots\\A_n\end{pmatrix}=\beta\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\A_i\\A_{i+1}\\\vdots\\A_n\end{pmatrix}+\gamma\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\B\\A_{i+1}\\\vdots\\A_n\end{pmatrix}</me>
+		</li>
+		<li>
+			For <m>A\in M_n(F)</m> and any <m>\beta\in F</m>, <m>\det(\beta A)=\beta^n\det(A)</m>.
+		</li>
+		<li>
+			<alert>Row rearrangement</alert>. Let <m>\sigma\in S_n</m> and <m>A^\prime</m> be the matrix such that the <m>i</m>-th row of <m>A^\prime</m> is the <m>\sigma(i)</m>-th row of <m>A</m>. Then <me>\det(A^\prime)=sgn(\sigma)\det(A).</me>
+		</li>
+		<li>
+			<alert>Alternating</alert>. If any two rows of <m>A\in M_n(F)</m> are the same then <m>\det(A)=0</m>.
+		</li>
+		<li>
+			<alert>Transpose</alert>. For any <m>A\in M_n(F)</m>,
+			<me>\det(A^t)=\det(A).</me>
+		</li>
+		<li>
+			<alert>Triangular matrices</alert>. If <m>A=(a_{ij})\in M_n(F)</m> is an upper triangular (resp., lower triangular) matrix, i.e., <m>a_{ij}=0</m> for <m>i&gt;j</m> (resp., <m>a_{ij}=0</m> for <m>i&lt;j</m>) then
+			<me>\det(A)=a_{11}a_{22}\cdots a_{nn}.</me>
+		</li>
+		<li>
+			<alert>Block form</alert>. Let <m>r\in\{1,2,\ldots,n-1\}</m>. Let <m>B\in M_r(F)</m>, <m>C\in M_{r\times n-r}(F)</m>, <m>D\in M_{n-r}(F)</m>, and <m>\mathbf{0}\in M_{n-r\times r}(F)</m> be the zero matrix. The determinant of 
+			<me>A=\begin{pmatrix}B\amp C\\\mathbf{0}\amp D\end{pmatrix}</me> is given by 
+			<me>\det(A)=\det(B)\cdot\det(D).</me>
+			Similar result is true for lower triangular block matrices.
+		</li>
+		<li>
+			<alert>Multiplicative property</alert>. Let <m>A, B\in M_n(F)</m>. We have <me>\det(AB)=\det(A)\cdot\det(B).</me>
+		</li>
+		</ol>
+	</p>
+</section>

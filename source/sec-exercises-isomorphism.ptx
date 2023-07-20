@@ -1,0 +1,78 @@
+<exercises xml:id="sec-exercises-isomorphism">
+	<exercise>
+		<statement>
+			Let <m>(\ell_1,\ell_2)</m> be one pair of distinct lines in <m>\R^2</m>, and let <m>(\ell^\prime_1,\ell^\prime_2)</m> be another pair of distinct lines in <m>\R^2</m>. Show that there is an <m>\R</m>-automorphism of <m>\R^2</m> mapping <m>\ell_i</m> to <m>\ell^\prime_i</m> for <m>i=1,2</m>.
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			Let <m>\mathcal{P}_{n-1}(F)</m> be the vector space of polynomials in one variable over a field <m>F</m> of degree at most <m>n-1</m>. Let <m>a_1,a_2,\ldots,a_n\in F</m> be distinct elements. Show that the following map is an <m>F</m>-isomorphism.
+			<me>T\colon\mathcal{P}_{n-1}(F)\longrightarrow F^n\quad\text{given by}\quad p\mapsto (p(a_1),\ldots,p(a_n)).</me>
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			Find all non-isomorphic subspaces of <m>\R^2</m>.
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Let <m>V</m> be a vector space over a field <m>F</m>. Show that <m>\Hom_F(F,V)\simeq V</m>.
+		</statement>
+	</exercise>
+	<exercise>
+		<statement>
+			Let <m>V, W</m> be vector spaces over a field <m>F</m>. Show that <m>(V\bigoplus W)^*\simeq V^*\bigoplus W^*</m>.
+			(The generalization of this exercise can be found <xref ref="commutativity-Hom-direct-sum"/>).
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Let <m>A\in M_{m\times n}(F)</m> and <m>L_A\colon F^n\to F^m</m> be an <m>F</m>-linear map given by <m>v\mapsto Av^t</m>. Show that 
+			<ol>
+				<li><m>L_A</m> is injective if and only if <m>rk(A)=n</m>.</li>
+				<li><m>L_A</m> is surjective if and only if <m>rk(A)=m</m>.</li>
+				<li><m>L_A</m> is invertible if and only if <m>n=m</m> and <m>A</m> is invertible.</li>
+			</ol>
+		</statement>
+	</exercise>
+
+	<exercise>
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. Show that <m>v_1,v_2,\ldots,v_r\in V</m> are linearly independent over <m>F</m> if and only if there are <m>f_1,f_2,\ldots,f_r\in V^*</m> such that <m>\det(f_i(v_j))\neq 0</m>.
+		</statement>
+	</exercise>
+
+	<exercisegroup>
+		<introduction>
+			In the following exercises, find bases so that the matrix representation of the given linear map has the following form. <me>\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}</me>
+		</introduction>
+		<exercise>
+			<statement>
+				<m>T\colon\R^2\to\R</m> given by <m>(x,y)\mapsto x</m>.
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>tr\colon M_n(F)\to F</m> given by <m>(a_{ij})\mapsto \sum_i a_{ii}</m>.
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>T\colon M_{n}(F)\to M_n(F)</m> given by <me>\sum_{1\leq i,j\leq n} a_{ij}E_{ij}\mapsto\sum_{i\geq j}a_{ij}E_{ij}</me>.
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>T\colon M_n(F)\to M_n(F)</m> given by <m>A\mapsto E_{11}A</m>.
+			</statement>
+		</exercise>
+		<exercise>
+			<statement>
+				<m>\mathcal{D}_n\colon\mathcal{P}_n(F)\to\mathcal{P}_{n-1}(F)</m> given by <m>\sum_{i=0}^na_iX^i\mapsto\sum_{i=1}^{n-1}ia_iX^{i-1}</m>.
+			</statement>
+		</exercise>
+	</exercisegroup>
+</exercises>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="ch-Cayley-Hamilton-Jordan-Normal" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Cayley-Hamilton theorem and Jordan Normal Form</title>
+	<xi:include href="./sec-Cayley-Hamilton-Theorem.ptx"/>
+	<xi:include href="./sec-Jordan-normal-form.ptx"/>
+	<xi:include href="./sec-examples-Jordan-form.ptx"/>
+</chapter>

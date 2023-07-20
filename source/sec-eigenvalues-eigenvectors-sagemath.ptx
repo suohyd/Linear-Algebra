@@ -1,0 +1,36 @@
+<section xml:id="sec-eigenvalues-eigenvectors-sagemath">
+	<title>Eigenvalues and Eigenvectors using SageMath</title>
+	<introduction>The computer algebra system SageMath can compute eigenvalues and eigenvectors of a given matrix. Please do the relevant changes on this page to verify your calculations.</introduction>
+	<p>
+		In the following examples QQ denotes the field of rational numbers. You may change it to RR, the field of real numbers. Numbers in brackets are rows of <m>A</m>. You can change number of rows as well as entries of rows.
+	</p>
+	<p>
+		<alert>Computation of eigenvalues</alert>
+		<sage>
+		<input>
+			sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
+			sage: A.eigenvalues()
+		</input>
+	</sage>
+	</p>
+
+	<p>
+		<alert>Computation of eigenvectors</alert>
+				<sage>
+		<input>
+			sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
+			sage: A.eigenvectors_right()
+	</input>
+	</sage>
+	</p>
+
+	<p>
+		<alert>Computation of eigenspaces</alert>
+		<sage>
+			<input>
+				sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
+				sage: A.eigenspaces_right()
+			</input>
+		</sage>
+	</p>
+</section>

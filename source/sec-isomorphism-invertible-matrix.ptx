@@ -1,0 +1,115 @@
+<section xml:id="sec-isomorphism-invertible-matrix">
+	<title>Isomorphism and invertible matrix</title>
+	<introduction>
+		We show that a matrix representation of an isomorphism is invertible. We keep the notations of <xref ref="subsec-matrix-rep"/>.
+	</introduction>
+	<proposition xml:id="matrix-iso-invertible">
+		<statement>
+			A matrix represented by an isomorphism is invertible.
+		</statement>
+	</proposition>
+	<proof>
+	<p>
+		Let <m>V</m> and <m>W</m> be finite-dimensional vector spaces over a field <m>F</m>. Suppose that <m>\mathfrak{B}_V=(v_1,v_2,\ldots,v_n)</m> and <m>\mathfrak{B}_W=(w_1,w_2,\ldots,w_n)</m> are ordered bases of <m>V</m> and <m>W</m>, respectively. Let <m>T\colon V\to W</m> be an <m>F</m>-linear isomorphism. Let the matrix of <m>T</m> relative to ordered bases <m>\mathfrak{B}_V</m> and <m>\mathfrak{B}_W</m> be
+		<me>[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}=\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{n1}\amp\beta_{n2}\amp\cdots\amp\beta_{nn}\end{pmatrix}.</me>
+		Recall from <xref ref="subsec-matrix-rep"/> that <m>T(v_i)=\sum_k\beta_{ki}w_k</m>.
+	</p>
+	<p>
+		By <xref ref="linearity-of-inverse"/>, the set-theoretic inverse of the map, <m>T^{-1}</m> is also <m>F</m>-linear. Suppose that
+		<me>T^{-1}(w_j)=\sum_\ell\gamma_{\ell j}v_\ell.</me>
+		The matrix of <m>T^{-1}</m> relative to ordered bases <m>\mathfrak{B}_W</m> and <m>\mathfrak{B}_V</m> is
+		<me>[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}=\begin{pmatrix}\gamma_{11}\amp\gamma_{12}\amp\cdots\amp\gamma_{1n}\\\gamma_{21}\amp\gamma_{22}\amp\cdots\amp\gamma_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\gamma_{n1}\amp\gamma_{n2}\amp\cdots\amp\gamma_{nn}\end{pmatrix}.</me>
+	</p>
+	<p>
+		By <xref ref="extending-linearly"/>, the composition <m>T\circ T^{-1}=I_W</m> is determined by its action on <m>\{w_j\}</m>. We have the following.
+		<md><mrow>w_j=T\circ T^{-1}(w_j)\amp=T\big(\sum_\ell\gamma_{\ell j}v_\ell\big)</mrow>\\<mrow>\amp=\sum_\ell\gamma_{\ell j}T(v_\ell)</mrow>\\<mrow>\amp=\sum_\ell\gamma_{\ell j}\big(\sum_k\beta_{k\ell}w_k\big)</mrow>\\<mrow>\amp=\sum_k\big(\sum_\ell\gamma_{\ell j}\beta_{k\ell}\big)w_k</mrow></md>
+		By <xref ref="unique-lin-combination"/>, we must have <me>\sum_\ell\gamma_{\ell j}\beta_{k\ell}=0\quad\text{for }k\neq j\quad\text{and}\quad\sum_\ell\gamma_{\ell j}\beta_{j\ell}=1.</me>
+		We thus obtain that the <m>j</m>-th column of the following matrix
+		<me>\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{n1}\amp\beta_{n2}\amp\cdots\amp\beta_{nn}\end{pmatrix}\cdot\begin{pmatrix}\gamma_{11}\amp\gamma_{12}\amp\cdots\amp\gamma_{1n}\\\gamma_{21}\amp\gamma_{22}\amp\cdots\amp\gamma_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\gamma_{n1}\amp\gamma_{n2}\amp\cdots\amp\gamma_{nn}\end{pmatrix}</me>
+		is <m>\big(0,0,\ldots,0,1,0,\ldots,0\big)^t</m>. Therefore, <m>[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}\cdot[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}</m> is the <m>n\times n</m> identity matrix.
+	</p>
+	<p>
+		Similar computations for <m>T^{-1}\circ T=I_V</m> yield <m>[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}\cdot[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}</m> is the <m>n\times n</m> identity matrix.
+	</p>
+	</proof>
+
+	
+
+	<lemma>
+		<statement>
+			Every <m>n\times n</m> invertible matrix induces an <m>F</m>-linear isomorphism of <m>M_{n\times 1}(F)</m> onto itself.
+		</statement>
+	</lemma>
+	<proof>
+		Let <m>A\in M_n(F)</m> be an invertible matrix and <m>B</m> be its inverse. Consider the linear maps induced by <m>A</m>, <m>L_A:x\mapsto Ax</m> and induced by <m>B</m>, <m>L_B:y\mapsto By</m>. Thus, <me>L_A\circ L_B(y)=A(By)=y\quad\text{and}\quad L_B\circ L_A(x)=B(Ax)=x.</me> Therefore, <m>L_A</m> as well as <m>L_B</m> are isomorphisms.
+	</proof>
+
+	<lemma xml:id="change-of-basis-matrix">
+		<statement>
+			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. Suppose that <m>\mathfrak{B}=\{u_1,\ldots,u_n\}</m> and <m>\mathfrak{B}^\prime=\{v_1,\ldots,v_n\}</m> are bases of <m>V</m>. Then there exists an <m>n\times n</m> invertible matrix <m>P</m> such that the coordinates of any vector <m>v</m> with respect to <m>\mathfrak{B}^\prime</m> is the same as the coordinates of <m>(Pv)^t</m> with respect to the basis <m>\mathfrak{B}</m>.
+		</statement>
+	</lemma>
+	<proof>
+		Let <m>v=a_1v_1+\cdots+a_nv_n</m>, i.e., the coordinates of <m>v</m> with respect to <m>\mathfrak{B}^\prime</m> are <m>(a_1,\ldots,a_n)</m>. Suppose that <me>v_i=\sum_j\alpha_{ji}u_j.</me> We thus have the following.
+		<md><mrow>v\amp=\sum_ia_iv_i</mrow><mrow>\amp=\sum_ia_i\sum_j\alpha_{ji}u_j</mrow><mrow>\amp=\sum_j\big(\sum_ia_i\alpha_{ji}\big)u_j</mrow></md>
+		By <xref ref="unique-lin-combination"/>, the coordinates of <m>v</m> with respect to the basis <m>\mathfrak{B}</m> are <me>(\sum_ia_i\alpha_{1i},\ldots,\sum_ia_i\alpha_{ni}).</me>
+		Put <m>P=(\alpha_{ij})</m>
+		Using <xref ref="composition"/> we therefore have the following.
+		<me>L_P\circ{}_nT\circ T_{\mathfrak{B}^\prime}(v)={}_nT\circ T_{\mathfrak{B}}(v).</me> Since, <m>{}_nT</m> and <m>T_{\mathfrak{B}^\prime}</m> are <m>F</m>-isomorphisms (see <xref ref="iso-to-n-dim-vs"/> and <xref ref="row-column-space-iso"/>), the <m>F</m>-linear map <m>L_P\circ{}_nT\circ T_{\mathfrak{B}^\prime}</m> is also an <m>F</m>-isomorphism.. Moreover the matrix of <m>L_P\circ{}_nT\circ T_{\mathfrak{B}^\prime}</m> with respect to <m>\mathfrak{B}</m>, <m>[L_P\circ{}_nT\circ T_{\mathfrak{B}^\prime}]_{\mathfrak{B}}^{\mathfrak{B}}=P</m>. By <xref ref="matrix-iso-invertible"/>, <m>P</m> is invertible and thus we get the result.
+	</proof>
+
+	<remark xml:id="change-of-basis-matrix-identity-map">
+		<statement>
+			Note that the matrix <m>P</m> in <xref ref="change-of-basis-matrix"/> is the matrix of the identity map <m>\unit_V</m> with respect to bases <m>\mathfrak{B}^\prime</m> and <m>\mathfrak{B}</m> in that order, i.e., <me>[\unit_V]_{\mathfrak{B}^\prime}^{\mathfrak{B}}=P.</me>
+		</statement>
+	</remark>
+
+	<theorem xml:id="change-of-basis-Hom">
+		<statement>
+			Let <m>V,W</m> be finite-dimensional vector spaces over a field <m>F</m>. Let <m>T\colon V\to W</m> be an <m>F</m>-linear map. Let <m>\mathfrak{B}_i</m> be bases of <m>V</m> and <m>\mathfrak{C}_i</m> be bases of <m>W</m>. Then there exists invertible matrices <m>P,Q</m> such that <me>[T]_{\mathfrak{B}_1}^{\mathfrak{C}_1}=P\cdot [T]_{\mathfrak{B}_2}^{\mathfrak{C}_2}\cdot Q.</me>
+		</statement>
+	</theorem>
+	<proof>
+		We consider the following composition of maps with bases considered written in brackets.
+		<me>(V,\mathfrak{B}_1)\xrightarrow{\unit_V}(V,\mathfrak{B}_2)\xrightarrow{T}(W,\mathfrak{C}_2)\xrightarrow{\unit_W}(W,\mathfrak{C}_1)</me>
+		We have <m>T=\unit_W\circ T\circ\unit_V</m>. By <xref ref="linear-map-matrix-composition"/> we get the result.
+	</proof>
+
+	<p>
+		As a special case of the above theorem we obtain the following result.
+	</p>
+
+	<corollary xml:id="change-of-basis-Endo">
+		<statement>
+			Let <m>V</m> be finite-dimensional vector space over a field <m>F</m>. Suppose that <m>\mathfrak{B}_{1}=(v_1,\ldots,v_n),\mathfrak{B}_{2}=(x_1,\ldots,x_n)</m> are ordered bases of <m>V</m>. Let <m>T\colon V\to V</m> be an <m>F</m>-linear map. Let <m>[T]_{\mathfrak{B}_1}</m> and <m>[T]_{\mathfrak{B}_2}</m> be matrices of <m>T</m> with respect to bases <m>\mathfrak{B}_1</m> and <m>\mathfrak{B}_2</m>, respectively. Then, there exists an invertible <m>n\times n</m> matrix <m>C</m> such that <me>[T]_{\mathfrak{B}_2}=C^{-1}\,[T]_{\mathfrak{B}_1}\,C.</me>
+		</statement>
+	</corollary>
+
+	<theorem xml:id="pre-row-colomn-rank-equality">
+		<statement>
+			Let <m>V, W</m> be finite-dimensional vector spaces over a field <m>F</m> and let <m>T\colon V\to W</m> be an <m>F</m>-linear map. Then there exists bases in which the matrix of <m>T</m> has a block-diagonal form
+			<me>\begin{pmatrix}I_r\amp 0_1\\0_2\amp 0_3\end{pmatrix},</me> where <m>r=\dim_F\Im(T)</m> and <m>I_r</m> is <m>r\times r</m> identity matrix, and <m>0_i</m> are zero matrices of appropriate size.
+		</statement>
+	</theorem>
+	<proof>
+		Suppose that <m>\dim_FV=n</m> and <m>\dim_FW=m</m>. By Rank-Nullity Theorem (see <xref ref="rank-nullity-theorem"/>), <m>\dim_F\ker(T)=n-r</m>. Let <m>\{v_1,v_2,\ldots,v_{n-r}\}</m> be a basis for <m>\ker(T)</m>. We extend it to a basis of <m>V</m>, say <m>\{v_1,\ldots,v_{n-r},u_1,\ldots,u_r\}</m>. By <xref ref="complementary-subspace"/>, we have <men xml:id="eq1">V=\ker(T)\bigoplus\langle u_1,\ldots,u_r\rangle.</men>
+		<p>
+			We claim that <m>\{T(u_1),\ldots,T(u_r)\}</m> is a basis of <m>\Im(T)</m>. Indeed, suppose that <m>\sum_i\alpha_iT(u_i)=0</m>. Hence, <m>\sum\alpha_iu_i\in\ker(T)</m> . By eq. <xref ref="eq1"/> and linear independence of <m>\{u_1,\ldots,u_r\}</m>, we have <m>\alpha_i=0</m> for every <m>i</m>. 
+		</p>
+		<p>
+			By <xref ref="complementary-subspace"/>, we write <me>W=\langle T(u_1),\ldots,T(u_r)\rangle\bigoplus W^\prime.</me> Let <m>\{w_1,\ldots,w_{m-r}\}</m> be a basis of <m>W^\prime</m>.
+		</p>
+		<p>
+		Consider the ordered bases <m>(u_1,\ldots,u_r,v_1,\ldots,v_{n-r})</m> and <m>\big(T(u_1),\ldots,T(u_r),w_1,\ldots,w_{m-r}\big)</m> of <m>V</m> and <m>W</m>, respectively. The matrix of <m>T</m> with respect to these bases is <me>\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}.</me> Hence the theorem is proved.
+		</p>
+	</proof>
+
+	<corollary>
+		<statement>
+			There exists bases in which the matrix of an <m>F</m>-linear isomorphism is the identity matrix.
+		</statement>
+	</corollary>
+	<remark>
+		The above corollary should remind the reader of the following result. <em>A square matrix over a field is invertible if and only if it is a product of elementary matrices.</em>
+	</remark>
+</section>
