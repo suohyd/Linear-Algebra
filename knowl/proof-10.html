@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(\{u_1,\ldots,u_r\}\)</span> be a basis for <span class="process-math">\(\ker(T)\text{.}\)</span> We extend this basis to a basis of <span class="process-math">\(V\text{,}\)</span> say <span class="process-math">\(\{u_1,\ldots,u_r,v_1,\ldots,v_s\}\text{.}\)</span> We claim that <span class="process-math">\(\{T(v_1),\ldots,T(v_s)\}\)</span> is a basis for <span class="process-math">\(\Im(T)\text{.}\)</span> We first check the independence. Suppose that</div>
+<div class="displaymath process-math">
+\begin{align*}
+0\amp=\sum\alpha_iT(v_i)\\
+\amp= T\big(\sum\alpha_iv_i\big)
+\end{align*}
+</div>
+<div class="para">Thus, <span class="process-math">\(\sum\alpha_iv_i\in\ker(T)\)</span> and hence there exists <span class="process-math">\(\beta_j\in F\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum\alpha_iv_i=\sum\beta_ju_j\quad\text{i.e.,}\quad\sum_i\alpha_iv_i-\sum_j\beta_ju_j=0.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(\{u_1,\ldots,u_r,v_1,\ldots,v_n\}\)</span> is a basis we have <span class="process-math">\(\alpha_i=0\)</span> and <span class="process-math">\(\beta_j=0\)</span> for each <span class="process-math">\(i\)</span> and <span class="process-math">\(j\text{.}\)</span> Therefore, <span class="process-math">\(\{T(v_j)\}\)</span> is linearly independent.</div>
+</div> <div class="para logical">
+<div class="para">Given any <span class="process-math">\(w\in\Im(T)\)</span> there exists <span class="process-math">\(v\in V\)</span> such that <span class="process-math">\(w=T(v)\text{.}\)</span> Let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v=\sum\gamma_iu_i+\sum\delta_jv_j.
+\end{equation*}
+</div>
+<div class="para">Using <span class="process-math">\(\{u_i\}\)</span> is a basis of <span class="process-math">\(\ker(T)\)</span> we have the following.</div>
+<div class="displaymath process-math">
+\begin{align*}
+w\amp=T(v)\\
+\amp=\sum\gamma_iT(u_i)+\sum\delta_jT(v_j)\\
+\amp=\sum\delta_jT(v_j)
+\end{align*}
+</div>
+<div class="para">Hence <span class="process-math">\(\{T(v_j)\}\)</span> spans <span class="process-math">\(\Im(T)\text{.}\)</span> Since <span class="process-math">\(\{T(v_j)\}\)</span> is linearly independent and spans the <span class="process-math">\(\Im(T)\)</span> it is a basis of <span class="process-math">\(\Im(T)\text{.}\)</span> We thus have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim_F\Im(T)=s\quad\text{and}\quad\dim_F\ker(T)=r.
+\end{equation*}
+</div>
+<div class="para">Therefore,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim_FV={\rm nullity}(T)+{\rm rank}(T).
+\end{equation*}
+</div>
+</div></article><span class="incontext"><a href="sec-rank-nullity.html#proof-10" class="internal">in-context</a></span>
+</body>
+</html>

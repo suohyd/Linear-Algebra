@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A basis for the kernel of trace map</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Abhay Soman">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Linear-Algebra.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Companion notes</span></a></h1>
+<p class="byline">Abhay Soman</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-rank-nullity.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-linear-transformations.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-ordered-basis-linear-trans.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb R}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\ev{\mathrm{ev}}
+\def\Im{\mathrm{Im}}
+\def\End{\mathrm{End}}
+\def\Aut{\mathrm{Aut}}
+\def\Hom{\mathrm{Hom}}
+\def\Iso{\mathrm{Iso}}
+\def\GL{\mathrm{GL}}
+\def\ker{\mathrm{ker }}
+\def\Span{\mathrm{Span}}
+\def\tr{\mathrm{tr}}
+\newcommand{\unit}{1\!\!1}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="preface-1.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Elt-row-operations.html" class="internal"><span class="codenumber">1</span> <span class="title">Elementary row operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary row operations</span></a></div></li>
+<li><div class="toc-item"><a href="Elt-row-exercises.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-sage-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Row echelon form using SageMath</span></a></div></li>
+<li><div class="toc-item"><a href="sec-uniqueness-echelon-forms.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Uniqueness of row reduced echelon form</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="VS.html" class="internal"><span class="codenumber">2</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="vs-def.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definition of a vector space</span></a></div></li>
+<li><div class="toc-item"><a href="vs-examples.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Examples of vector spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Ex-VS.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="linear-combination.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear combination</span></a></div></li>
+<li><div class="toc-item"><a href="subspace.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Subspace of a vector space</span></a></div></li>
+<li><div class="toc-item"><a href="Ex-subspace.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Basis-Dim.html" class="internal"><span class="codenumber">3</span> <span class="title">Basis and dimension of a vector space</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linearly independent vectors</span></a></div></li>
+<li><div class="toc-item"><a href="ex-linear-dependence.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-basis-dim.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Basis and Dimension</span></a></div></li>
+<li><div class="toc-item"><a href="sec-results-basis-dim.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invariance of dimension</span></a></div></li>
+<li><div class="toc-item"><a href="ex-basis-dim.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-basis-examples.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Examples</span></a></div></li>
+<li><div class="toc-item"><a href="sec-new-vs.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Sum and direct sum of vector subspaces</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-linear-transformations.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear transformations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-def-linear-transformation.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Definition of linear transformation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-linear-transformations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Examples of linear transformations</span></a></div></li>
+<li><div class="toc-item"><a href="ex-lin-trans.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-kernel-image-of-hom.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Kernel and image of a linear homomorphism</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rank-nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Rank-Nullity Theorem</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec-kernel-of-trace.html" class="internal"><span class="codenumber">4.6</span> <span class="title">A basis for the kernel of trace map</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-ordered-basis-linear-trans.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Ordered basis and linear maps</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-ordered-basis-linear-trans.html#subsec-ordered-basis" class="internal"><span class="codenumber">4.7.1</span> <span class="title">Ordered basis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-ordered-basis-linear-trans.html#subsec-matrix-rep" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Matrix representation of a linear transformation</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="ex-ordered-basis.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exact-seq.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Exact sequences (Optional)</span></a></div></li>
+<li><div class="toc-item"><a href="ex-exact-seq.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-isomorphisms.html" class="internal"><span class="codenumber">5</span> <span class="title">Isomorphisms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-isomorphisms.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Definition of Isomorphism</span></a></div></li>
+<li><div class="toc-item"><a href="sec-iso-between-matrices-Hom.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Matrices and a space of linear transformations</span></a></div></li>
+<li><div class="toc-item"><a href="sec-isomorphism-invertible-matrix.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Isomorphism and invertible matrix</span></a></div></li>
+<li><div class="toc-item"><a href="sec-row-column-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Row and Column rank</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rank-nullity-sage.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Rank and Nullity using SageMath</span></a></div></li>
+<li><div class="toc-item"><a href="sec-double-dual-iso.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Natural isomorphism between a vector space and its double dual</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises-isomorphism.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Quotient-space.html" class="internal"><span class="codenumber">6</span> <span class="title">Quotient space</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-quotient-space-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Definition of Quotient Space</span></a></div></li>
+<li><div class="toc-item"><a href="sec-natural-projection.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Natural Projection and Correspondence Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-first-isomorphism-theorem.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fundamental Homomorphism Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-FIT.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-invariant-subspaces-eigenvectors.html" class="internal"><span class="codenumber">7</span> <span class="title">Invariant Subspaces and Eigenvectors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-invariant-subspaces.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Invariant subspaces</span></a></div></li>
+<li><div class="toc-item"><a href="sec-eigen.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-algebraic-geometric-multiplicity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Algebraic and Geometric multiplicity</span></a></div></li>
+<li><div class="toc-item"><a href="sec-triangulable-maps.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Triangulable linear maps and matrices</span></a></div></li>
+<li><div class="toc-item"><a href="sec-cyclic-subspaces.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Cyclic subspaces</span></a></div></li>
+<li><div class="toc-item"><a href="sec-computations-with-Jordan-block.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Some Computations with Jordan block</span></a></div></li>
+<li><div class="toc-item"><a href="ex-invariant-subspaces-eigenvectors.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-eigenvalues-eigenvectors-sagemath.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Eigenvalues and Eigenvectors using SageMath</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Cayley-Hamilton-Jordan-Normal.html" class="internal"><span class="codenumber">8</span> <span class="title">Cayley-Hamilton theorem and Jordan Normal Form</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Cayley-Hamilton.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Cayley-Hamilton Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Jordan-normal-form.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Finding Jordan normal form over <span class="process-math">\(\C\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-Jordan-form.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">(Algebra of polynomials and determinants)</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-algebra-of-polynomials.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Algebra of polynomials</span></a></div></li>
+<li><div class="toc-item"><a href="sec-determinant.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Determinants</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-kernel-of-trace"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.6</span> <span class="title">A basis for the kernel of trace map</span>
+</h2>
+<section class="introduction" id="introduction-23">Using Rank-Nullity Theorem, we give an explicit basis for the kernel of the trace map.</section><div class="para logical" id="p-72">
+<div class="para">Let <span class="process-math">\(n\geq 2\)</span> be a natural number. Consider <span class="process-math">\(n\times n\)</span> matrices over a field <span class="process-math">\(F\text{,}\)</span> <span class="process-math">\(M_n(F)\text{.}\)</span> Let <span class="process-math">\(E_{ij}\in M_n(F)\)</span> be the matrix with <span class="process-math">\((i,j)\)</span>-th entry <span class="process-math">\(1\)</span> and all other entries zero. We have observed that <span class="process-math">\(\{E_{ij}:1\leq i,j\leq n\}\)</span> is a basis for <span class="process-math">\(M_n(F)\text{.}\)</span> Recall that we defined the trace of map in <a href="" class="xref" data-knowl="./knowl/trace.html" title="Example 4.2.5: (Trace as a linear map)">Example 4.2.5</a> as follows.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/trace.html">
+\begin{equation*}
+tr\colon M_n(F)\to F\quad\text{given by}\quad(a_{ij})\mapsto\sum_i a_{ii}.
+\end{equation*}
+</div>
+</div>
+<article class="theorem theorem-like" id="theorem-10"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.6.1</span><span class="period">.</span>
+</h3>We keep the notations of the above paragraph. A basis of the kernel of the trace map is<div class="displaymath process-math">
+\begin{equation*}
+\ker(tr)=\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-11"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-11"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-11"><article class="hiddenproof"><div class="para logical" id="p-73">
+<div class="para">By Rank-Nullity Theorem (<a href="" class="xref" data-knowl="./knowl/rank-nullity-theorem.html" title="Theorem 4.5.3: (Rank-Nullity Theorem)">Theorem 4.5.3</a>),</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html">
+\begin{equation*}
+\dim_F\ker(tr)=\dim_FM_n(F)-\dim_F\Im(tr).
+\end{equation*}
+</div>
+<div class="para">For any <span class="process-math">\(\alpha\in F\)</span> the trace of the matrix <span class="process-math">\({\rm diag}(\alpha,0,\ldots,0)\)</span> is <span class="process-math">\(\alpha\text{.}\)</span> Thus <span class="process-math">\(tr\)</span> is surjective. Therefore, <span class="process-math">\(\Im(tr)=F\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html">
+\begin{equation*}
+\dim_F\ker(tr)=n^2-1.
+\end{equation*}
+</div>
+</div> <div class="para" id="p-74">Note that <span class="process-math">\(E_{ij}\in\ker(tr)\)</span> for every <span class="process-math">\(i\neq j\)</span> and <span class="process-math">\(E_{11}-E_{ii}\in\ker(tr)\)</span> for every <span class="process-math">\(2\leq i\leq n\text{.}\)</span>
+</div> <div class="para logical" id="p-75">
+<div class="para">Suppose that there exists <span class="process-math">\(\alpha_{ij},\beta_i\in F\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i\neq j}\alpha_{ij}E_{ij}+\sum_{i\neq 1}\beta_i(E_{11}-E_{ii})=0.
+\end{equation*}
+</div>
+<div class="para">In other words the above equation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}\sum_{i=2}^{n}\beta_i\amp\alpha_{12}\amp\alpha_{13}\amp\cdots\amp\alpha_{1n}\\\alpha_{21}\amp-\beta_2\amp\alpha_{23}\amp\cdots\amp\alpha_{2n}\\\vdots\amp\vdots\amp\vdots\amp\ddots\amp\vdots\\\alpha_{n1}\amp\alpha_{n2}\amp\alpha_{n3}\amp\cdots\amp -\beta_n\end{pmatrix}=0.
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(\alpha_{ij}=0,\beta_i=0\text{.}\)</span> We thus get <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is linearly independent.</div>
+</div> <div class="para" id="p-76">The cardinality of the set <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is <span class="process-math">\((n^2-n)+(n-1)=n^2-1\text{.}\)</span> Since the <span class="process-math">\(\dim_F\ker(tr)=n^2-1\)</span> the set <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is a maximal linearly independent subset of <span class="process-math">\(\ker(tr)\text{,}\)</span> i.e., it is a basis of <span class="process-math">\(\ker(tr)\)</span> (see <a href="" class="xref" data-knowl="./knowl/pre-invariance-dimension.html" title="Lemma 3.4.1">Lemma 3.4.1</a> and <a href="" class="xref" data-knowl="./knowl/well-definedness-dim.html" title="Theorem 3.4.3">Theorem 3.4.3</a>).</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-rank-nullity.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-ordered-basis-linear-trans.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">(Intersection and Direct Sum).</span>
+</h3> Let <span class="process-math">\(X,Y\leq V\)</span> be subspaces of a vector space <span class="process-math">\(V\)</span> over a field <span class="process-math">\(F\text{.}\)</span> Consider natural projections (see <a href="" class="xref" data-knowl="./knowl/def-natural-projection.html" title="Definition 6.2.1: (Natural Projection)">Definition 6.2.1</a>).<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{equation*}
+p\colon V/X\to V/(X+Y)\quad\text{and}\quad q\colon V/Y\to V/(X+Y)
+\end{equation*}
+</div>Consider the compositions<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{equation*}
+r\colon V/(X\cap Y)\to V/X\to (V/X)\bigoplus (V/Y)
+\end{equation*}
+</div>and<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{equation*}
+s\colon V/(X\cap Y)\to V/Y\to (V/X)\bigoplus (V/Y).
+\end{equation*}
+</div>Let <span class="process-math">\(t\colon V/(X\cap Y)\to(V/X)\bigoplus (V/Y)\)</span> be such that <span class="process-math">\(t=r+s\text{.}\)</span> We show that<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{equation*}
+p-q\colon (V/X)\bigoplus (V/Y)\to V/(X+Y)
+\end{equation*}
+</div>is surjective, <span class="process-math">\(t\colon V/(X\cap Y)\to (V/X)\bigoplus (V/Y)\)</span> is injective, and <span class="process-math">\(\Im(t)=\ker(p-q)\text{.}\)</span> In other words, we show that the following is an short exact sequence.<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{equation}
+0\to V/(X\cap Y)\xrightarrow{t}(V/X)\bigoplus (V/Y)\xrightarrow{p-q} V/(X+Y)\to 0\tag{6.4.2}
+\end{equation}
+</div>Indeed, the injectivity is a part of <a href="" class="xref" data-knowl="./knowl/intersections-product.html" title="Example 6.4.2: (Intersections and product)">Example 6.4.2</a>. The surjectivity of <span class="process-math">\(p-q\)</span> is left to the reader. We have<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/intersections-product.html">
+\begin{align*}
+(p-q)\circ t\left(v+(X\cap Y)\right)\amp=(p-q)\left(v+X,v+Y\right)=0
+\end{align*}
+</div>Hence, <span class="process-math">\(\Im(t)\leq\ker(p-q)\text{.}\)</span> <div class="para logical">
+<div class="para">Now suppose that <span class="process-math">\((p-q)(v+X,v^\prime+Y)=0\text{,}\)</span> i.e., <span class="process-math">\(v+(X+Y)=v^\prime+(X+Y)\text{.}\)</span> Therefore there exists <span class="process-math">\(x\in X\)</span> and <span class="process-math">\(y\in Y\)</span> such that <span class="process-math">\(v-v^\prime=x+y\text{.}\)</span> Hence,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+v-x=v^\prime+y.
+\end{equation*}
+</div>
+<div class="para">Put <span class="process-math">\(w=v-x=v^\prime+y\text{.}\)</span> Thus,</div>
+<div class="displaymath process-math">
+\begin{align*}
+r\left(w+(X\cap Y)\right)\amp=r\left(v-x+(X\cap Y)\right)\\
+\amp=\left((v-x)+X,0\right)\\
+\amp=(v+X,0)
+\end{align*}
+</div>
+<div class="para">Similarly,</div>
+<div class="displaymath process-math">
+\begin{align*}
+s\left(w+(X\cap Y)\right)\amp=r\left(v^\prime-y+(X\cap Y)\right)\\
+\amp=\left(0,(v^\prime+y)+Y\right)\\
+\amp=(0,v^\prime+Y)
+\end{align*}
+</div>
+<div class="para">In particular,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(r+s)\left(w+(X\cap Y)\right)=t\left(w+(X\cap Y)\right)=(v+X,v^\prime+Y)\text{.}
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(\ker(p-q)\leq\Im(t)\)</span> and the result is proved.</div>
+</div></article><span class="incontext"><a href="sec-examples-FIT.html#intersection-direct-sum" class="internal">in-context</a></span>
+</body>
+</html>

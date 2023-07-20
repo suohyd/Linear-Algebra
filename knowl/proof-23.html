@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>We only prove the result for one of the elementary matrices. Recall from <a href="" class="xref" data-knowl="./knowl/generators-of-GL.html" title="Exercise 1.2.3">Exercise 1.2.3</a> that <span class="process-math">\(T_{pq}(\alpha)\)</span> is the matrix obtained by multiplying <span class="process-math">\(q\)</span>-th row of <span class="process-math">\(I_n\)</span> by <span class="process-math">\(\alpha\in F\)</span> and adding this row to <span class="process-math">\(p\)</span>-th row of <span class="process-math">\(I_n\text{.}\)</span> For simplicity we further assume that <span class="process-math">\(p\)</span> is less than <span class="process-math">\(q\text{.}\)</span> <div class="para logical">
+<div class="para">Thus, the matrix <span class="process-math">\(AT_{pq}(\alpha)\)</span> is obtained by multiplying <span class="process-math">\(q\)</span>-th column of <span class="process-math">\(A\)</span> by <span class="process-math">\(\alpha\in F\)</span> and adding this column to <span class="process-math">\(p\)</span>-th column of <span class="process-math">\(A\text{.}\)</span> Therefore, using notation of eq. <a href="" class="xref" data-knowl="./knowl/right-multi-column.html" title="Equation 5.4.2">(5.4.2)</a>, the column space of <span class="process-math">\(AT_{pq}(\alpha)\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/right-multi-column.html">
+\begin{equation*}
+\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle.
+\end{equation*}
+</div>
+<div class="para">Since, <span class="process-math">\(Af_p^t=(Af_p^t+\alpha Af_q^t)-\alpha Af_q^t\)</span> we get</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/right-multi-column.html">
+\begin{equation*}
+\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle=\langle Af_i^t:1\leq i\leq n\rangle.
+\end{equation*}
+</div>
+<div class="para">We thus have <span class="process-math">\(crk(A)=crk(AT_{pq}(\alpha))\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We now show that an elementary column operation does not change the row rank. Consider the following <span class="process-math">\(F\)</span>-linear map, right multiplication by <span class="process-math">\(E\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/iso-implies-same-dim.html">
+\begin{equation*}
+R_E\colon F^n\to F^n\quad\text{defined by}\quad v\mapsto v\cdot E.
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(E\)</span> is an elementary matrix it is invertible and <span class="process-math">\(F\)</span>-linear map <span class="process-math">\(R_{E^{-1}}\)</span> is the inverse of <span class="process-math">\(R_{E}\text{.}\)</span> In particular, <span class="process-math">\(R_{E}\)</span> is an <span class="process-math">\(F\)</span>-isomorphism. By <a href="" class="xref" data-knowl="./knowl/iso-implies-same-dim.html" title="Lemma 5.1.6">Lemma 5.1.6</a>, we have the following.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/iso-implies-same-dim.html">
+\begin{equation*}
+\langle e_1A,\ldots,e_nA\rangle\simeq\langle e_1AE,\ldots,e_nAE\rangle.
+\end{equation*}
+</div>
+<div class="para">In particular, <span class="process-math">\(rrk(A)=rrk(AE)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="sec-row-column-rank.html#proof-23" class="internal">in-context</a></span>
+</body>
+</html>

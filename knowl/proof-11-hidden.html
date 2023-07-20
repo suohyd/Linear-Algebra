@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof"><div class="para logical">
+<div class="para">By Rank-Nullity Theorem (<a href="" class="xref" data-knowl="./knowl/rank-nullity-theorem.html" title="Theorem 4.5.3: (Rank-Nullity Theorem)">Theorem 4.5.3</a>),</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html">
+\begin{equation*}
+\dim_F\ker(tr)=\dim_FM_n(F)-\dim_F\Im(tr).
+\end{equation*}
+</div>
+<div class="para">For any <span class="process-math">\(\alpha\in F\)</span> the trace of the matrix <span class="process-math">\({\rm diag}(\alpha,0,\ldots,0)\)</span> is <span class="process-math">\(\alpha\text{.}\)</span> Thus <span class="process-math">\(tr\)</span> is surjective. Therefore, <span class="process-math">\(\Im(tr)=F\)</span> and</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html">
+\begin{equation*}
+\dim_F\ker(tr)=n^2-1.
+\end{equation*}
+</div>
+</div> <div class="para">Note that <span class="process-math">\(E_{ij}\in\ker(tr)\)</span> for every <span class="process-math">\(i\neq j\)</span> and <span class="process-math">\(E_{11}-E_{ii}\in\ker(tr)\)</span> for every <span class="process-math">\(2\leq i\leq n\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Suppose that there exists <span class="process-math">\(\alpha_{ij},\beta_i\in F\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i\neq j}\alpha_{ij}E_{ij}+\sum_{i\neq 1}\beta_i(E_{11}-E_{ii})=0.
+\end{equation*}
+</div>
+<div class="para">In other words the above equation is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}\sum_{i=2}^{n}\beta_i\amp\alpha_{12}\amp\alpha_{13}\amp\cdots\amp\alpha_{1n}\\\alpha_{21}\amp-\beta_2\amp\alpha_{23}\amp\cdots\amp\alpha_{2n}\\\vdots\amp\vdots\amp\vdots\amp\ddots\amp\vdots\\\alpha_{n1}\amp\alpha_{n2}\amp\alpha_{n3}\amp\cdots\amp -\beta_n\end{pmatrix}=0.
+\end{equation*}
+</div>
+<div class="para">Hence, <span class="process-math">\(\alpha_{ij}=0,\beta_i=0\text{.}\)</span> We thus get <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is linearly independent.</div>
+</div> <div class="para">The cardinality of the set <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is <span class="process-math">\((n^2-n)+(n-1)=n^2-1\text{.}\)</span> Since the <span class="process-math">\(\dim_F\ker(tr)=n^2-1\)</span> the set <span class="process-math">\(\{E_{ij}:i\neq j\}\cup\{E_{11}-E_{ii}:2\leq i\leq n\}\)</span> is a maximal linearly independent subset of <span class="process-math">\(\ker(tr)\text{,}\)</span> i.e., it is a basis of <span class="process-math">\(\ker(tr)\)</span> (see <a href="" class="xref" data-knowl="./knowl/pre-invariance-dimension.html" title="Lemma 3.4.1">Lemma 3.4.1</a> and <a href="" class="xref" data-knowl="./knowl/well-definedness-dim.html" title="Theorem 3.4.3">Theorem 3.4.3</a>).</div></article></body>
+</html>

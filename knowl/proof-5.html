@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para">We use induction to prove this theorem. Suppose that <span class="process-math">\(\{v_1,v_2,\ldots,v_n\}\)</span> is a basis of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(w_1,w_2,\ldots,w_n,w_{n+1}\)</span> be vectors in <span class="process-math">\(V\text{.}\)</span> If <span class="process-math">\(n=1\)</span> then, there are scalars <span class="process-math">\(\alpha,\beta\in F\)</span> such that <span class="process-math">\(w_1=\alpha v_1\)</span> and <span class="process-math">\(w_2=\beta v_1\text{.}\)</span> In view of <a href="" class="xref" data-knowl="./knowl/remark-dependence.html" title="Remark 3.1.2">Remark 3.1.2</a> it is enough to consider the case when <span class="process-math">\(\alpha\neq 0\)</span> and <span class="process-math">\(\beta\neq 0\text{.}\)</span> Thus, <span class="process-math">\(\alpha\neq 0\)</span> (resp., <span class="process-math">\(\beta\neq 0\)</span>) implies that <span class="process-math">\(w_2=\beta\alpha^{-1}w_1\)</span> (resp., <span class="process-math">\(w_1=\alpha\beta^{-1}w_2)\text{.}\)</span> Hence, we are done when <span class="process-math">\(n=1\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We now assume that the result is true for vector spaces having <span class="process-math">\(n-1\)</span> number of vectors in its basis. Now assume that <span class="process-math">\(w_1,\ldots,w_n,w_{n+1}\in V\)</span> are linearly independent. As <span class="process-math">\(\{v_1,v_2,\ldots,v_n\}\)</span> is a basis it spans <span class="process-math">\(V\text{,}\)</span> in particular we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linear-combination-independence.html">
+\begin{equation*}
+w_i=\sum_{i=1}^{n}\alpha_{ij}v_j.
+\end{equation*}
+</div>
+<div class="para">Without loss of generality we assume that <span class="process-math">\(w_1\neq 0\text{.}\)</span> So, one of the scalars, say <span class="process-math">\(\alpha_{1n}\neq 0\text{.}\)</span> Set <span class="process-math">\(w_1^\prime=w_1\)</span> and <span class="process-math">\(w_k^\prime=w_k-\alpha_{kn}\alpha_{1n}^{-1}w_1\)</span> for <span class="process-math">\(k=2,3,\ldots,n+1\text{.}\)</span> Note that in the expression of <span class="process-math">\(w_k^\prime\)</span> (<span class="process-math">\(1\leq k\leq n+1\)</span>) the vector <span class="process-math">\(v_n\)</span> does not occur. Repeated application of <a href="" class="xref" data-knowl="./knowl/linear-combination-independence.html" title="Lemma 3.4.2">Lemma 3.4.2</a> implies that <span class="process-math">\(w_1^\prime,w_2^\prime,\ldots,w_{n+1}^\prime\)</span> is linearly independent. In particular, <span class="process-math">\(w_2^\prime,\ldots,w_{n+1}^\prime\)</span> is linearly independent. As seen above, each <span class="process-math">\(w_k^\prime\)</span> (<span class="process-math">\(1\leq k\leq n+1\)</span>) is a linear combination of <span class="process-math">\(v_1,\ldots,v_{n-1}\text{.}\)</span> Induction hypothesis applied to a vector subspace <span class="process-math">\(\langle v_1,v_2,\ldots,v_{n-1}\rangle\)</span> implies that <span class="process-math">\(w_2^\prime,\ldots,w_{n+1}^\prime\)</span> are linearly dependent, a contradiction.</div>
+</div></article><span class="incontext"><a href="sec-results-basis-dim.html#proof-5" class="internal">in-context</a></span>
+</body>
+</html>

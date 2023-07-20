@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/extending-linearly.html" title="Remark 4.1.5: (Linear extension of a map)">Remark 4.1.5</a>, the composition <span class="process-math">\(T\circ T^{-1}=I_W\)</span> is determined by its action on <span class="process-math">\(\{w_j\}\text{.}\)</span> We have the following.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{align*}
+w_j=T\circ T^{-1}(w_j)\amp=T\big(\sum_\ell\gamma_{\ell j}v_\ell\big)\\
+\amp=\sum_\ell\gamma_{\ell j}T(v_\ell)\\
+\amp=\sum_\ell\gamma_{\ell j}\big(\sum_k\beta_{k\ell}w_k\big)\\
+\amp=\sum_k\big(\sum_\ell\gamma_{\ell j}\beta_{k\ell}\big)w_k
+\end{align*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/unique-lin-combination.html" title="Exercise 3.5.11">Exercise 3.5.11</a>, we must have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{equation*}
+\sum_\ell\gamma_{\ell j}\beta_{k\ell}=0\quad\text{for }k\neq j\quad\text{and}\quad\sum_\ell\gamma_{\ell j}\beta_{j\ell}=1.
+\end{equation*}
+</div>
+<div class="para">We thus obtain that the <span class="process-math">\(j\)</span>-th column of the following matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{equation*}
+\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{n1}\amp\beta_{n2}\amp\cdots\amp\beta_{nn}\end{pmatrix}\cdot\begin{pmatrix}\gamma_{11}\amp\gamma_{12}\amp\cdots\amp\gamma_{1n}\\\gamma_{21}\amp\gamma_{22}\amp\cdots\amp\gamma_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\gamma_{n1}\amp\gamma_{n2}\amp\cdots\amp\gamma_{nn}\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">is <span class="process-math">\(\big(0,0,\ldots,0,1,0,\ldots,0\big)^t\text{.}\)</span> Therefore, <span class="process-math">\([T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}\cdot[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix.</div>
+</div>
+<span class="incontext"><a href="sec-isomorphism-invertible-matrix.html#p-103" class="internal">in-context</a></span>
+</body>
+</html>

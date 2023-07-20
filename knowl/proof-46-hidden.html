@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof">By <a href="" class="xref" data-knowl="./knowl/triangulable-criterion-ch-poly.html" title="Theorem 7.4.4">Theorem 7.4.4</a>, <span class="process-math">\(\chi_T=(t-\lambda_1)(t-\lambda_2)\cdots(t-\lambda_n)\in F[t]\)</span> and thus, there exists a basis <span class="process-math">\(\mathfrak{B}=\{v_1,v_2,\ldots,v_n\}\)</span> of <span class="process-math">\(V\)</span> such that<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{equation*}
+[T]_{\mathfrak{B}}=\begin{pmatrix}\lambda_1\amp a_{12}\amp\cdots\amp a_{1n}\\0\amp \lambda_2\amp\cdots\amp a_{2n}\\\vdots\amp\vdots\amp\ddots\amp \vdots\\0\amp 0\amp\cdots\amp \lambda_n\end{pmatrix}.
+\end{equation*}
+</div>Hence,<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{equation}
+T(v_1)=\lambda_1v_1\quad\text{and}\quad T(v_k)=\sum_{\ell=1}^{k-1}a_{\ell k}v_\ell+\lambda_kv_k\quad\text{for}\;2\leq k\leq n.\tag{8.1.5}
+\end{equation}
+</div>For any <span class="process-math">\(\lambda_i\)</span> and <span class="process-math">\(\lambda_j\)</span> we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{equation}
+(T-\lambda_i\unit_V)(T-\lambda_j\unit_V)=(T-\lambda_j\unit_V)(T-\lambda_i\unit_V).\tag{8.1.6}
+\end{equation}
+</div>For any <span class="process-math">\(k\geq 1\)</span> put <span class="process-math">\(g_{k}(T)=(T-\lambda_{k}\unit_V)(T-\lambda_{k-1}\unit_V)\cdots(T-\lambda_1\unit_V)\text{.}\)</span> In particular<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{equation}
+\chi_T(T)=g_{n}(T)=(T-\lambda_n\unit_V)(T-\lambda_{n-1}\unit_V)\cdots(T-\lambda_1\unit_V).\tag{8.1.7}
+\end{equation}
+</div>We can obtain the following identity by a repeated application of <a href="" class="xref" data-knowl="./knowl/commutativity-particular.html" title="Equation 8.1.6">(8.1.6)</a>.<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{equation}
+(T-\lambda_k\unit_V)\cdot g_{k-1}(T)=g_{k-1}(T)\cdot(T-\lambda_k\unit_V)\tag{8.1.8}
+\end{equation}
+</div>We show that <span class="process-math">\(\chi_T(T)(v_k)=0\)</span> for every basis vector <span class="process-math">\(v_k\text{.}\)</span> We prove this by showing <span class="process-math">\(g_{k}(T)(v_i)=0\)</span> for every <span class="process-math">\(1\leq i\leq k\)</span> and <span class="process-math">\(1\leq k\leq n\text{.}\)</span> We have <span class="process-math">\((T-\lambda_1\unit_V)(v_1)=0\text{.}\)</span> Hence, by <a href="" class="xref" data-knowl="./knowl/commutativity-general.html" title="Equation 8.1.8">(8.1.8)</a>, <span class="process-math">\(g_k(T)(v_1)=0\)</span> for all <span class="process-math">\(k\text{.}\)</span> Now assume that, for some <span class="process-math">\(1\lt r-1\lt n\text{,}\)</span> we have proved <span class="process-math">\(g_{r-1}(T)(v_i)=0\text{,}\)</span> where <span class="process-math">\(1\leq i\leq r-1\text{.}\)</span> We show that <span class="process-math">\(g_{r}(T)(v_i)=0\)</span> for all <span class="process-math">\(1\leq i\leq r\text{.}\)</span> Since <span class="process-math">\(g_r(T)=(T-\lambda_r\unit_V)g_{r-1}(T)\text{,}\)</span> we only need to show that <span class="process-math">\(g_{r}(T)(v_{r})=0\text{.}\)</span> We have<div class="displaymath process-math" data-contains-math-knowls="./knowl/triangulable-criterion-ch-poly.html ./knowl/commutativity-particular.html ./knowl/commutativity-general.html ./knowl/commutativity-general.html ./knowl/matrix-representation.html">
+\begin{align*}
+g_{r}(T)(v_{r})\amp=(T-\lambda_{r}\unit_V)g_{r-1}(T)(v_{r})\amp\\
+\amp= g_{r-1}(T)(T-\lambda_{r}\unit_V)(v_{r})\amp\text{by}\; \knowl{./knowl/commutativity-general.html}{\text{(8.1.8)}}\\
+\amp= g_{r-1}(T)\left(\sum_{\ell=1}^{r-1}a_{\ell r}v_\ell\right)\amp\text{by}\;\knowl{./knowl/matrix-representation.html}{\text{(8.1.5)}}\\
+\amp=\sum_{\ell=1}^{r-1}a_{\ell r}g_{r-1}(T)(v_\ell)\amp\text{as}\;g_{r-1}(T)\in\End_F(V)
+\end{align*}
+</div>By induction <span class="process-math">\(g_{r-1}(T)(v_\ell)=0\)</span> for <span class="process-math">\(1\leq\ell\leq r-1\text{.}\)</span> Hence, <span class="process-math">\(g_{r}(T)(v_r)=0\text{.}\)</span> Hence the required result can be obtained by taking <span class="process-math">\(r=n\text{.}\)</span></article></body>
+</html>

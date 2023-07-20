@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">(Matrix representation of dual basis).</span>
+</h3>Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> with an ordered basis <span class="process-math">\(\mathfrak{B}=(v_1,\ldots,v_n)\text{.}\)</span> Consider a dual basis <span class="process-math">\(\mathfrak{B}^*=(v_1^*,\ldots,v_n^*)\)</span> as in <a href="" class="xref" data-knowl="./knowl/dual-basis.html" title="Definition 5.6.3">Definition 5.6.3</a>. Let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. Suppose that <span class="process-math">\(T(v_j)=\sum_i a_{ij}v_i\text{,}\)</span> i.e.,<div class="displaymath process-math" data-contains-math-knowls="./knowl/dual-basis.html">
+\begin{equation*}
+[T]_{\mathfrak{B}}=\begin{pmatrix}a_{11}\amp a_{12}\amp\cdots\amp a_{1n}\\a_{21}\amp a_{22}\amp\cdots\amp a_{2n}\\\vdots\amp \vdots\amp\ddots\amp \vdots\\a_{n1}\amp a_{n2}\amp\cdots\amp a_{nn}\\\end{pmatrix}.
+\end{equation*}
+</div>We have a map<div class="displaymath process-math" data-contains-math-knowls="./knowl/dual-basis.html">
+\begin{equation*}
+T^*\colon V^*\to V^*\quad\text{given by}\quad f\mapsto f\circ T.
+\end{equation*}
+</div>We have the following.<div class="displaymath process-math" data-contains-math-knowls="./knowl/dual-basis.html">
+\begin{equation*}
+T^*(v_j^*)(v_k)=v_j^*\circ T(v_k)=v_j^*\left(\sum_i a_{ik}v_i\right)=a_{jk}
+\end{equation*}
+</div>Hence,<div class="displaymath process-math" data-contains-math-knowls="./knowl/dual-basis.html">
+\begin{equation*}
+T^*(v_j^*)=\sum_ka_{jk}v^*_k.
+\end{equation*}
+</div>The matrix of <span class="process-math">\(T^*\)</span> with respect to <span class="process-math">\(\mathfrak{B}^*\)</span> is the <em class="emphasis">transpose</em> of <span class="process-math">\([T]_{\mathfrak{B}}\text{.}\)</span><div class="displaymath process-math" data-contains-math-knowls="./knowl/dual-basis.html">
+\begin{equation*}
+[T^*]_{\mathfrak{B}^*}=\begin{pmatrix}a_{11}\amp a_{21}\amp\cdots\amp a_{n1}\\a_{12}\amp a_{22}\amp\cdots\amp a_{n2}\\\vdots\amp \vdots\amp\ddots\amp \vdots\\a_{1n}\amp a_{2n}\amp\cdots\amp a_{nn}\\\end{pmatrix}
+\end{equation*}
+</div></article><span class="incontext"><a href="sec-double-dual-iso.html#matrix-representation-dual-basis" class="internal">in-context</a></span>
+</body>
+</html>

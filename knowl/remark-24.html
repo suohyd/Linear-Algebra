@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.9.7</span><span class="period">.</span>
+</h3>In fact following more general result is true. <div class="para logical">
+<div class="para">Let <span class="process-math">\(X_0,X_1,\ldots,X_n\)</span> be finite-dimensional vector spaces over a field <span class="process-math">\(F\text{.}\)</span> Suppose that we have the following exact sequence with <span class="process-math">\(F\)</span>-linear maps <span class="process-math">\(d_i\text{.}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0\to X_0\xrightarrow{d_0}X_1\xrightarrow{d_1}X_2\xrightarrow{d_2}\cdots\xrightarrow{d_{n-1}}X_n\to 0
+\end{equation*}
+</div>
+<div class="para">Thus, we have <span class="process-math">\(d_0\)</span> is injective, <span class="process-math">\(d_{n-1}\)</span> is surjective, and <span class="process-math">\(\ker(d_{k+1})=\Im(d_{k})\)</span> for each <span class="process-math">\(0\leq k\leq n-2\text{.}\)</span> Then,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{i=0}^{n}(-1)^{i}\dim_FX_i=0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">We will not prove this result. A possible way to prove this result is by ’splitting’ the exact sequence into several short exact sequences:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/additivity-of-dim.html">
+\begin{gather*}
+0\to X_0\xrightarrow{d_0}X_1\xrightarrow{d_0}\Im(d_0)\to 0\\
+0\to\ker(d_k)\xrightarrow{\text{inclusion map}}X_k\xrightarrow{d_k}\Im(d_k)\to 0\quad\text{for each }1\leq k\leq n-1.
+\end{gather*}
+</div>
+<div class="para">One may then apply <a href="" class="xref" data-knowl="./knowl/additivity-of-dim.html" title="Theorem 4.9.6: (Dimension as an additive function)">Theorem 4.9.6</a> for every short exact sequence obtained above to get the result.</div>
+</div></article><span class="incontext"><a href="sec-exact-seq.html#remark-24" class="internal">in-context</a></span>
+</body>
+</html>

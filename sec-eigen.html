@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eigenvalues and Eigenvectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Linear Algebra">
+<meta property="book:author" content="Abhay Soman">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.3/pretext_search.js"></script><link href="https://pretextbook.org/css/0.7/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.3</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.3/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.3/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.3/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.7/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.7/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="Linear-Algebra.html"><span class="title">Linear Algebra:</span> <span class="subtitle">Companion notes</span></a></h1>
+<p class="byline">Abhay Soman</p>
+</div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" class="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms" class="searchterms"></span>
+</h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="avatarbutton" class="avatarbutton name">You!</span><div id="preferences_menu_holder" class="preferences_menu_holder hidden"><ol id="preferences_menu" class="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-invariant-subspaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-invariant-subspaces-eigenvectors.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-algebraic-geometric-multiplicity.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" class="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\R}{\mathbb R}
+\def\C{\mathbb{C}}
+\def\Q{\mathbb{Q}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\ev{\mathrm{ev}}
+\def\Im{\mathrm{Im}}
+\def\End{\mathrm{End}}
+\def\Aut{\mathrm{Aut}}
+\def\Hom{\mathrm{Hom}}
+\def\Iso{\mathrm{Iso}}
+\def\GL{\mathrm{GL}}
+\def\ker{\mathrm{ker }}
+\def\Span{\mathrm{Span}}
+\def\tr{\mathrm{tr}}
+\newcommand{\unit}{1\!\!1}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="preface-1.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="Elt-row-operations.html" class="internal"><span class="codenumber">1</span> <span class="title">Elementary row operations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Elementary row operations</span></a></div></li>
+<li><div class="toc-item"><a href="Elt-row-exercises.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-sage-echelon-form.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Row echelon form using SageMath</span></a></div></li>
+<li><div class="toc-item"><a href="sec-uniqueness-echelon-forms.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Uniqueness of row reduced echelon form</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="VS.html" class="internal"><span class="codenumber">2</span> <span class="title">Vector spaces</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="vs-def.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Definition of a vector space</span></a></div></li>
+<li><div class="toc-item"><a href="vs-examples.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Examples of vector spaces</span></a></div></li>
+<li><div class="toc-item"><a href="Ex-VS.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="linear-combination.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear combination</span></a></div></li>
+<li><div class="toc-item"><a href="subspace.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Subspace of a vector space</span></a></div></li>
+<li><div class="toc-item"><a href="Ex-subspace.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Basis-Dim.html" class="internal"><span class="codenumber">3</span> <span class="title">Basis and dimension of a vector space</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-linear-dependence.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Linearly independent vectors</span></a></div></li>
+<li><div class="toc-item"><a href="ex-linear-dependence.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-basis-dim.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Basis and Dimension</span></a></div></li>
+<li><div class="toc-item"><a href="sec-results-basis-dim.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Invariance of dimension</span></a></div></li>
+<li><div class="toc-item"><a href="ex-basis-dim.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-basis-examples.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Examples</span></a></div></li>
+<li><div class="toc-item"><a href="sec-new-vs.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Sum and direct sum of vector subspaces</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-linear-transformations.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear transformations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-def-linear-transformation.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Definition of linear transformation</span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-linear-transformations.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Examples of linear transformations</span></a></div></li>
+<li><div class="toc-item"><a href="ex-lin-trans.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-kernel-image-of-hom.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Kernel and image of a linear homomorphism</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rank-nullity.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Rank-Nullity Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-kernel-of-trace.html" class="internal"><span class="codenumber">4.6</span> <span class="title">A basis for the kernel of trace map</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec-ordered-basis-linear-trans.html" class="internal"><span class="codenumber">4.7</span> <span class="title">Ordered basis and linear maps</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-ordered-basis-linear-trans.html#subsec-ordered-basis" class="internal"><span class="codenumber">4.7.1</span> <span class="title">Ordered basis</span></a></div></li>
+<li><div class="toc-item"><a href="sec-ordered-basis-linear-trans.html#subsec-matrix-rep" class="internal"><span class="codenumber">4.7.2</span> <span class="title">Matrix representation of a linear transformation</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="ex-ordered-basis.html" class="internal"><span class="codenumber">4.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exact-seq.html" class="internal"><span class="codenumber">4.9</span> <span class="title">Exact sequences (Optional)</span></a></div></li>
+<li><div class="toc-item"><a href="ex-exact-seq.html" class="internal"><span class="codenumber">4.10</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-isomorphisms.html" class="internal"><span class="codenumber">5</span> <span class="title">Isomorphisms</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-isomorphisms.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Definition of Isomorphism</span></a></div></li>
+<li><div class="toc-item"><a href="sec-iso-between-matrices-Hom.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Matrices and a space of linear transformations</span></a></div></li>
+<li><div class="toc-item"><a href="sec-isomorphism-invertible-matrix.html" class="internal"><span class="codenumber">5.3</span> <span class="title">Isomorphism and invertible matrix</span></a></div></li>
+<li><div class="toc-item"><a href="sec-row-column-rank.html" class="internal"><span class="codenumber">5.4</span> <span class="title">Row and Column rank</span></a></div></li>
+<li><div class="toc-item"><a href="sec-rank-nullity-sage.html" class="internal"><span class="codenumber">5.5</span> <span class="title">Rank and Nullity using SageMath</span></a></div></li>
+<li><div class="toc-item"><a href="sec-double-dual-iso.html" class="internal"><span class="codenumber">5.6</span> <span class="title">Natural isomorphism between a vector space and its double dual</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises-isomorphism.html" class="internal"><span class="codenumber">5.7</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Quotient-space.html" class="internal"><span class="codenumber">6</span> <span class="title">Quotient space</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-quotient-space-def.html" class="internal"><span class="codenumber">6.1</span> <span class="title">Definition of Quotient Space</span></a></div></li>
+<li><div class="toc-item"><a href="sec-natural-projection.html" class="internal"><span class="codenumber">6.2</span> <span class="title">Natural Projection and Correspondence Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-first-isomorphism-theorem.html" class="internal"><span class="codenumber">6.3</span> <span class="title">Fundamental Homomorphism Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-FIT.html" class="internal"><span class="codenumber">6.4</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-invariant-subspaces-eigenvectors.html" class="internal"><span class="codenumber">7</span> <span class="title">Invariant Subspaces and Eigenvectors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-invariant-subspaces.html" class="internal"><span class="codenumber">7.1</span> <span class="title">Invariant subspaces</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec-eigen.html" class="internal"><span class="codenumber">7.2</span> <span class="title">Eigenvalues and Eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="sec-algebraic-geometric-multiplicity.html" class="internal"><span class="codenumber">7.3</span> <span class="title">Algebraic and Geometric multiplicity</span></a></div></li>
+<li><div class="toc-item"><a href="sec-triangulable-maps.html" class="internal"><span class="codenumber">7.4</span> <span class="title">Triangulable linear maps and matrices</span></a></div></li>
+<li><div class="toc-item"><a href="sec-cyclic-subspaces.html" class="internal"><span class="codenumber">7.5</span> <span class="title">Cyclic subspaces</span></a></div></li>
+<li><div class="toc-item"><a href="sec-computations-with-Jordan-block.html" class="internal"><span class="codenumber">7.6</span> <span class="title">Some Computations with Jordan block</span></a></div></li>
+<li><div class="toc-item"><a href="ex-invariant-subspaces-eigenvectors.html" class="internal"><span class="codenumber">7.7</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-eigenvalues-eigenvectors-sagemath.html" class="internal"><span class="codenumber">7.8</span> <span class="title">Eigenvalues and Eigenvectors using SageMath</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-Cayley-Hamilton-Jordan-Normal.html" class="internal"><span class="codenumber">8</span> <span class="title">Cayley-Hamilton theorem and Jordan Normal Form</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-Cayley-Hamilton.html" class="internal"><span class="codenumber">8.1</span> <span class="title">Cayley-Hamilton Theorem</span></a></div></li>
+<li><div class="toc-item"><a href="sec-Jordan-normal-form.html" class="internal"><span class="codenumber">8.2</span> <span class="title">Finding Jordan normal form over <span class="process-math">\(\C\)</span></span></a></div></li>
+<li><div class="toc-item"><a href="sec-examples-Jordan-form.html" class="internal"><span class="codenumber">8.3</span> <span class="title">Examples</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li>
+<div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">(Algebra of polynomials and determinants)</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec-algebra-of-polynomials.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Algebra of polynomials</span></a></div></li>
+<li><div class="toc-item"><a href="sec-determinant.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Determinants</span></a></div></li>
+</ul>
+</li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-eigen"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">7.2</span> <span class="title">Eigenvalues and Eigenvectors</span>
+</h2>
+<section class="introduction" id="introduction-42">We define an important class of invariant subspaces. We refer the reader to <a href="sec-determinant.html" class="internal" title="Section A.2: Determinants">Section A.2</a> for a definition and properties of the determinant.</section><article class="definition definition-like" id="def-eigenvector-map"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Eigenvector and Eigenvalue of a linear map).</span>
+</h3> Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. An <dfn class="terminology">eigenvector <span class="process-math">\(v\)</span></dfn> of <span class="process-math">\(T\)</span> is a nonzero vector such that<div class="displaymath process-math">
+\begin{equation*}
+T(v)=\lambda v
+\end{equation*}
+</div>for some scalar <span class="process-math">\(\lambda\in F\text{.}\)</span> The scalar <span class="process-math">\(\lambda\)</span> is called the <dfn class="terminology">eigenvalue</dfn> associated to the eigenvector <span class="process-math">\(v\text{.}\)</span></article><div class="para" id="p-147">Similarly we define eigenvector and eigenvalue of a matrix.</div>
+<article class="definition definition-like" id="def-eigenvector-matrix"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.2</span><span class="period">.</span><span class="space"> </span><span class="title">(Eigenvector and Eigenvalue of a square matrix).</span>
+</h3> Let <span class="process-math">\(A\in M_n(F)\)</span> be an <span class="process-math">\(n\times n\)</span> matrix over a field <span class="process-math">\(F\text{.}\)</span> A nonzero column vector is an <dfn class="terminology">eigenvector</dfn> of <span class="process-math">\(A\)</span> if it is an eigenvector of a linear map <span class="process-math">\(\ell_A\colon F^n\to F^n\)</span> defined by the left multiplication by <span class="process-math">\(A\text{.}\)</span> The scalar corresponding to an eigenvector of <span class="process-math">\(\ell_A\)</span> is called an <dfn class="terminology">eigenvalue</dfn> of <span class="process-math">\(A\text{.}\)</span></article><article class="remark remark-like" id="remark-37"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-148">We keep notations of <a href="" class="xref" data-knowl="./knowl/def-eigenvector-map.html" title="Definition 7.2.1: (Eigenvector and Eigenvalue of a linear map)">Definition 7.2.1</a>. The image of the line <span class="process-math">\(\ell=\{\alpha v:\alpha\in F\}\)</span> containing <span class="process-math">\(v\)</span> and passing through the “origin” under <span class="process-math">\(T\)</span> is contained in <span class="process-math">\(\ell\text{.}\)</span> If <span class="process-math">\(\lambda\neq 0\)</span> then <span class="process-math">\(T(\ell)=\ell\text{.}\)</span>
+</div> <div class="para" id="p-149">In other words, lines defined by eigenvectors are invariant under <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para" id="p-150">Conversely, if <span class="process-math">\(\ell\)</span> is a line in <span class="process-math">\(V\)</span> invariant under <span class="process-math">\(T\)</span> i.e., <span class="process-math">\(\ell\)</span> is an one-dimensional invariant subspace of <span class="process-math">\(V\text{,}\)</span> then any nonzero vector in <span class="process-math">\(\ell\)</span> is an eigenvector.</div></article><div class="para" id="p-151">Using above remark and thinking geometrically it is clear that the anti-clockwise rotation of the real plane by <span class="process-math">\(90^0\)</span> has no eigenvectors. Indeed, algebraically we have the following.</div>
+<article class="example example-like" id="rotation-of-real-plane"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-rotation-of-real-plane"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">(Rotation in the real plane).</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-rotation-of-real-plane"><article class="example example-like">The anti-clockwise rotation by <span class="process-math">\(90^0\)</span> is the map <span class="process-math">\(T\colon\R^2\to\R^2\)</span> given by<div class="displaymath process-math">
+\begin{equation*}
+e_1\mapsto e_2\quad\text{and}\quad e_2\mapsto -e_1.
+\end{equation*}
+</div>Suppose that <span class="process-math">\(\lambda\in\R\)</span> and <span class="process-math">\((\alpha,\beta)\neq (0,0)\)</span> are such that<div class="displaymath process-math" id="md-16">
+\begin{align*}
+\lambda\alpha e_1+\lambda\beta e_2\amp= T(\alpha e_1+\beta e_2)\\
+\amp=\alpha e_2-\beta e_1.
+\end{align*}
+</div>Therefore,<div class="displaymath process-math">
+\begin{equation*}
+\lambda\alpha=-\beta\quad\text{and}\quad\lambda\beta=\alpha.
+\end{equation*}
+</div>Suppose that <span class="process-math">\(\beta\neq 0\)</span> (the case when <span class="process-math">\(\alpha\neq 0\)</span> can be similarly dealt with). Thus, <span class="process-math">\(-\beta=\lambda^2\beta\)</span> implies that <span class="process-math">\(\lambda^2=-1\text{,}\)</span> a contradiction.</article></div>
+<div class="para" id="p-152">In the above example the underlying field plays an important role. If we consider the complex plane <span class="process-math">\(\C^2\)</span> over <span class="process-math">\(\C\)</span> then the “rotation” have eigenvectors, as the following calculations show.</div>
+<article class="example example-like" id="rotation-in-the-complex-plane-"><a href="" data-knowl="" class="id-ref example-knowl original" data-refid="hk-rotation-in-the-complex-plane-"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">7.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">(Rotation in the complex plane).</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-rotation-in-the-complex-plane-"><article class="example example-like">Consider the map <span class="process-math">\(T\colon\C^2\to\C^2\)</span> given by<div class="displaymath process-math">
+\begin{equation*}
+e_1\mapsto e_2\quad\text{and}\quad e_2\mapsto -e_1.
+\end{equation*}
+</div>We consider <span class="process-math">\(\C^2\)</span> as a vector space over <span class="process-math">\(\C\text{.}\)</span> Suppose that <span class="process-math">\(\lambda\in\C\)</span> and <span class="process-math">\((\alpha,\beta)\neq (0,0)\)</span> are such that<div class="displaymath process-math" id="md-17">
+\begin{align*}
+\lambda\alpha e_1+\lambda\beta e_2\amp= T(\alpha e_1+\beta e_2)\\
+\amp=\alpha e_2-\beta e_1.
+\end{align*}
+</div>Therefore,<div class="displaymath process-math">
+\begin{equation*}
+\lambda\alpha=-\beta\quad\text{and}\quad\lambda\beta=\alpha.
+\end{equation*}
+</div>Suppose that <span class="process-math">\(\beta\neq 0\)</span> (the case when <span class="process-math">\(\alpha\neq 0\)</span> can be similarly dealt with). Thus, <span class="process-math">\(-\beta=\lambda^2\beta\)</span> implies that <span class="process-math">\(\lambda^2=-1\text{,}\)</span> i.e., <span class="process-math">\(\lambda=\pm i\text{.}\)</span> Take <span class="process-math">\(\lambda=i\)</span> (the case when <span class="process-math">\(\lambda=-i\)</span> can be dealt with similarly) and <span class="process-math">\(v=ie_1+e_2\neq 0\text{.}\)</span> Thus<div class="displaymath process-math">
+\begin{equation*}
+T(ie_1+e_2)=ie_2-e_1=i(ie_1+e_2)\text{,}
+\end{equation*}
+</div>i.e., <span class="process-math">\(v\)</span> is an eigenvector of <span class="process-math">\(T\)</span> with an eigenvalue <span class="process-math">\(i\text{.}\)</span> Corresponding to <span class="process-math">\(-i\)</span> we get eigenvector <span class="process-math">\(-ie_1+e_2\)</span> which is linearly independent from <span class="process-math">\(ie_1+e_2\text{.}\)</span></article></div>
+<div class="para" id="p-153">As similar matrices represents the same linear map we obtain the following</div>
+<article class="proposition theorem-like" id="proposition-7"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.6</span><span class="period">.</span>
+</h3>Similar matrices have the same eigenvalues.</article><div class="para" id="p-154">The following simple observations will be useful.</div>
+<article class="proposition theorem-like" id="proposition-8"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.7</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. The matrix of <span class="process-math">\(T\)</span> with respect to an ordered basis <span class="process-math">\((v_1,v_2,\ldots,v_n)\)</span> is a diagonal matrix if and only if each <span class="process-math">\(v_i\)</span> is an eigenvector.</article><article class="proposition theorem-like" id="proposition-9"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.8</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. A nonzero vector is an eigenvector with an eigenvalue <span class="process-math">\(\lambda\)</span> if and only if it is in the kernel of <span class="process-math">\(T-\lambda\unit_V\text{.}\)</span></article><article class="corollary theorem-like" id="det-criterion-for-eigenvalue"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.9</span><span class="period">.</span>
+</h3>Following are equivalent. <ol class="decimal">
+<li id="li-63"><div class="para" id="p-derived-li-63">
+<span class="process-math">\(T\)</span> is not invertible</div></li>
+<li id="li-64"><div class="para" id="p-derived-li-64">
+<span class="process-math">\(T\)</span> has an eigenvalue equal to <span class="process-math">\(0\)</span>
+</div></li>
+<li id="li-65"><div class="para" id="p-derived-li-65">If <span class="process-math">\(A\)</span> is a matrix of <span class="process-math">\(T\)</span> with respect to an arbitrary basis then <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></li>
+</ol></article><article class="remark remark-like" id="remark-det-criterion-for-eigenvalue"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">7.2.10</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-155">Suppose that <span class="process-math">\(v\in V\)</span> is an eigenvector of <span class="process-math">\(T\)</span> corresponding to eigenvalue <span class="process-math">\(\lambda\in F\text{.}\)</span> If we let <span class="process-math">\(S=T-\lambda\unit_V\)</span> then <span class="process-math">\(S(v)=0\text{,}\)</span> i.e., <span class="process-math">\(v\)</span> is an eigenvector corresponding to eigenvalue <span class="process-math">\(0\)</span> for <span class="process-math">\(S\text{.}\)</span>
+</div> <div class="para" id="p-156">Observe that if the matrix representation of <span class="process-math">\(T\)</span> with respect to a basis <span class="process-math">\(\mathfrak{B}\)</span> is <span class="process-math">\(A\)</span> then, the matrix representation of <span class="process-math">\(T-\lambda\unit_V\)</span> with respect to <span class="process-math">\(\mathfrak{B}\)</span> is <span class="process-math">\(A-\lambda I_n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/det-criterion-for-eigenvalue.html" title="Corollary 7.2.9">Corollary 7.2.9</a>, <span class="process-math">\(\det(A-\lambda I_n)=0\text{.}\)</span> Hence, <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> if and only if <span class="process-math">\(\det(A-\lambda I_n)=0\text{.}\)</span>
+</div></article><article class="definition definition-like" id="def-eigenspace"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.11</span><span class="period">.</span><span class="space"> </span><span class="title">(Eigenspace).</span>
+</h3> Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. Suppose that <span class="process-math">\(\lambda\in F\)</span> is an eigenvalue of <span class="process-math">\(T\text{.}\)</span> The subspace <span class="process-math">\(\ker(T-\lambda\unit_V)\)</span> is called the <dfn class="terminology">eigenspace corresponding to eigenvalue <span class="process-math">\(\lambda\)</span></dfn>.</article><article class="convention remark-like" id="eigenspace-notation"><h3 class="heading">
+<span class="type">Convention</span><span class="space"> </span><span class="codenumber">7.2.12</span><span class="period">.</span>
+</h3>The eigenspace corresponding to an eigenvalue <span class="process-math">\(\lambda\)</span> is denoted by <span class="process-math">\(V_\lambda\text{.}\)</span></article><div class="para" id="p-157">If <span class="process-math">\(A\in M_n(F)\)</span> is a matrix then the expansion of the determinant <span class="process-math">\(\det(tI_n-A)\)</span> shows that it is a polynomial in <span class="process-math">\(t\)</span> whose coefficients are in <span class="process-math">\(F\)</span> and it has degree <span class="process-math">\(n\text{.}\)</span> We define the characteristic polynomial of a linear map.</div>
+<article class="definition definition-like" id="def-characteristic-polynomial"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.13</span><span class="period">.</span><span class="space"> </span><span class="title">(Characteristic polynomial).</span>
+</h3> Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\)</span> of dimension <span class="process-math">\(n\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. Suppose that <span class="process-math">\(A\)</span> is a matrix representation of <span class="process-math">\(T\text{.}\)</span> The <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(T\)</span> is the polynomial<div class="displaymath process-math">
+\begin{equation*}
+\chi_T(t)=\det(tI_n-A)\in F[t].
+\end{equation*}
+</div>
+<div class="para logical" id="p-158">
+<div class="para">Let <span class="process-math">\(P\in M_n(F)\text{.}\)</span> The <dfn class="terminology">characteristic polynomial</dfn> of <span class="process-math">\(P\)</span> is the polynomial</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\chi_P(t)=\det(tI_n-P)\in F[t].
+\end{equation*}
+</div>
+</div></article><div class="para" id="p-159">By <a href="" class="xref" data-knowl="./knowl/remark-det-criterion-for-eigenvalue.html" title="Remark 7.2.10">Remark 7.2.10</a> we get the following result.</div>
+<article class="corollary theorem-like" id="eigenvalues-as-roots"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">7.2.14</span><span class="period">.</span>
+</h3>The eigenvalues of <span class="process-math">\(T\)</span> are roots in <span class="process-math">\(F\)</span> of its characteristic polynomial.</article><article class="proposition theorem-like" id="eigenvalue-over-C"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.15</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map on a vector space <span class="process-math">\(V\)</span> of dimension <span class="process-math">\(n&lt;\infty\text{.}\)</span> <ol class="decimal">
+<li id="li-66"><div class="para" id="p-derived-li-66">The linear map <span class="process-math">\(T\)</span> has at most <span class="process-math">\(n\)</span> eigenvalues.</div></li>
+<li id="li-67"><div class="para" id="p-derived-li-67">If <span class="process-math">\(F=\C\)</span> and <span class="process-math">\(V\neq\{0\}\)</span> then <span class="process-math">\(T\)</span> has at least one eigenvalue.</div></li>
+</ol></article><article class="hiddenproof" id="proof-34"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof">This follows from <a href="" class="xref" data-knowl="./knowl/eigenvalues-as-roots.html" title="Corollary 7.2.14">Corollary 7.2.14</a>, <a href="" class="xref" data-knowl="./knowl/number-of-roots-polynomial.html" title="Lemma A.1.9">Lemma A.1.9</a>, and <a href="" class="xref" data-knowl="./knowl/Fundamental-theorem-of-algebra.html" title="Theorem A.1.10: (Fundamental Theorem of Algebra)">Theorem A.1.10</a>.</article></div>
+<div class="para" id="p-160">Note that the characteristic polynomial of anti-clockwise rotation by <span class="process-math">\(90^0\)</span> of the real plane is <span class="process-math">\(t^2+1\text{.}\)</span> Hence it has no real roots and thus no eigenvalues. However, <span class="process-math">\(t^2+1\)</span> has roots in <span class="process-math">\(\C\)</span> (refer to <a href="" class="xref" data-knowl="./knowl/rotation-of-real-plane.html" title="Example 7.2.4: (Rotation in the real plane)">Example 7.2.4</a> and <a href="" class="xref" data-knowl="./knowl/rotation-in-the-complex-plane-.html" title="Example 7.2.5: (Rotation in the complex plane)">Example 7.2.5</a>).</div>
+<div class="para" id="p-161">Following result shows that the characteristic polynomial of <span class="process-math">\(T\)</span> does not depend on a particular matrix representation.</div>
+<article class="proposition theorem-like" id="independent-of-basis-charateristic-polynomial"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.16</span><span class="period">.</span>
+</h3>The characteristic polynomial of <span class="process-math">\(T\)</span> does not depend on the choice of a basis.</article><article class="hiddenproof" id="proof-35"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-35"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-35"><article class="hiddenproof">Suppose that <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> be matrix representations of <span class="process-math">\(T\)</span> with respect to some bases of <span class="process-math">\(V\text{.}\)</span> Then there exists an invertible matrix <span class="process-math">\(P\)</span> such that <span class="process-math">\(B=C^{-1}AC\)</span> (see <a href="" class="xref" data-knowl="./knowl/change-of-basis-Endo.html" title="Corollary 5.3.6">Corollary 5.3.6</a>). Thus,<div class="displaymath process-math" data-contains-math-knowls="./knowl/change-of-basis-Endo.html">
+\begin{equation*}
+tI_n-B=tI_n-C^{-1}AC=C^{-1}(tI_n-A)C.
+\end{equation*}
+</div>Hence<div class="displaymath process-math" data-contains-math-knowls="./knowl/change-of-basis-Endo.html">
+\begin{equation*}
+\det(tI_n-B)=\det\left(C^{-1}(tI_n-A)C\right)=\det(tI_n-A).
+\end{equation*}
+</div>Thus the result is proved.</article></div>
+<article class="definition definition-like" id="def-minimal-polynomial"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">7.2.17</span><span class="period">.</span><span class="space"> </span><span class="title">(Minimal polynomial).</span>
+</h3> Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. The <dfn class="terminology">minimal polynomial of <span class="process-math">\(T\)</span></dfn> is the monic polynomial <span class="process-math">\(m_T(t)\in F[t]\)</span> of least degree annihilating <span class="process-math">\(T\text{.}\)</span> <div class="para" id="p-162">Let <span class="process-math">\(A\in M_n(F)\text{.}\)</span> The <dfn class="terminology">minimal polynomial of <span class="process-math">\(A\)</span></dfn> is the monic polynomial <span class="process-math">\(m_A(t)\in F[t]\)</span> of least degree annihilating <span class="process-math">\(A\text{.}\)</span>
+</div></article><article class="lemma theorem-like" id="lemma-14"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">7.2.18</span><span class="period">.</span>
+</h3>If <span class="process-math">\(A,B\in M_n(F)\)</span> are similar then the minimal polynomial of <span class="process-math">\(A\)</span> and the minimal polynomial of <span class="process-math">\(B\)</span> are the same.</article><article class="hiddenproof" id="proof-36"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-36"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-36"><article class="hiddenproof">This follows from the following observation. For any invertible matrix <span class="process-math">\(P\)</span> and any polynomial <span class="process-math">\(f(t)\in F[t]\)</span><div class="displaymath process-math">
+\begin{equation*}
+f(P^{-1}AP)=P^{-1}f(A)P.
+\end{equation*}
+</div></article></div>
+<article class="exercise exercise-like" id="exercise-77"><a href="" data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-77"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">7.2.19</span><span class="period">.</span>
+</h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-77"><article class="exercise exercise-like">Find the minimal polynomial of a linear map corresponding to the following matrix.<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}1\amp 1\amp 1\\-1\amp -1\amp -1\\1\amp 1\amp 1\end{pmatrix}
+\end{equation*}
+</div></article></div>
+<article class="proposition theorem-like" id="minimal-poly-divides-annihilating-poly"><h3 class="heading">
+<span class="type">Proposition</span><span class="space"> </span><span class="codenumber">7.2.20</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(p(t)\in F[t]\)</span> be an annihilating polynomial of an <span class="process-math">\(F\)</span> linear map <span class="process-math">\(T\colon V\to V\text{.}\)</span> Then the minimal polynomial of <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(m_T\)</span> divides <span class="process-math">\(p(t)\text{.}\)</span></article><article class="hiddenproof" id="proof-37"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-37"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-37"><article class="hiddenproof">By the division algorithm there are polynomials <span class="process-math">\(q(t),r(t)\in F[t]\)</span> with <span class="process-math">\(\deg r(t)\lt\deg m_T\)</span> such that<div class="displaymath process-math">
+\begin{equation*}
+p(t)=m_T\cdot q(t)+r(t).
+\end{equation*}
+</div>This gives the following equation.<div class="displaymath process-math">
+\begin{equation*}
+0=p(T)=m_T(T)\cdot q(T)+r(T)=r(T).
+\end{equation*}
+</div>Since <span class="process-math">\(\deg r(t)\lt\deg m_T\)</span> and <span class="process-math">\(m_T\)</span> is the least degree monic polynomial annihilating <span class="process-math">\(T\)</span> we must have <span class="process-math">\(r(t)=0\in F[t]\text{.}\)</span> Thus <span class="process-math">\(m_T\)</span> divides <span class="process-math">\(p(t)\text{.}\)</span></article></div>
+<div class="para" id="p-163">In fact roots of the characteristic and minimal polynomial are the same.</div>
+<article class="theorem theorem-like" id="theorem-20"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">7.2.21</span><span class="period">.</span>
+</h3>Let <span class="process-math">\(V\)</span> be a finite-dimensional vector space over a field <span class="process-math">\(F\text{,}\)</span> and let <span class="process-math">\(T\colon V\to V\)</span> be an <span class="process-math">\(F\)</span>-linear map. The characteristic polynomial of <span class="process-math">\(T\)</span> and the minimal polynomial of <span class="process-math">\(T\)</span> has the same roots.</article><article class="hiddenproof" id="proof-38"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-38"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-38"><article class="hiddenproof"><div class="para logical" id="p-164">
+<div class="para">Let <span class="process-math">\(\lambda\in F\)</span> be a root of <span class="process-math">\(\chi_T\text{,}\)</span> i.e., <span class="process-math">\(\lambda\)</span> is an eigenvalue of <span class="process-math">\(T\)</span> (see <a href="" class="xref" data-knowl="./knowl/eigenvalues-as-roots.html" title="Corollary 7.2.14">Corollary 7.2.14</a>). Let <span class="process-math">\(v\in V\)</span> be an eigenvector corresponding to <span class="process-math">\(\lambda\text{.}\)</span> Thus <span class="process-math">\(T^k(v)=\lambda^kv\)</span> for any <span class="process-math">\(k\in\mathbb{N}\text{.}\)</span> Suppose that <span class="process-math">\(m_T=a_0+a_1t+\cdots+a_{r-1}t^{r-1}+t^r\in F[t]\text{.}\)</span> Since <span class="process-math">\(m_T\)</span> is an annihilating polynomial we get the following.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/eigenvalues-as-roots.html">
+\begin{equation*}
+0=m_T(T)(v)=a_0v+a_1\lambda v+\cdots+a_{r-1}\lambda^{r-1}v+\lambda^rv=m_T(\lambda)v
+\end{equation*}
+</div>
+<div class="para">As <span class="process-math">\(v\)</span> is an eigenvector, it is nonzero. Hence we must have <span class="process-math">\(m_T(\lambda)=0\text{,}\)</span> i.e., <span class="process-math">\(\lambda\)</span> is a root of <span class="process-math">\(m_T\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-165">Conversely assume that <span class="process-math">\(\lambda\in F\)</span> is a root of <span class="process-math">\(m_T\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/minimal-poly-divides-annihilating-poly.html" title="Proposition 7.2.20">Proposition 7.2.20</a>, there exists <span class="process-math">\(q(t)\in F[t]\)</span> such that <span class="process-math">\(\chi_T=m_T\cdot q(t)\text{.}\)</span> Hence <span class="process-math">\(\chi_T(\lambda)=m_T(\lambda)\cdot q(\lambda)=0\text{,}\)</span> i.e., <span class="process-math">\(\lambda\)</span> is a root of <span class="process-math">\(\chi_T\text{.}\)</span>
+</div></article></div></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec-invariant-subspaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-algebraic-geometric-multiplicity.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">8.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">(Invariant subspace of dimension <span class="process-math">\(1\)</span> or <span class="process-math">\(2\)</span> in <span class="process-math">\(\R^3\)</span>).</span>
+</h3>
+<div class="para">Let <span class="process-math">\(T\colon\R^3\to\R^3\)</span> be an <span class="process-math">\(\R\)</span>-linear map. Then <span class="process-math">\(T\)</span> has either a one-dimensional or a two-dimensional invariant subspace.</div> <div class="para logical">
+<div class="para">Indeed, the characteristic polynomial of <span class="process-math">\(T\text{,}\)</span> <span class="process-math">\(\chi_T\)</span> is of the degree <span class="process-math">\(3\text{.}\)</span> Hence <span class="process-math">\(\chi_T\)</span> has a real root, say <span class="process-math">\(a\in\R\)</span> (this can be proved, for instance, by using continuity of polynomial <span class="process-math">\(\chi_T\)</span>). By <a href="" class="xref" data-knowl="./knowl/criterion-for-root.html" title="Lemma A.1.6">Lemma A.1.6</a>, there exists a monic (i.e., coefficient of <span class="process-math">\(t^2\)</span> is <span class="process-math">\(1\)</span>) quadratic polynomial <span class="process-math">\(q(t)\in\R[t]\)</span> such that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/criterion-for-root.html ./knowl/ev-multiplication.html">
+\begin{equation}
+\chi_T=(t-a)\cdot q(t)\tag{8.1.9}
+\end{equation}
+</div>
+<div class="para">By Cayley-Hamilton Theorem, <span class="process-math">\(T\)</span> is annihilated by the characteristic polynomial <span class="process-math">\(\chi_T\in\R[t]\text{.}\)</span> Hence, by <a href="" class="xref" data-knowl="./knowl/ev-multiplication.html" title="Equation 8.1.3">(8.1.3)</a>,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/criterion-for-root.html ./knowl/ev-multiplication.html">
+\begin{equation*}
+0=\chi_T(T)(v)=(T-a\unit_{\R^3})\left(q(T)(v)\right)\quad\text{for all}\;v\in\R^3.
+\end{equation*}
+</div>
+</div> <div class="para">We now assume that <span class="process-math">\(v\in\R^3\)</span> is a nonzero vector.</div> <div class="para">
+<em class="alert">Case 1</em>. Suppose that <span class="process-math">\(q(T)(v)\neq 0\text{.}\)</span> If we put <span class="process-math">\(w=q(T)(v)\in\R^3\)</span> then <span class="process-math">\((T-a\unit_{\R^3})(w)=0\text{,}\)</span> i.e., <span class="process-math">\(\langle w\rangle\)</span> is a one-dimensional subspace invariant under <span class="process-math">\(T\text{.}\)</span>
+</div> <div class="para">
+<em class="alert">Case 2</em>. Suppose that <span class="process-math">\(q(T)(v)= 0\)</span> and <span class="process-math">\(q(t)=t^2+bt+c\in\R[t]\text{.}\)</span> Thus <span class="process-math">\((T^2+bT+c\unit_{\R^3})(v)=0\text{.}\)</span> Consider the subspace <span class="process-math">\(W=\langle v,T(v)\rangle\text{.}\)</span> If <span class="process-math">\(v\)</span> and <span class="process-math">\(T(v)\)</span> are linearly dependent then <span class="process-math">\(v\)</span> is an eigenvector of <span class="process-math">\(T\)</span> and we are done. So we assume that <span class="process-math">\(\dim_{\R}W=2\text{.}\)</span> Note that <span class="process-math">\(T^2(v)=-bT(v)-cv\in W\)</span> and hence <span class="process-math">\(W\)</span> is an invariant subspace of dimension <span class="process-math">\(2\text{.}\)</span>
+</div></article><span class="incontext"><a href="sec-Cayley-Hamilton.html#invariant-subspace-of-dim-1-or-2" class="internal">in-context</a></span>
+</body>
+</html>

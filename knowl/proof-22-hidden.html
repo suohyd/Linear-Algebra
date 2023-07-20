@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof">Suppose that <span class="process-math">\(\dim_FV=n\)</span> and <span class="process-math">\(\dim_FW=m\text{.}\)</span> By Rank-Nullity Theorem (see <a href="" class="xref" data-knowl="./knowl/rank-nullity-theorem.html" title="Theorem 4.5.3: (Rank-Nullity Theorem)">Theorem 4.5.3</a>), <span class="process-math">\(\dim_F\ker(T)=n-r\text{.}\)</span> Let <span class="process-math">\(\{v_1,v_2,\ldots,v_{n-r}\}\)</span> be a basis for <span class="process-math">\(\ker(T)\text{.}\)</span> We extend it to a basis of <span class="process-math">\(V\text{,}\)</span> say <span class="process-math">\(\{v_1,\ldots,v_{n-r},u_1,\ldots,u_r\}\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/complementary-subspace.html" title="Proposition 3.7.6">Proposition 3.7.6</a>, we have<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html ./knowl/complementary-subspace.html ./knowl/eq1.html ./knowl/complementary-subspace.html">
+\begin{equation}
+V=\ker(T)\bigoplus\langle u_1,\ldots,u_r\rangle.\tag{5.3.1}
+\end{equation}
+</div>
+<div class="para">We claim that <span class="process-math">\(\{T(u_1),\ldots,T(u_r)\}\)</span> is a basis of <span class="process-math">\(\Im(T)\text{.}\)</span> Indeed, suppose that <span class="process-math">\(\sum_i\alpha_iT(u_i)=0\text{.}\)</span> Hence, <span class="process-math">\(\sum\alpha_iu_i\in\ker(T)\)</span> . By eq. <a href="" class="xref" data-knowl="./knowl/eq1.html" title="Equation 5.3.1">(5.3.1)</a> and linear independence of <span class="process-math">\(\{u_1,\ldots,u_r\}\text{,}\)</span> we have <span class="process-math">\(\alpha_i=0\)</span> for every <span class="process-math">\(i\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/complementary-subspace.html" title="Proposition 3.7.6">Proposition 3.7.6</a>, we write</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/complementary-subspace.html">
+\begin{equation*}
+W=\langle T(u_1),\ldots,T(u_r)\rangle\bigoplus W^\prime.
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(\{w_1,\ldots,w_{m-r}\}\)</span> be a basis of <span class="process-math">\(W^\prime\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Consider the ordered bases <span class="process-math">\((u_1,\ldots,u_r,v_1,\ldots,v_{n-r})\)</span> and <span class="process-math">\(\big(T(u_1),\ldots,T(u_r),w_1,\ldots,w_{m-r}\big)\)</span> of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively. The matrix of <span class="process-math">\(T\)</span> with respect to these bases is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Hence the theorem is proved.</div>
+</div></article></body>
+</html>

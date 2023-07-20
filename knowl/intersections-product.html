@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">6.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">(Intersections and product).</span>
+</h3> Let <span class="process-math">\(V\)</span> be a vector space over a field <span class="process-math">\(F\)</span> and <span class="process-math">\(W_i\leq V\)</span> (<span class="process-math">\(i\)</span> is in some indexing set <span class="process-math">\(I\)</span>) be subspace of <span class="process-math">\(V\text{.}\)</span> Then,<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/first-isomorphism-theorem.html">
+\begin{equation*}
+V\big/\bigcap_{i\in I}W_i\text{ is isomorphic to a subspace of }\prod_{i\in I}\big(V/W_i\big).
+\end{equation*}
+</div>For each <span class="process-math">\(i\in I\)</span> consider the natural projection <span class="process-math">\(\pi_i\colon V\to V/W_i\)</span> (see <a href="" class="xref" data-knowl="./knowl/def-natural-projection.html" title="Definition 6.2.1: (Natural Projection)">Definition 6.2.1</a>). Define <span class="process-math">\(\pi\colon V\to\prod_{i\in I}\big(V/W_i\big)\)</span> by<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/first-isomorphism-theorem.html">
+\begin{equation*}
+v\mapsto (\ldots,v+W_i,\ldots)
+\end{equation*}
+</div>The verification that this map is <span class="process-math">\(F\)</span>-linear is left to the reader. The kernel of <span class="process-math">\(\pi\)</span> is<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/first-isomorphism-theorem.html">
+\begin{align*}
+\ker(\pi)\amp=\{v\in V:v+W_i=0+W_i\text{ for each }i\in I\}\\
+\amp=\{v\in V:v\in W_i\text{ for each }i\in I\}\\
+\amp=\bigcap_{i\in I}W_i
+\end{align*}
+</div>By <a href="" class="xref" data-knowl="./knowl/first-isomorphism-theorem.html" title="Theorem 6.3.2: (Fundamental Homomorphism Theorem)">Theorem 6.3.2</a>, <span class="process-math">\(V\big/\bigcap_{i\in I}W_i\)</span> is isomorphic to <span class="process-math">\(\Im(\pi)\text{.}\)</span> Hence the result. This shows that the following is an exact sequence.<div class="displaymath process-math" data-contains-math-knowls="./knowl/def-natural-projection.html ./knowl/first-isomorphism-theorem.html">
+\begin{equation}
+0\to \bigcap_{i\in I}W_i\to V\to\prod_{i\in I}\big(V/W_i\big).\tag{6.4.1}
+\end{equation}
+</div></article><span class="incontext"><a href="sec-examples-FIT.html#intersections-product" class="internal">in-context</a></span>
+</body>
+</html>

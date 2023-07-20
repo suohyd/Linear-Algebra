@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><article class="hiddenproof">By <a href="" class="xref" data-knowl="./knowl/short-exact-seq.html" title="Definition 4.9.5">Definition 4.9.5</a>, <span class="process-math">\(f\)</span> is injective, <span class="process-math">\(g\)</span> is surjective, and <span class="process-math">\(\Im(f)=\ker(g)\text{.}\)</span> Let <span class="process-math">\(\{x_1,\ldots,x_r\}\)</span> be a basis for <span class="process-math">\(X\text{.}\)</span> <div class="para">We claim that <span class="process-math">\(\{f(x_1),\ldots,f(x_r)\}\)</span> is a basis for <span class="process-math">\(\Im(f)\text{.}\)</span> Suppose that <span class="process-math">\(\sum\alpha_if(x_i)=0\text{,}\)</span> i.e., <span class="process-math">\(f\big(\sum\alpha_ix_i\big)=0\text{.}\)</span> Hence, <span class="process-math">\(\sum\alpha_ix_i\in\ker(f)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is injective, we get <span class="process-math">\(\sum\alpha_ix_i=0\text{.}\)</span> The linear independence of <span class="process-math">\(\{x_1,\ldots,x_n\}\)</span> implies that <span class="process-math">\(\alpha_i=0\)</span> for each <span class="process-math">\(i\text{.}\)</span> Therefore, <span class="process-math">\(\{f(x_1),\ldots,f(x_r)\}\)</span> is linearly independent.</div> <div class="para">We now show that <span class="process-math">\(\{f(x_1),\ldots,f(x_r)\}\)</span> spans <span class="process-math">\(\Im(f)\text{.}\)</span> Indeed, suppose that <span class="process-math">\(f(x)\in\Im(f)\text{.}\)</span> There exists unique <span class="process-math">\(\alpha_i\in F\)</span> such that <span class="process-math">\(x=\sum\alpha_ix_i\text{.}\)</span> Hence, <span class="process-math">\(f(x)=\sum\alpha_if(x_i)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We thus have proved that <span class="process-math">\(\{f(x_1),\ldots,f(x_r)\}\)</span> is a basis (this shows that <span class="process-math">\(X\)</span> is <span class="process-math">\(F\)</span>-isomorphic to <span class="process-math">\(f(X)\text{,}\)</span> see <a href="" class="xref" data-knowl="./knowl/injective-iso-to-image.html" title="Lemma 5.1.4">Lemma 5.1.4</a>). Therefore, using <span class="process-math">\(\Im(f)=\ker(g)\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/injective-iso-to-image.html">
+\begin{equation*}
+\dim_F\ker(g)=\dim_F\Im(f)=r=\dim_FX\text{.}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Furthermore, using <span class="process-math">\(g\)</span> is surjective, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dim_FZ=\dim_F\Im(g).
+\end{equation*}
+</div>
+</div> By Rank-Nullity Theorem (see <a href="" class="xref" data-knowl="./knowl/rank-nullity-theorem.html" title="Theorem 4.5.3: (Rank-Nullity Theorem)">Theorem 4.5.3</a>), applied to the linear transformation <span class="process-math">\(g\colon Y\to Z\text{,}\)</span> we get that<div class="displaymath process-math" data-contains-math-knowls="./knowl/short-exact-seq.html ./knowl/injective-iso-to-image.html ./knowl/rank-nullity-theorem.html">
+\begin{align*}
+\dim_FY\amp=\dim_F\ker(g)+\dim_F\Im(g)\\
+\amp=\dim_F\Im(f)+\dim_FZ\\
+\amp=\dim_FX+\dim_FZ.
+\end{align*}
+</div>In other words, <span class="process-math">\(\dim_FX-\dim_FY+\dim_FZ=0\text{,}\)</span> and hence the theorem is proved.</article></body>
+</html>

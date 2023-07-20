@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">(A basis of solution space - particular case).</span>
+</h3> <div class="para logical">
+<div class="para">Consider the matrix over <span class="process-math">\(\Q\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Elt-row-operations.html">
+\begin{equation*}
+A=\begin{pmatrix}1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Its row-reduced echelon form is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/Elt-row-operations.html">
+\begin{equation*}
+R=\begin{pmatrix}1\amp 1\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">We want to find a basis for the solution space of <span class="process-math">\(AX=0\text{.}\)</span> In <a href="Elt-row-operations.html" class="internal" title="Chapter 1: Elementary row operations">Chapter 1</a> we saw that the solution space of the system <span class="process-math">\(AX=0\)</span> and the system <span class="process-math">\(RX=0\)</span> is same. So, we work with the matrix <span class="process-math">\(R\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Only the first row of <span class="process-math">\(R\)</span> is nonzero and the leading term occurs in the first column. We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x_1+x_2+x_3=0.
+\end{equation*}
+</div>
+<div class="para">Solutions of the system <span class="process-math">\(RX=0\)</span> are obtained by assigning arbitrary values to <span class="process-math">\(x_2,x_3\)</span> and then computing the corresponding value for <span class="process-math">\(x_1\text{.}\)</span> Consider the vectors <span class="process-math">\(v=(-1,1,0)^t\)</span> and <span class="process-math">\(w=(-1,0,1)^t\text{.}\)</span> We claim that <span class="process-math">\(\{v,w\}\)</span> forms a basis for the space of solutions of <span class="process-math">\(RX=0\text{.}\)</span> It is easy to see that <span class="process-math">\(\{v,w\}\)</span> is linearly independent.</div>
+</div> <div class="para logical">
+<div class="para">Now suppose that <span class="process-math">\((s_1,s_2,s_3)^t\)</span> is a solution of <span class="process-math">\(RX=0\text{.}\)</span> Then,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+s_2\cdot v+s_3\cdot w=(-s_2-s_3,s_2,s_3)^t
+\end{equation*}
+</div>
+<div class="para">is also a solution of <span class="process-math">\(RX=0\text{.}\)</span> Moreover, as <span class="process-math">\(s_1=-s_2-s_3\)</span> we get that <span class="process-math">\((s_1,s_2,s_3)^t\)</span> is a linear combination of <span class="process-math">\(v,w\text{.}\)</span> Hence, <span class="process-math">\(\{v,w\}\)</span> spans the space of solutions of <span class="process-math">\(RX=0\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a href="sec-basis-examples.html#example-19" class="internal">in-context</a></span>
+</body>
+</html>

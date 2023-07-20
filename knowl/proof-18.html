@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="hiddenproof"><h3 class="heading"><span class="type">Proof</span></h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(V\)</span> and <span class="process-math">\(W\)</span> be finite-dimensional vector spaces over a field <span class="process-math">\(F\text{.}\)</span> Suppose that <span class="process-math">\(\mathfrak{B}_V=(v_1,v_2,\ldots,v_n)\)</span> and <span class="process-math">\(\mathfrak{B}_W=(w_1,w_2,\ldots,w_n)\)</span> are ordered bases of <span class="process-math">\(V\)</span> and <span class="process-math">\(W\text{,}\)</span> respectively. Let <span class="process-math">\(T\colon V\to W\)</span> be an <span class="process-math">\(F\)</span>-linear isomorphism. Let the matrix of <span class="process-math">\(T\)</span> relative to ordered bases <span class="process-math">\(\mathfrak{B}_V\)</span> and <span class="process-math">\(\mathfrak{B}_W\)</span> be</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/subsec-matrix-rep.html">
+\begin{equation*}
+[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}=\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{n1}\amp\beta_{n2}\amp\cdots\amp\beta_{nn}\end{pmatrix}.
+\end{equation*}
+</div>
+<div class="para">Recall from <a href="sec-ordered-basis-linear-trans.html#subsec-matrix-rep" class="internal" title="Subsection 4.7.2: Matrix representation of a linear transformation">Subsection 4.7.2</a> that <span class="process-math">\(T(v_i)=\sum_k\beta_{ki}w_k\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/linearity-of-inverse.html" title="Lemma 5.1.2">Lemma 5.1.2</a>, the set-theoretic inverse of the map, <span class="process-math">\(T^{-1}\)</span> is also <span class="process-math">\(F\)</span>-linear. Suppose that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linearity-of-inverse.html">
+\begin{equation*}
+T^{-1}(w_j)=\sum_\ell\gamma_{\ell j}v_\ell.
+\end{equation*}
+</div>
+<div class="para">The matrix of <span class="process-math">\(T^{-1}\)</span> relative to ordered bases <span class="process-math">\(\mathfrak{B}_W\)</span> and <span class="process-math">\(\mathfrak{B}_V\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/linearity-of-inverse.html">
+\begin{equation*}
+[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}=\begin{pmatrix}\gamma_{11}\amp\gamma_{12}\amp\cdots\amp\gamma_{1n}\\\gamma_{21}\amp\gamma_{22}\amp\cdots\amp\gamma_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\gamma_{n1}\amp\gamma_{n2}\amp\cdots\amp\gamma_{nn}\end{pmatrix}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/extending-linearly.html" title="Remark 4.1.5: (Linear extension of a map)">Remark 4.1.5</a>, the composition <span class="process-math">\(T\circ T^{-1}=I_W\)</span> is determined by its action on <span class="process-math">\(\{w_j\}\text{.}\)</span> We have the following.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{align*}
+w_j=T\circ T^{-1}(w_j)\amp=T\big(\sum_\ell\gamma_{\ell j}v_\ell\big)\\
+\amp=\sum_\ell\gamma_{\ell j}T(v_\ell)\\
+\amp=\sum_\ell\gamma_{\ell j}\big(\sum_k\beta_{k\ell}w_k\big)\\
+\amp=\sum_k\big(\sum_\ell\gamma_{\ell j}\beta_{k\ell}\big)w_k
+\end{align*}
+</div>
+<div class="para">By <a href="" class="xref" data-knowl="./knowl/unique-lin-combination.html" title="Exercise 3.5.11">Exercise 3.5.11</a>, we must have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{equation*}
+\sum_\ell\gamma_{\ell j}\beta_{k\ell}=0\quad\text{for }k\neq j\quad\text{and}\quad\sum_\ell\gamma_{\ell j}\beta_{j\ell}=1.
+\end{equation*}
+</div>
+<div class="para">We thus obtain that the <span class="process-math">\(j\)</span>-th column of the following matrix</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/extending-linearly.html ./knowl/unique-lin-combination.html">
+\begin{equation*}
+\begin{pmatrix}\beta_{11}\amp\beta_{12}\amp\cdots\amp\beta_{1n}\\\beta_{21}\amp\beta_{22}\amp\cdots\amp\beta_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\beta_{n1}\amp\beta_{n2}\amp\cdots\amp\beta_{nn}\end{pmatrix}\cdot\begin{pmatrix}\gamma_{11}\amp\gamma_{12}\amp\cdots\amp\gamma_{1n}\\\gamma_{21}\amp\gamma_{22}\amp\cdots\amp\gamma_{2n}\\\vdots\amp\vdots\amp\ddots\amp\vdots\\\gamma_{n1}\amp\gamma_{n2}\amp\cdots\amp\gamma_{nn}\end{pmatrix}
+\end{equation*}
+</div>
+<div class="para">is <span class="process-math">\(\big(0,0,\ldots,0,1,0,\ldots,0\big)^t\text{.}\)</span> Therefore, <span class="process-math">\([T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}\cdot[T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix.</div>
+</div> <div class="para">Similar computations for <span class="process-math">\(T^{-1}\circ T=I_V\)</span> yield <span class="process-math">\([T^{-1}]_{\mathfrak{B}_W}^{\mathfrak{B}_V}\cdot[T]_{\mathfrak{B}_V}^{\mathfrak{B}_W}\)</span> is the <span class="process-math">\(n\times n\)</span> identity matrix.</div></article><span class="incontext"><a href="sec-isomorphism-invertible-matrix.html#proof-18" class="internal">in-context</a></span>
+</body>
+</html>
