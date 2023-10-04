@@ -2419,7 +2419,7 @@ var ptx_lunr_docs = [
   "type": "Exercises",
   "number": "5.7",
   "title": "Exercises",
-  "body": " Let be one pair of distinct lines in , and let be another pair of distinct lines in . Show that there is an -automorphism of mapping to for .  Let be the vector space of polynomials in one variable over a field of degree at most . Let be distinct elements. Show that the following map is an -isomorphism.   Find all non-isomorphic subspaces of .  Let be a vector space over a field . Show that .  Let be vector spaces over a field . Show that . (The generalization of this exercise can be found ).  Let and be an -linear map given by . Show that  is injective if and only if .  is surjective if and only if .  is invertible if and only if and is invertible.    Let be a finite-dimensional vector space over a field . Show that are linearly independent over if and only if there are such that .   In the following exercises, find bases so that the matrix representation of the given linear map has the following form.    given by .   given by .   given by .   given by .   given by .   "
+  "body": " Let be one pair of distinct lines in , and let be another pair of distinct lines in . Show that there is an -automorphism of mapping to for .  Let be the vector space of polynomials in one variable over a field of degree at most . Let be distinct elements. Show that the following map is an -isomorphism.   Find all non-isomorphic subspaces of .  Let be a vector space over a field . Show that .  Let be vector spaces over a field . Show that . (The generalization of this exercise can be found ).  Let and be an -linear map given by . Show that  is injective if and only if .  is surjective if and only if .  is invertible if and only if and is invertible.     Suppose that . Consider the following map. where are obtained by replacing the -th column of by .  Show that the map defined above is a linear isomorphism. This will prove the Cramer's rule .   Let be a finite-dimensional vector space over a field . Show that are linearly independent over if and only if there are such that .   In the following exercises, find bases so that the matrix representation of the given linear map has the following form.    given by .   given by .   given by .   given by .   given by .   "
 },
 {
   "id": "exercise-64",
@@ -2482,7 +2482,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.7.7",
   "title": "",
-  "body": "Let be a finite-dimensional vector space over a field . Show that are linearly independent over if and only if there are such that . "
+  "body": " Suppose that . Consider the following map. where are obtained by replacing the -th column of by .  Show that the map defined above is a linear isomorphism. This will prove the Cramer's rule .  "
 },
 {
   "id": "exercise-71",
@@ -2491,7 +2491,7 @@ var ptx_lunr_docs = [
   "type": "Exercise",
   "number": "5.7.8",
   "title": "",
-  "body": " given by . "
+  "body": "Let be a finite-dimensional vector space over a field . Show that are linearly independent over if and only if there are such that . "
 },
 {
   "id": "exercise-72",
@@ -2530,6 +2530,15 @@ var ptx_lunr_docs = [
   "body": " given by . "
 },
 {
+  "id": "exercise-76",
+  "level": "2",
+  "url": "sec-exercises-isomorphism.html#exercise-76",
+  "type": "Exercise",
+  "number": "5.7.13",
+  "title": "",
+  "body": " given by . "
+},
+{
   "id": "sec-quotient-space-def",
   "level": "1",
   "url": "sec-quotient-space-def.html",
@@ -2539,9 +2548,9 @@ var ptx_lunr_docs = [
   "body": " Definition of Quotient Space  Let be a vector space over a field and let be its subspace. We denote the abelian group operation on by ' ' We consider the quotient group . Recall that where The set is called the coset of and is called a coset representative for . We denote the coset by .   (Quotient space) Let be a vector space over a field and be a subspace. We denote the abelian group operation on by ' '. The quotient group with following operations of addition and scalar multiplication is called the quotient space of modulo .  Addition: for any  Scalar multiplication: for any and any   With this addition and the scalar multiplication is a vector space over .     Check that with the addition and the scalar multiplication defined in the quotient space is a vector space over .  Show that the additive identity of is .     It is possible to realize the quotient space geometrically. We give a few examples.  Consider and , a line passing through origin. Any coset is a line passing through and parallel to .  Consider and , a plane passing through origin. Any coset is a plane passing through and parallel to .     "
 },
 {
-  "id": "p-133",
+  "id": "p-135",
   "level": "2",
-  "url": "sec-quotient-space-def.html#p-133",
+  "url": "sec-quotient-space-def.html#p-135",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -2557,9 +2566,9 @@ var ptx_lunr_docs = [
   "body": " (Quotient space) Let be a vector space over a field and be a subspace. We denote the abelian group operation on by ' '. The quotient group with following operations of addition and scalar multiplication is called the quotient space of modulo .  Addition: for any  Scalar multiplication: for any and any   With this addition and the scalar multiplication is a vector space over .  "
 },
 {
-  "id": "exercise-76",
+  "id": "exercise-77",
   "level": "2",
-  "url": "sec-quotient-space-def.html#exercise-76",
+  "url": "sec-quotient-space-def.html#exercise-77",
   "type": "Checkpoint",
   "number": "6.1.2",
   "title": "",
@@ -3007,9 +3016,9 @@ var ptx_lunr_docs = [
   "body": "This follows from the following observation. For any invertible matrix and any polynomial   "
 },
 {
-  "id": "exercise-77",
+  "id": "exercise-78",
   "level": "2",
-  "url": "sec-eigen.html#exercise-77",
+  "url": "sec-eigen.html#exercise-78",
   "type": "Checkpoint",
   "number": "7.2.19",
   "title": "",
@@ -3313,65 +3322,56 @@ var ptx_lunr_docs = [
   "body": " Throughout this section we assume that is a finite-dimensional vector space over a field and an -linear map.  Find the characteristic polynomial of . Show that .  Let be an invertible matrix. Show that has same eigenvectors as that of .  An -linear map has every vector in as an eigenvector if and only if for every and some fixed scalar .  Show that eigenvectors corresponding to distinct eigenvalues are linearly independent.  Suppose that is of the rank . Show that is an eigenvalue of .   Find the characteristic and the minimal polynomial of linear transformations corresponding to the following matrices.              The matrix corresponding to a linear map given by     Find the minimal polynomial, eigenvalues, and eigenvectors for the following linear maps\/matrices. Furthermore, if is an eigenvalue then find a basis and the dimension of (resp., .     The differentiation operator on polynomials in one variable over of degree at most .  The transpose map given by .    Find out whether the following matrices are similar to diagonal matrices over a given field.  , where is a field with two elements.         Let be the matrix of the following linear map with respect to the standard ordered basis.    Find .  "
 },
 {
-  "id": "exercise-78",
+  "id": "exercise-79",
   "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-78",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-79",
   "type": "Exercise",
   "number": "7.7.1",
   "title": "",
   "body": "Find the characteristic polynomial of . Show that . "
 },
 {
-  "id": "exercise-79",
+  "id": "exercise-80",
   "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-79",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-80",
   "type": "Exercise",
   "number": "7.7.2",
   "title": "",
   "body": "Let be an invertible matrix. Show that has same eigenvectors as that of . "
 },
 {
-  "id": "exercise-80",
+  "id": "exercise-81",
   "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-80",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-81",
   "type": "Exercise",
   "number": "7.7.3",
   "title": "",
   "body": "An -linear map has every vector in as an eigenvector if and only if for every and some fixed scalar . "
 },
 {
-  "id": "exercise-81",
+  "id": "exercise-82",
   "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-81",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-82",
   "type": "Exercise",
   "number": "7.7.4",
   "title": "",
   "body": "Show that eigenvectors corresponding to distinct eigenvalues are linearly independent. "
 },
 {
-  "id": "exercise-82",
+  "id": "exercise-83",
   "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-82",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-83",
   "type": "Exercise",
   "number": "7.7.5",
   "title": "",
   "body": "Suppose that is of the rank . Show that is an eigenvalue of . "
 },
 {
-  "id": "exercise-83",
-  "level": "2",
-  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-83",
-  "type": "Exercise",
-  "number": "7.7.6",
-  "title": "",
-  "body": "  "
-},
-{
   "id": "exercise-84",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-84",
   "type": "Exercise",
-  "number": "7.7.7",
+  "number": "7.7.6",
   "title": "",
   "body": "  "
 },
@@ -3380,7 +3380,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-85",
   "type": "Exercise",
-  "number": "7.7.8",
+  "number": "7.7.7",
   "title": "",
   "body": "  "
 },
@@ -3389,7 +3389,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-86",
   "type": "Exercise",
-  "number": "7.7.9",
+  "number": "7.7.8",
   "title": "",
   "body": "  "
 },
@@ -3398,25 +3398,25 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-87",
   "type": "Exercise",
-  "number": "7.7.10",
+  "number": "7.7.9",
   "title": "",
-  "body": "The matrix corresponding to a linear map given by  "
+  "body": "  "
 },
 {
   "id": "exercise-88",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-88",
   "type": "Exercise",
-  "number": "7.7.11",
+  "number": "7.7.10",
   "title": "",
-  "body": ""
+  "body": "The matrix corresponding to a linear map given by  "
 },
 {
   "id": "exercise-89",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-89",
   "type": "Exercise",
-  "number": "7.7.12",
+  "number": "7.7.11",
   "title": "",
   "body": ""
 },
@@ -3425,7 +3425,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-90",
   "type": "Exercise",
-  "number": "7.7.13",
+  "number": "7.7.12",
   "title": "",
   "body": ""
 },
@@ -3434,52 +3434,52 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-91",
   "type": "Exercise",
-  "number": "7.7.14",
+  "number": "7.7.13",
   "title": "",
-  "body": "The differentiation operator on polynomials in one variable over of degree at most . "
+  "body": ""
 },
 {
   "id": "exercise-92",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-92",
   "type": "Exercise",
-  "number": "7.7.15",
+  "number": "7.7.14",
   "title": "",
-  "body": "The transpose map given by . "
+  "body": "The differentiation operator on polynomials in one variable over of degree at most . "
 },
 {
   "id": "exercise-93",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-93",
   "type": "Exercise",
-  "number": "7.7.16",
+  "number": "7.7.15",
   "title": "",
-  "body": ", where is a field with two elements. "
+  "body": "The transpose map given by . "
 },
 {
   "id": "exercise-94",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-94",
   "type": "Exercise",
-  "number": "7.7.17",
+  "number": "7.7.16",
   "title": "",
-  "body": ""
+  "body": ", where is a field with two elements. "
 },
 {
   "id": "exercise-95",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-95",
   "type": "Exercise",
-  "number": "7.7.18",
+  "number": "7.7.17",
   "title": "",
-  "body": "  "
+  "body": ""
 },
 {
   "id": "exercise-96",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-96",
   "type": "Exercise",
-  "number": "7.7.19",
+  "number": "7.7.18",
   "title": "",
   "body": "  "
 },
@@ -3488,14 +3488,23 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-97",
   "type": "Exercise",
-  "number": "7.7.20",
+  "number": "7.7.19",
   "title": "",
-  "body": "Let be the matrix of the following linear map with respect to the standard ordered basis.  "
+  "body": "  "
 },
 {
   "id": "exercise-98",
   "level": "2",
   "url": "ex-invariant-subspaces-eigenvectors.html#exercise-98",
+  "type": "Exercise",
+  "number": "7.7.20",
+  "title": "",
+  "body": "Let be the matrix of the following linear map with respect to the standard ordered basis.  "
+},
+{
+  "id": "exercise-99",
+  "level": "2",
+  "url": "ex-invariant-subspaces-eigenvectors.html#exercise-99",
   "type": "Exercise",
   "number": "7.7.21",
   "title": "",
@@ -3583,9 +3592,9 @@ var ptx_lunr_docs = [
   "body": " (Cayley-Hamilton Theorem)  Let be a finite-dimensional vector space over a field and let be an -linear map. The characteristic polynomial of annihilates .  "
 },
 {
-  "id": "exercise-99",
+  "id": "exercise-100",
   "level": "2",
-  "url": "sec-Cayley-Hamilton.html#exercise-99",
+  "url": "sec-Cayley-Hamilton.html#exercise-100",
   "type": "Checkpoint",
   "number": "8.1.7",
   "title": "",

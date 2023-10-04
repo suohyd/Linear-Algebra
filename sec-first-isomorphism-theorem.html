@@ -337,7 +337,7 @@ window.MathJax = {
 </h2>
 <section class="introduction" id="introduction-40">We prove the Fundamental Homomorphism Theorem, a similar result as in the Group Theory course, in context of vector spaces. We begin with the following result.</section><article class="theorem theorem-like" id="universal-property-quotient"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">6.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">(Universal Property of Quotient Space).</span>
-</h3>Let <span class="process-math">\(V, X\)</span> be vector spaces over a field <span class="process-math">\(F\)</span> and <span class="process-math">\(W\)</span> be a subspace of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(T\colon V\to X\)</span> be an <span class="process-math">\(F\)</span>-linear map such that <span class="process-math">\(W\leq\ker(T)\text{.}\)</span> Then there is a unique linear map <span class="process-math">\(\overline{T}\colon V/W\to X\)</span> such that <span class="process-math">\(\overline{T}\circ\pi_W=T\text{.}\)</span> <div class="para logical" id="p-138">
+</h3>Let <span class="process-math">\(V, X\)</span> be vector spaces over a field <span class="process-math">\(F\)</span> and <span class="process-math">\(W\)</span> be a subspace of <span class="process-math">\(V\text{.}\)</span> Let <span class="process-math">\(T\colon V\to X\)</span> be an <span class="process-math">\(F\)</span>-linear map such that <span class="process-math">\(W\leq\ker(T)\text{.}\)</span> Then there is a unique linear map <span class="process-math">\(\overline{T}\colon V/W\to X\)</span> such that <span class="process-math">\(\overline{T}\circ\pi_W=T\text{.}\)</span> <div class="para logical" id="p-140">
 <div class="para">Diagrammatically we require an <span class="process-math">\(F\)</span>-linear map <span class="process-math">\(\overline{T}\colon V/W\to X\)</span> such that <span class="process-math">\(\overline{T}\circ\pi_W=T\text{.}\)</span>
 </div>
 <div class="displaymath process-math">
@@ -363,7 +363,7 @@ V/\ker(T)\simeq\Im(T).
 \begin{equation*}
 V\simeq\ker(T)\bigoplus\Im(T).
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-32"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><div class="para logical" id="p-139">
+</div></article><article class="hiddenproof" id="proof-32"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><div class="para logical" id="p-141">
 <div class="para">Since, <span class="process-math">\(V\)</span> is finite-dimensional, its subspace <span class="process-math">\(\ker(T)\)</span> is also finite-dimensional. Let <span class="process-math">\(\{v_1,\ldots,v_s\}\)</span> be a basis for <span class="process-math">\(\ker(T)\text{.}\)</span> Extend it to a basis for <span class="process-math">\(V\text{,}\)</span> say <span class="process-math">\(\mathfrak{B}=\{v_1,\ldots,v_s,u_1,\ldots,u_r\}\text{.}\)</span> Then, <span class="process-math">\(\{u_1+\ker(T),\ldots,u_r+\ker(T)\}\)</span> is a basis for <span class="process-math">\(V/\ker(T)\text{.}\)</span> Indeed, if <span class="process-math">\(\sum\alpha_i(u_i+\ker(T))=0+\ker(T)\)</span> then <span class="process-math">\(\sum\alpha_iu_i\in\ker(T)\text{.}\)</span> Therefore, there exists <span class="process-math">\(\beta_j\in F\)</span> such that <span class="process-math">\(\sum\alpha_iu_i=\sum\beta_jv_j\text{.}\)</span> By linear independence of <span class="process-math">\(\mathfrak{B}\text{,}\)</span> <span class="process-math">\(\alpha_i=0\)</span> for every <span class="process-math">\(i\text{.}\)</span> Therefore, <span class="process-math">\(\{u_1+\ker(T),\ldots,u_r+\ker(T)\}\)</span> is linearly independent over <span class="process-math">\(F\text{.}\)</span> Given a vector <span class="process-math">\(v\in V\)</span> there are uniquely determined <span class="process-math">\(\beta_i,\gamma_j\)</span> such that <span class="process-math">\(v=\sum\beta_iv_i+\gamma_ju_j\text{,}\)</span> i.e., <span class="process-math">\(v+\ker(T)=\big(\sum\gamma_ju_j\big)+\ker(T)\text{.}\)</span> This shows that <span class="process-math">\(\{u_1+\ker(T),\ldots,u_r+\ker(T)\}\)</span> spans <span class="process-math">\(V/\ker(T)\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/first-isomorphism-theorem.html" title="Theorem 6.3.2: (Fundamental Homomorphism Theorem)">Theorem 6.3.2</a> and <a href="" class="xref" data-knowl="./knowl/iso-implies-same-dim.html" title="Lemma 5.1.6">Lemma 5.1.6</a>,</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/first-isomorphism-theorem.html ./knowl/iso-implies-same-dim.html">
 \begin{equation*}
@@ -372,7 +372,7 @@ V\simeq\ker(T)\bigoplus\Im(T).
 </div>
 <div class="para">is a basis for <span class="process-math">\(\Im(T)\text{.}\)</span>
 </div>
-</div> <div class="para logical" id="p-140">
+</div> <div class="para logical" id="p-142">
 <div class="para">We define an <span class="process-math">\(F\)</span>-linear map</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -386,7 +386,7 @@ V\simeq\ker(T)\bigoplus\Im(T).
 \end{equation*}
 </div>
 <div class="para">Therefore, <span class="process-math">\(\varphi\)</span> maps a basis of <span class="process-math">\(\ker(T)\bigoplus\Im(T)\)</span> onto a basis of <span class="process-math">\(V\text{,}\)</span> and hence, <span class="process-math">\(\varphi\)</span> is an <span class="process-math">\(F\)</span>-isomorphism.</div>
-</div> <div class="para" id="p-141">Both the assertions of the corollary now follows.</div></article></div>
+</div> <div class="para" id="p-143">Both the assertions of the corollary now follows.</div></article></div>
 <article class="remark remark-like" id="remark-35"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">6.3.4</span><span class="period">.</span>
 </h3>Let <span class="process-math">\(T\colon\R^2\to\R^2\)</span> be a linear map given by<div class="displaymath process-math" data-contains-math-knowls="./knowl/rank-nullity-theorem.html ./knowl/direct-sum-equivalent-conditions.html ./knowl/corollary-FIT.html">

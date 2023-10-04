@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical"><ol class="decimal">
+<li><div class="para">
+<em class="alert">Row linearity</em>. Let <span class="process-math">\(A_i=(a_{i1},a_{i2},\ldots,a_{in})\)</span> be the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A\text{.}\)</span> For <span class="process-math">\(\beta\in F\)</span> we let <span class="process-math">\(\beta A_i=(\beta a_{i1},\beta a_{i2},\ldots,\beta a_{in})\text{.}\)</span> For any <span class="process-math">\(B\in M_{1\times n}(F)\)</span> and any <span class="process-math">\(\beta,\gamma\in F\)</span> and any <span class="process-math">\(i\in\{1,2,\ldots,n\}\)</span> we get the following.<div class="displaymath process-math">
+\begin{equation*}
+\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\\beta A_i+\gamma B\\A_{i+1}\\\vdots\\A_n\end{pmatrix}=\beta\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\A_i\\A_{i+1}\\\vdots\\A_n\end{pmatrix}+\gamma\det\begin{pmatrix}A_1\\A_2\\\vdots\\A_{i-1}\\B\\A_{i+1}\\\vdots\\A_n\end{pmatrix}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">For <span class="process-math">\(A\in M_n(F)\)</span> and any <span class="process-math">\(\beta\in F\text{,}\)</span> <span class="process-math">\(\det(\beta A)=\beta^n\det(A)\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<em class="alert">Row rearrangement</em>. Let <span class="process-math">\(\sigma\in S_n\)</span> and <span class="process-math">\(A^\prime\)</span> be the matrix such that the <span class="process-math">\(i\)</span>-th row of <span class="process-math">\(A^\prime\)</span> is the <span class="process-math">\(\sigma(i)\)</span>-th row of <span class="process-math">\(A\text{.}\)</span> Then<div class="displaymath process-math">
+\begin{equation*}
+\det(A^\prime)=sgn(\sigma)\det(A).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">
+<em class="alert">Alternating</em>. If any two rows of <span class="process-math">\(A\in M_n(F)\)</span> are the same then <span class="process-math">\(\det(A)=0\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<em class="alert">Transpose</em>. For any <span class="process-math">\(A\in M_n(F)\text{,}\)</span><div class="displaymath process-math">
+\begin{equation*}
+\det(A^t)=\det(A).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">
+<em class="alert">Triangular matrices</em>. If <span class="process-math">\(A=(a_{ij})\in M_n(F)\)</span> is an upper triangular (resp., lower triangular) matrix, i.e., <span class="process-math">\(a_{ij}=0\)</span> for <span class="process-math">\(i&gt;j\)</span> (resp., <span class="process-math">\(a_{ij}=0\)</span> for <span class="process-math">\(i&lt;j\)</span>) then<div class="displaymath process-math">
+\begin{equation*}
+\det(A)=a_{11}a_{22}\cdots a_{nn}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">
+<em class="alert">Block form</em>. Let <span class="process-math">\(r\in\{1,2,\ldots,n-1\}\text{.}\)</span> Let <span class="process-math">\(B\in M_r(F)\text{,}\)</span> <span class="process-math">\(C\in M_{r\times n-r}(F)\text{,}\)</span> <span class="process-math">\(D\in M_{n-r}(F)\text{,}\)</span> and <span class="process-math">\(\mathbf{0}\in M_{n-r\times r}(F)\)</span> be the zero matrix. The determinant of<div class="displaymath process-math">
+\begin{equation*}
+A=\begin{pmatrix}B\amp C\\\mathbf{0}\amp D\end{pmatrix}
+\end{equation*}
+</div>is given by<div class="displaymath process-math">
+\begin{equation*}
+\det(A)=\det(B)\cdot\det(D).
+\end{equation*}
+</div>Similar result is true for lower triangular block matrices.</div></li>
+<li><div class="para">
+<em class="alert">Multiplicative property</em>. Let <span class="process-math">\(A, B\in M_n(F)\text{.}\)</span> We have<div class="displaymath process-math">
+\begin{equation*}
+\det(AB)=\det(A)\cdot\det(B).
+\end{equation*}
+</div>
+</div></li>
+</ol></div>
+<span class="incontext"><a href="sec-determinant.html#p-205" class="internal">in-context</a></span>
+</body>
+</html>

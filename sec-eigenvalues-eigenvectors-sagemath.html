@@ -341,18 +341,18 @@ sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-eigenvalues-eigenvectors-sagemath"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">7.8</span> <span class="title">Eigenvalues and Eigenvectors using SageMath</span>
 </h2>
-<section class="introduction" id="introduction-50">The computer algebra system SageMath can compute eigenvalues and eigenvectors of a given matrix. Please do the relevant changes on this page to verify your calculations.</section><div class="para" id="p-177">In the following examples QQ denotes the field of rational numbers. You may change it to RR, the field of real numbers. Numbers in brackets are rows of <span class="process-math">\(A\text{.}\)</span> You can change number of rows as well as entries of rows.</div>
-<div class="para" id="p-178">
+<section class="introduction" id="introduction-50">The computer algebra system SageMath can compute eigenvalues and eigenvectors of a given matrix. Please do the relevant changes on this page to verify your calculations.</section><div class="para" id="p-179">In the following examples QQ denotes the field of rational numbers. You may change it to RR, the field of real numbers. Numbers in brackets are rows of <span class="process-math">\(A\text{.}\)</span> You can change number of rows as well as entries of rows.</div>
+<div class="para" id="p-180">
 <em class="alert">Computation of eigenvalues</em> <pre class="ptx-sagecell sagecell-sage" id="sage-9"><script type="text/x-sage">sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
 sage: A.eigenvalues()
 </script></pre>
 </div>
-<div class="para" id="p-179">
+<div class="para" id="p-181">
 <em class="alert">Computation of eigenvectors</em> <pre class="ptx-sagecell sagecell-sage" id="sage-10"><script type="text/x-sage">sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
 sage: A.eigenvectors_right()
 </script></pre>
 </div>
-<div class="para" id="p-180">
+<div class="para" id="p-182">
 <em class="alert">Computation of eigenspaces</em> <pre class="ptx-sagecell sagecell-sage" id="sage-11"><script type="text/x-sage">sage: A=matrix(QQ,[[1,0,1],[1,0,1],[2,-2,2]]); A
 sage: A.eigenspaces_right()
 </script></pre>
