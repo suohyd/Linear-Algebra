@@ -38,6 +38,20 @@
 			</ol>
 		</statement>
 	</exercise>
+	<exercise>
+		<statement>
+			<p>
+				Suppose that <m>A\in{\rm GL}_n(F)</m>. Consider the following map.
+				<me>
+					T\colon F^n\to F^n\quad\text{given by}\quad (\alpha_1,\ldots,\alpha_n)\mapsto \tfrac{1}{\det(A)}\left(\det(A_1),\ldots,\det(A_n)\right),
+				</me>
+				where <m>A_i</m> are obtained by replacing the <m>i</m>-th column of <m>A</m> by <m>(\alpha_1,\ldots,\alpha_n)^t</m>.
+			</p>
+			<p>
+				Show that the map defined above is a linear isomorphism. This will prove the <url href="https://en.wikipedia.org/wiki/Cramer%27s_rule">Cramer's rule</url>.
+			</p>
+		</statement>
+	</exercise>
 
 	<exercise>
 		<statement>
