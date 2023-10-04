@@ -52,7 +52,6 @@
 			</p>
 		</statement>
 	</exercise>
-
 	<exercise>
 		<statement>
 			Let <m>V</m> be a finite-dimensional vector space over a field <m>F</m>. Show that <m>v_1,v_2,\ldots,v_r\in V</m> are linearly independent over <m>F</m> if and only if there are <m>f_1,f_2,\ldots,f_r\in V^*</m> such that <m>\det(f_i(v_j))\neq 0</m>.
