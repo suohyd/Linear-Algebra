@@ -18,14 +18,14 @@
 		<title>(Row space)</title>
 		Let <m>A=(a_{ij})</m> be an <m>m\times n</m> matrix over a field <m>F</m>. The <term>row space</term> of <m>A</m> is <m>\langle e_1A,e_2A,\ldots,e_mA\rangle\subset F^m</m>.
 		<p>
-			The dimension of the row space is called <term>row rank</term> of <m>A</m>, and it is denoted by <m>rrk(A)</m>.
+			The dimension of the row space is called the <term>row rank</term> of <m>A</m>, and it is denoted by <m>rrk(A)</m>.
 		</p>
 	</definition>
 	<definition xml:id="column-space">
 		<title>(Column space)</title>
 		Let <m>A=(a_{ij})</m> be an <m>m\times n</m> matrix over a field <m>F</m>. The <term>column space</term> of <m>A</m> is <m>\langle Af_1^t,Af_2^t,\ldots,Af_n^t\rangle\subset M_{n\times 1}(F)</m>.
 		<p>
-			The dimension of the column space is called <term>column rank</term> of <m>A</m>, and it is denoted by <m>crk(A)</m>.
+			The dimension of the column space is called the <term>column rank</term> of <m>A</m>, and it is denoted by <m>crk(A)</m>.
 		</p>
 	</definition>
 
@@ -35,13 +35,13 @@
 		</statement>
 	</lemma>
 	<proof>
-		We only prove the result for one of the elementary matrices. Recall from <xref ref="generators-of-GL"/> that <m>T_{pq}(\alpha)</m> is the matrix obtained by multiplying <m>q</m>-th row of <m>I_n</m> by <m>\alpha\in F</m> and adding this row to <m>p</m>-th row of <m>I_n</m>. For simplicity we further assume that <m>p</m> is less than <m>q</m>.
+		We only prove the result for one of the elementary matrices. Recall from <xref ref="generators-of-GL"/> that <m>T_{pq}(\alpha)</m> is the matrix obtained by multiplying the <m>q</m>-th row of <m>I_n</m> by <m>\alpha\in F</m> and adding this row to the <m>p</m>-th row of <m>I_n</m>. For simplicity we further assume that <m>p</m> is less than <m>q</m>.
 		<p>
-			Thus, the matrix <m>AT_{pq}(\alpha)</m> is obtained by multiplying <m>q</m>-th column of <m>A</m> by <m>\alpha\in F</m> and adding this column to <m>p</m>-th column of <m>A</m>.
+			Thus, the matrix <m>AT_{pq}(\alpha)</m> is obtained by multiplying the <m>q</m>-th column of <m>A</m> by <m>\alpha\in F</m> and adding this column to the <m>p</m>-th column of <m>A</m>.
 			Therefore, using notation of eq. <xref ref="right-multi-column"/>, the column space of <m>AT_{pq}(\alpha)</m> is 
-			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle.</me>
+			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,\ldots,Af_n^t\big\rangle.</me>
 			Since, <m>Af_p^t=(Af_p^t+\alpha Af_q^t)-\alpha Af_q^t</m> we get
-			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,Af_n^t\big\rangle=\langle Af_i^t:1\leq i\leq n\rangle.</me>
+			<me>\big\langle Af_1^t,\ldots,Af_{p-1}^t,Af_p^t+\alpha Af_q^t,Af_{p+1}^t,\ldots,Af_q^t,\ldots,Af_n^t\big\rangle=\langle Af_i^t:1\leq i\leq n\rangle.</me>
 			We thus have <m>crk(A)=crk(AT_{pq}(\alpha))</m>.
 		</p>
 		<p>
@@ -49,7 +49,7 @@
 		Consider the following <m>F</m>-linear map, right multiplication by <m>E</m>:
 			<me>R_E\colon F^n\to F^n\quad\text{defined by}\quad v\mapsto v\cdot E.</me>
 			Since <m>E</m> is an elementary matrix it is invertible and <m>F</m>-linear map <m>R_{E^{-1}}</m> is the inverse of <m>R_{E}</m>. In particular, <m>R_{E}</m> is an <m>F</m>-isomorphism. By <xref ref="iso-implies-same-dim"/>, we have the following.
-			<me>\langle e_1A,\ldots,e_nA\rangle\simeq\langle e_1AE,\ldots,e_nAE\rangle.</me> In particular, <m>rrk(A)=rrk(AE)</m>.
+			<me>\langle e_1A,\ldots,e_mA\rangle\simeq\langle e_1AE,\ldots,e_mAE\rangle.</me> In particular, <m>rrk(A)=rrk(AE)</m>.
 		</p>
 	</proof>
 
@@ -75,7 +75,7 @@
 	</theorem>
 	<proof>
 		 <p>
-		 	We consider <m>L_A\colon M_{n\times 1}(F)\to M_{m\times 1}(F)</m> defined in <xref ref="left-multiplication"/>. Then, the matrix of <m>L_A</m> with respect to standard bases is <m>A</m> (see <xref ref="standard-basis"/>). By <xref ref="pre-row-colomn-rank-equality"/>, there exists bases <m>\mathfrak{B}</m> and <m>\mathfrak{C}</m> of <m>M_{n\times 1}(F)</m> and <m>M_{m\times 1}(F)</m>, respectively such that <me>[T]_{\mathfrak{B}}^{\mathfrak{C}}=\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}.</me> Note that <m>rrk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=crk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=r</m>. By <xref ref="change-of-basis-Hom"/>, there are invertible matrices <m>P, Q</m> such that 
+		 	We consider <m>L_A\colon M_{n\times 1}(F)\to M_{m\times 1}(F)</m> defined in <xref ref="induced-by-matrix"/>. Then, the matrix of <m>L_A</m> with respect to standard bases is <m>A</m> (see <xref ref="standard-basis"/>). By <xref ref="pre-row-colomn-rank-equality"/>, there exists bases <m>\mathfrak{B}</m> and <m>\mathfrak{C}</m> of <m>M_{n\times 1}(F)</m> and <m>M_{m\times 1}(F)</m>, respectively such that <me>[T]_{\mathfrak{B}}^{\mathfrak{C}}=\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}.</me> Note that <m>rrk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=crk\begin{pmatrix}I_r\amp 0\\0\amp 0\end{pmatrix}=r</m>. By <xref ref="change-of-basis-Hom"/>, there are invertible matrices <m>P, Q</m> such that 
 		<me>A=P\cdot [T]_{\mathfrak{B}}^{\mathfrak{C}}\cdot Q</me> Since, <m>P,Q</m> are invertible matrices, by a part of the proof of <xref ref="rrk-crk-elt-operations"/>, we get that 
 		<me>rrk(A)=r=crk(A).</me>
 		</p>
